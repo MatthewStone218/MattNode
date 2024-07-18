@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MattNode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+407199fa236fe3a7786cca64ec8980cc8ad6c19f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46df7797f97982bc7e97eb4614b132435ca8ac4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MattNode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MattNode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

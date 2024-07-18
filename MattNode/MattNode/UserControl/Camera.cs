@@ -32,7 +32,9 @@ namespace MattNode
         {
             if (GlobalHooks.KeyboardCtrlDown)
             {
-                size += -(float)(_size >> 16) / 1200.0f;
+                float delta = -(float)(_size >> 16) / 1200.0f;
+                size += delta;
+                if (size < 0.1f) { size = 0.1f; }
             }
         }
 
@@ -43,10 +45,10 @@ namespace MattNode
 
         private void Camera_Tick(object sender, EventArgs e)
         {
-            Position = Location;
+            Position = new Point(x,y);
             for (int i = 0; i < Instance.InstanceList.Count; i++)
             {
-                Instance.InstanceList[i].Location = new Point((int)((float)(Instance.InstanceList[i].x-x)/size), (int)((float)(Instance.InstanceList[i].y-y)/size));
+                Instance.InstanceList[i].Location = new Point((int)((float)(Instance.InstanceList[i].x-x)/size) + (int)((float)Form1.WindowWidth/2), (int)((float)(Instance.InstanceList[i].y-y)/size) + (int)((float)Form1.WindowHeight/2));
                 Instance.InstanceList[i].SetSize(size);
                 Instance.InstanceList[i].Refresh();
             }

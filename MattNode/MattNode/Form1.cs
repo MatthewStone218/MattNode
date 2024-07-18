@@ -4,6 +4,9 @@ namespace MattNode
 {
     public partial class Form1 : Form
     {
+        public static Camera? MainCamera;
+        public static int WindowWidth;
+        public static int WindowHeight;
         protected bool clicked = false;
         protected Point MousePrevPoint;
         public Form1()
@@ -11,7 +14,8 @@ namespace MattNode
             GlobalHooks.Start();
             InitializeComponent();
             SetInstancesPosition();
-            ScreenDragger.MainCamera = MainCamera;
+            MainCamera = MainCamera1;
+            EnableStep();
             MainCamera.EnableStep();
             screenDragger1.EnableStep();
         }
@@ -37,6 +41,17 @@ namespace MattNode
         private void MainForm_Close(object sender, FormClosedEventArgs e)
         {
             GlobalHooks.Stop();
+        }
+
+        private void Step(object sender, EventArgs e)
+        {
+            WindowWidth = this.Width;
+            WindowHeight = this.Height;
+        }
+
+        public void EnableStep()
+        {
+            Step1.Enabled = true;
         }
     }
 }

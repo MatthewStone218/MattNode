@@ -17,7 +17,6 @@ namespace MattNode
         private Point MouseClickedPoint;
         private Point CameraPositionAtClick;
         private bool MouseLeftDownPrev = false;
-        public static Camera? MainCamera;
         public ScreenDragger()
         {
             InitializeComponent();
@@ -45,9 +44,9 @@ namespace MattNode
             if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
                 Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
-                MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
-                MainCamera.x = MainCamera.Location.X;
-                MainCamera.y = MainCamera.Location.Y;
+                Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                Form1.MainCamera.x = Form1.MainCamera.Location.X;
+                Form1.MainCamera.y = Form1.MainCamera.Location.Y;
             }
         }
 
@@ -62,9 +61,9 @@ namespace MattNode
             if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
             {
                 Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
-                MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
-                MainCamera.x = MainCamera.Location.X;
-                MainCamera.y = MainCamera.Location.Y;
+                Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                Form1.MainCamera.x = Form1.MainCamera.Location.X;
+                Form1.MainCamera.y = Form1.MainCamera.Location.Y;
             }
 
             MouseLeftDownPrev = GlobalHooks.MouseLeftDown;

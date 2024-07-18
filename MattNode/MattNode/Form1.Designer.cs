@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MainCamera = new Camera();
+            components = new System.ComponentModel.Container();
+            MainCamera1 = new Camera();
             node1 = new Node();
             screenDragger1 = new ScreenDragger();
             node2 = new Node();
             node3 = new Node();
+            Step1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // MainCamera
             // 
-            MainCamera.Location = new Point(-2, 0);
-            MainCamera.Name = "MainCamera";
-            MainCamera.Size = new Size(0, 0);
-            MainCamera.TabIndex = 0;
+            MainCamera1.Location = new Point(-2, 0);
+            MainCamera1.Name = "MainCamera";
+            MainCamera1.Size = new Size(0, 0);
+            MainCamera1.TabIndex = 0;
             // 
             // node1
             // 
@@ -71,6 +73,11 @@
             node3.Size = new Size(315, 143);
             node3.TabIndex = 4;
             // 
+            // Step1
+            // 
+            Step1.Interval = 1;
+            Step1.Tick += Step;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -80,7 +87,7 @@
             Controls.Add(node3);
             Controls.Add(node2);
             Controls.Add(node1);
-            Controls.Add(MainCamera);
+            Controls.Add(MainCamera1);
             Controls.Add(screenDragger1);
             Name = "Form1";
             FormClosed += MainForm_Close;
@@ -89,10 +96,11 @@
 
         #endregion
 
-        private Camera MainCamera;
+        private Camera MainCamera1;
         private Node node1;
         private ScreenDragger screenDragger1;
         private Node node2;
         private Node node3;
+        private System.Windows.Forms.Timer Step1;
     }
 }
