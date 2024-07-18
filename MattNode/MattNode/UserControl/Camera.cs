@@ -15,6 +15,7 @@ namespace MattNode
         public int x = 0;
         public int y = 0;
         public static float size = 1.0f;
+        private static float sizeGoal = 1.0f;
         public static Point Position = new Point(0, 0);
         public Camera()
         {
@@ -33,8 +34,8 @@ namespace MattNode
             if (GlobalHooks.KeyboardCtrlDown)
             {
                 float delta = -(float)(_size >> 16) / 1200.0f;
-                size += delta;
-                if (size < 0.1f) { size = 0.1f; }
+                sizeGoal += delta;
+                if (sizeGoal < 0.1f) { sizeGoal = 0.1f; }
             }
         }
 
@@ -45,6 +46,7 @@ namespace MattNode
 
         private void Camera_Tick(object sender, EventArgs e)
         {
+            size += (sizeGoal - size) / 4.0f;
             Position = new Point(x,y);
             for (int i = 0; i < Instance.InstanceList.Count; i++)
             {
