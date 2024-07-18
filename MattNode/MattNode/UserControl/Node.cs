@@ -14,7 +14,6 @@ namespace MattNode
     {
         private bool clicked = false;
         private Point PositionToCursor;
-        private Point MousePrevPoint;
         private Size InitSize;
         private Point InitLabelLocation;
         private Size InitLabelSize;

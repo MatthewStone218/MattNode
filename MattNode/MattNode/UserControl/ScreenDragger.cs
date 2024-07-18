@@ -14,7 +14,8 @@ namespace MattNode
     public partial class ScreenDragger : UserControl
     {
         private bool clicked = false;
-        private Point MousePrevPoint;
+        private Point MouseClickedPoint;
+        private Point CameraPositionAtClick;
         private bool MouseLeftDownPrev = false;
         public static Camera? MainCamera;
         public ScreenDragger()
@@ -25,7 +26,8 @@ namespace MattNode
         private void Drag_MouseDown(object sender, MouseEventArgs e)
         {
             clicked = true;
-            MousePrevPoint = Cursor.Position;
+            MouseClickedPoint = Cursor.Position;
+            CameraPositionAtClick = Camera.Position;
         }
 
         private void Drag_MouseLeave(object sender, EventArgs e)
@@ -40,14 +42,12 @@ namespace MattNode
 
         private void Drag_MouseMove(object sender, MouseEventArgs e)
         {
-
             if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
-                Point delta = Point.Subtract(Cursor.Position, new Size(MousePrevPoint));
-                MainCamera.Location = Point.Subtract(MainCamera.Location, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
+                MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
                 MainCamera.x = MainCamera.Location.X;
                 MainCamera.y = MainCamera.Location.Y;
-                MousePrevPoint = Cursor.Position;
             }
         }
 
@@ -55,16 +55,16 @@ namespace MattNode
         {
             if(!MouseLeftDownPrev && GlobalHooks.MouseLeftDown)
             {
-                MousePrevPoint = Cursor.Position;
+                MouseClickedPoint = Cursor.Position;
+                CameraPositionAtClick = Camera.Position;
             }
 
             if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
             {
-                Point delta = Point.Subtract(Cursor.Position, new Size(MousePrevPoint));
-                MainCamera.Location = Point.Subtract(MainCamera.Location,new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
+                MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
                 MainCamera.x = MainCamera.Location.X;
                 MainCamera.y = MainCamera.Location.Y;
-                MousePrevPoint = Cursor.Position;
             }
 
             MouseLeftDownPrev = GlobalHooks.MouseLeftDown;
