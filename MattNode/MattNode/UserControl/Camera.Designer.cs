@@ -34,7 +34,7 @@
             // 
             // Step
             // 
-            Step.Interval = 2;
+            Step.Interval = 1;
             Step.Tick += Camera_Tick;
             // 
             // Camera

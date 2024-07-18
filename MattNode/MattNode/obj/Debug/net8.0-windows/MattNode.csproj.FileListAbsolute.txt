@@ -18,3 +18,4 @@ C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.genruntimeconfig.cache
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\ref\MattNode.dll
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.ScreenDragger.resources
+C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.sourcelink.json

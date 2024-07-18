@@ -32,5 +32,9 @@ namespace MattNode
             x = Location.X;
             y = Location.Y;
         }
+
+        public virtual void SetSize(float size)
+        {
+        }
     }
 }

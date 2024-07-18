@@ -15,6 +15,7 @@ namespace MattNode
     {
         private bool clicked = false;
         private Point MousePrevPoint;
+        private bool MouseLeftDownPrev = false;
         public static Camera? MainCamera;
         public ScreenDragger()
         {
@@ -40,13 +41,38 @@ namespace MattNode
         private void Drag_MouseMove(object sender, MouseEventArgs e)
         {
 
-            if (clicked)
+            if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
-                MainCamera.Location = Point.Subtract(MainCamera.Location, new Size(Point.Subtract(Cursor.Position, new Size(MousePrevPoint))));
+                Point delta = Point.Subtract(Cursor.Position, new Size(MousePrevPoint));
+                MainCamera.Location = Point.Subtract(MainCamera.Location, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
                 MainCamera.x = MainCamera.Location.X;
                 MainCamera.y = MainCamera.Location.Y;
                 MousePrevPoint = Cursor.Position;
             }
+        }
+
+        private void Step(object sender, EventArgs e)
+        {
+            if(!MouseLeftDownPrev && GlobalHooks.MouseLeftDown)
+            {
+                MousePrevPoint = Cursor.Position;
+            }
+
+            if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
+            {
+                Point delta = Point.Subtract(Cursor.Position, new Size(MousePrevPoint));
+                MainCamera.Location = Point.Subtract(MainCamera.Location,new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                MainCamera.x = MainCamera.Location.X;
+                MainCamera.y = MainCamera.Location.Y;
+                MousePrevPoint = Cursor.Position;
+            }
+
+            MouseLeftDownPrev = GlobalHooks.MouseLeftDown;
+        }
+
+        public void EnableStep()
+        {
+            Step1.Enabled = true;
         }
     }
 }

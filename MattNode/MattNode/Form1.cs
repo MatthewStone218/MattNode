@@ -8,10 +8,12 @@ namespace MattNode
         protected Point MousePrevPoint;
         public Form1()
         {
+            GlobalHooks.Start();
             InitializeComponent();
             SetInstancesPosition();
             ScreenDragger.MainCamera = MainCamera;
             MainCamera.EnableStep();
+            screenDragger1.EnableStep();
         }
 
         private void SetInstancesPosition()
@@ -30,6 +32,11 @@ namespace MattNode
         private void dragableControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_Close(object sender, FormClosedEventArgs e)
+        {
+            GlobalHooks.Stop();
         }
     }
 }

@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            Step1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
+            // 
+            // Step1
+            // 
+            Step1.Interval = 1;
+            Step1.Tick += Step;
             // 
             // ScreenDragger
             // 
@@ -45,5 +52,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer Step1;
     }
 }
