@@ -67,7 +67,7 @@
             textBox.Name = "textBox";
             textBox.ScrollBars = ScrollBars.Vertical;
             textBox.Size = new Size(285, 963);
-            textBox.TabIndex = 3;
+            textBox.TabIndex = 2;
             textBox.TextChanged += TextBox_TextChanged;
             // 
             // nameBox
@@ -75,7 +75,7 @@
             nameBox.Location = new Point(72, 22);
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(234, 23);
-            nameBox.TabIndex = 4;
+            nameBox.TabIndex = 0;
             nameBox.TextChanged += NameBox_TextChanged;
             // 
             // typeBox
@@ -83,7 +83,7 @@
             typeBox.Location = new Point(72, 55);
             typeBox.Name = "typeBox";
             typeBox.Size = new Size(234, 23);
-            typeBox.TabIndex = 6;
+            typeBox.TabIndex = 1;
             typeBox.TextChanged += TypeBox_TextChanged;
             // 
             // dragPanel

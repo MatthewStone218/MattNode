@@ -42,27 +42,27 @@
             textBox.Name = "textBox";
             textBox.ScrollBars = ScrollBars.Vertical;
             textBox.Size = new Size(368, 162);
-            textBox.TabIndex = 1;
+            textBox.TabIndex = 2;
             textBox.TextChanged += TextBox_TextChanged;
-            textBox.MouseDown += ShowInspector;
+            textBox.Enter += ShowInspector;
             // 
             // TypeBox
             // 
             TypeBox.Location = new Point(79, 74);
             TypeBox.Name = "TypeBox";
             TypeBox.Size = new Size(309, 23);
-            TypeBox.TabIndex = 2;
+            TypeBox.TabIndex = 1;
             TypeBox.TextChanged += TypeBox_TextChanged;
-            TypeBox.MouseDown += ShowInspector;
+            TypeBox.Enter += ShowInspector;
             // 
             // NameBox
             // 
             NameBox.Location = new Point(79, 41);
             NameBox.Name = "NameBox";
             NameBox.Size = new Size(309, 23);
-            NameBox.TabIndex = 3;
+            NameBox.TabIndex = 0;
             NameBox.TextChanged += NameBox_TextChanged;
-            NameBox.MouseDown += ShowInspector;
+            NameBox.Enter += ShowInspector;
             // 
             // NameLabel
             // 
