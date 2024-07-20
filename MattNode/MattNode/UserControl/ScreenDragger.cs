@@ -27,6 +27,7 @@ namespace MattNode
             clicked = true;
             MouseClickedPoint = Cursor.Position;
             CameraPositionAtClick = Camera.Position;
+            Inspector.MainInspector.DisableInspector();
         }
 
         private void Drag_MouseLeave(object sender, EventArgs e)
@@ -52,18 +53,21 @@ namespace MattNode
 
         private void Step(object sender, EventArgs e)
         {
-            if(!MouseLeftDownPrev && GlobalHooks.MouseLeftDown)
+            if (Inspector.BboxRight < Cursor.Position.X)
             {
-                MouseClickedPoint = Cursor.Position;
-                CameraPositionAtClick = Camera.Position;
-            }
+                if (!MouseLeftDownPrev && GlobalHooks.MouseLeftDown)
+                {
+                    MouseClickedPoint = Cursor.Position;
+                    CameraPositionAtClick = Camera.Position;
+                }
 
-            if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
-            {
-                Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
-                Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
-                Form1.MainCamera.x = Form1.MainCamera.Location.X;
-                Form1.MainCamera.y = Form1.MainCamera.Location.Y;
+                if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
+                {
+                    Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
+                    Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
+                    Form1.MainCamera.x = Form1.MainCamera.Location.X;
+                    Form1.MainCamera.y = Form1.MainCamera.Location.Y;
+                }
             }
 
             MouseLeftDownPrev = GlobalHooks.MouseLeftDown;

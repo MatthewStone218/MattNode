@@ -12,6 +12,8 @@ namespace MattNode
 {
     public partial class Node : Instance
     {
+        public static Node? FocusedNode;
+
         private bool clicked = false;
         private Point PositionToCursor;
 
@@ -28,6 +30,14 @@ namespace MattNode
         private Point InitTypeBoxLocation;
         private Size InitTypeBoxSize;
         private float InitTypeBoxFontSize;
+
+        private Point InitNameLabelLocation;
+        private Size InitNameLabelSize;
+        private float InitNameLabelFontSize;
+
+        private Point InitTypeLabelLocation;
+        private Size InitTypeLabelSize;
+        private float InitTypeLabelFontSize;
         public Node()
         {
             InitializeComponent();
@@ -44,6 +54,14 @@ namespace MattNode
             InitTypeBoxLocation = TypeBox.Location;
             InitTypeBoxSize = TypeBox.Size;
             InitTypeBoxFontSize = TypeBox.Font.Size;
+
+            InitNameLabelLocation = NameLabel.Location;
+            InitNameLabelSize = NameLabel.Size;
+            InitNameLabelFontSize = NameLabel.Font.Size;
+
+            InitTypeLabelLocation = TypeLabel.Location;
+            InitTypeLabelSize = TypeLabel.Size;
+            InitTypeLabelFontSize = TypeLabel.Font.Size;
         }
         public override void SetSize(float size)
         {
@@ -60,6 +78,14 @@ namespace MattNode
             TypeBox.Size = new Size((int)(((float)InitTypeBoxSize.Width) / size), (int)(((float)InitTypeBoxSize.Height) / size));
             TypeBox.Location = new Point((int)(((float)InitTypeBoxLocation.X) / size), (int)(((float)InitTypeBoxLocation.Y) / size));
             TypeBox.Font = new(textBox.Font.FontFamily, InitTypeBoxFontSize / size);
+
+            NameLabel.Size = new Size((int)(((float)InitNameLabelSize.Width) / size), (int)(((float)InitNameLabelSize.Height) / size));
+            NameLabel.Location = new Point((int)(((float)InitNameLabelLocation.X) / size), (int)(((float)InitNameLabelLocation.Y) / size));
+            NameLabel.Font = new(NameLabel.Font.FontFamily, InitNameLabelFontSize / size);
+
+            TypeLabel.Size = new Size((int)(((float)InitTypeLabelSize.Width) / size), (int)(((float)InitTypeLabelSize.Height) / size));
+            TypeLabel.Location = new Point((int)(((float)InitTypeLabelLocation.X) / size), (int)(((float)InitTypeLabelLocation.Y) / size));
+            TypeLabel.Font = new(TypeLabel.Font.FontFamily, InitTypeLabelFontSize / size);
         }
 
         private void Drag_MouseDown(object sender, MouseEventArgs e)
@@ -90,9 +116,52 @@ namespace MattNode
             }
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ShowInspector(object sender, EventArgs e)
+        {
+            FocusedNode = this;
+            Inspector.MainInspector.EnableInspector();
+        }
+
+        public void SetName(string text)
+        {
+            NameBox.Text = text;
+        }
+
+        private void NameBox_TextChanged(object sender, EventArgs e)
+        {
+            if (NameBox.Focused)
+            {
+                Inspector.MainInspector.SetName(NameBox.Text);
+            }
+        }
+        public void SetType(string text)
+        {
+            TypeBox.Text = text;
+        }
+
+        private void TypeBox_TextChanged(object sender, EventArgs e)
+        {
+            if (TypeBox.Focused)
+            {
+                Inspector.MainInspector.SetType(TypeBox.Text);
+            }
+        }
+        public void SetText(string text)
+        {
+            textBox.Text = text;
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox.Focused)
+            {
+                Inspector.MainInspector.SetText(textBox.Text);
+            }
         }
     }
 }

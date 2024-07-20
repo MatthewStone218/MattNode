@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             textBox = new TextBox();
+            TypeBox = new TextBox();
             NameBox = new TextBox();
-            TypeBox = new ComboBox();
+            NameLabel = new Label();
+            TypeLabel = new Label();
             SuspendLayout();
             // 
             // textBox
@@ -41,34 +43,67 @@
             textBox.ScrollBars = ScrollBars.Vertical;
             textBox.Size = new Size(368, 162);
             textBox.TabIndex = 1;
-            textBox.TextChanged += textBox_TextChanged;
-            // 
-            // NameBox
-            // 
-            NameBox.Location = new Point(20, 74);
-            NameBox.Name = "NameBox";
-            NameBox.Size = new Size(368, 23);
-            NameBox.TabIndex = 2;
+            textBox.TextChanged += TextBox_TextChanged;
+            textBox.MouseDown += ShowInspector;
             // 
             // TypeBox
             // 
-            TypeBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            TypeBox.FormattingEnabled = true;
-            TypeBox.Location = new Point(20, 43);
+            TypeBox.Location = new Point(79, 74);
             TypeBox.Name = "TypeBox";
-            TypeBox.Size = new Size(368, 23);
-            TypeBox.TabIndex = 3;
+            TypeBox.Size = new Size(309, 23);
+            TypeBox.TabIndex = 2;
+            TypeBox.TextChanged += TypeBox_TextChanged;
+            TypeBox.MouseDown += ShowInspector;
+            // 
+            // NameBox
+            // 
+            NameBox.Location = new Point(79, 41);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(309, 23);
+            NameBox.TabIndex = 3;
+            NameBox.TextChanged += NameBox_TextChanged;
+            NameBox.MouseDown += ShowInspector;
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("맑은 고딕", 12F);
+            NameLabel.Location = new Point(20, 42);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(53, 21);
+            NameLabel.TabIndex = 4;
+            NameLabel.Text = "Name";
+            NameLabel.MouseDown += ShowInspector;
+            NameLabel.MouseLeave += Drag_MouseLeave;
+            NameLabel.MouseMove += Drag_MouseMove;
+            NameLabel.MouseUp += Drag_MouseUp;
+            // 
+            // TypeLabel
+            // 
+            TypeLabel.AutoSize = true;
+            TypeLabel.Font = new Font("맑은 고딕", 12F);
+            TypeLabel.Location = new Point(20, 74);
+            TypeLabel.Name = "TypeLabel";
+            TypeLabel.Size = new Size(46, 21);
+            TypeLabel.TabIndex = 5;
+            TypeLabel.Text = "Type";
+            TypeLabel.MouseDown += ShowInspector;
+            TypeLabel.MouseLeave += Drag_MouseLeave;
+            TypeLabel.MouseMove += Drag_MouseMove;
+            TypeLabel.MouseUp += Drag_MouseUp;
             // 
             // Node
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(TypeBox);
+            Controls.Add(TypeLabel);
+            Controls.Add(NameLabel);
             Controls.Add(NameBox);
+            Controls.Add(TypeBox);
             Controls.Add(textBox);
             Name = "Node";
             Size = new Size(407, 289);
-            MouseDown += Drag_MouseDown;
+            MouseDown += ShowInspector;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
             MouseUp += Drag_MouseUp;
@@ -78,7 +113,9 @@
 
         #endregion
         private TextBox textBox;
+        private TextBox TypeBox;
         private TextBox NameBox;
-        private ComboBox TypeBox;
+        private Label NameLabel;
+        private Label TypeLabel;
     }
 }

@@ -19,6 +19,7 @@ namespace MattNode
             EnableStep();
             MainCamera.EnableStep();
             screenDragger1.EnableStep();
+            inspector.EnableStep();
         }
 
         private void SetInstancesPosition()
