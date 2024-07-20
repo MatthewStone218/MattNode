@@ -95,6 +95,7 @@ namespace MattNode
                 clicked = true;
                 PositionToCursor = new Point(x - (int)((float)Cursor.Position.X * Camera.size), y - (int)((float)Cursor.Position.Y * Camera.size));
             }
+            ShowInspector();
         }
 
         private void Drag_MouseLeave(object sender, EventArgs e)
@@ -116,15 +117,17 @@ namespace MattNode
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ShowInspector(object sender, EventArgs e)
+        private void ShowInspector()
         {
             FocusedNode = this;
+            Inspector.MainInspector.SetName(NameBox.Text);
+            Inspector.MainInspector.SetType(TypeBox.Text);
+            Inspector.MainInspector.SetText(textBox.Text);
             Inspector.MainInspector.EnableInspector();
+        }
+        private void ShowInspector(object sender, EventArgs e)
+        {
+            ShowInspector();
         }
 
         public void SetName(string text)

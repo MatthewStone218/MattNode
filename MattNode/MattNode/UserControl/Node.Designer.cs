@@ -73,7 +73,7 @@
             NameLabel.Size = new Size(53, 21);
             NameLabel.TabIndex = 4;
             NameLabel.Text = "Name";
-            NameLabel.MouseDown += ShowInspector;
+            NameLabel.MouseDown += Drag_MouseDown;
             NameLabel.MouseLeave += Drag_MouseLeave;
             NameLabel.MouseMove += Drag_MouseMove;
             NameLabel.MouseUp += Drag_MouseUp;
@@ -87,7 +87,7 @@
             TypeLabel.Size = new Size(46, 21);
             TypeLabel.TabIndex = 5;
             TypeLabel.Text = "Type";
-            TypeLabel.MouseDown += ShowInspector;
+            TypeLabel.MouseDown += Drag_MouseDown;
             TypeLabel.MouseLeave += Drag_MouseLeave;
             TypeLabel.MouseMove += Drag_MouseMove;
             TypeLabel.MouseUp += Drag_MouseUp;
@@ -103,7 +103,7 @@
             Controls.Add(textBox);
             Name = "Node";
             Size = new Size(407, 289);
-            MouseDown += ShowInspector;
+            MouseDown += Drag_MouseDown;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
             MouseUp += Drag_MouseUp;
