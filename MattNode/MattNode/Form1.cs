@@ -1,12 +1,13 @@
 using System.Diagnostics.PerformanceData;
+using System.Windows.Forms;
 
 namespace MattNode
 {
     public partial class Form1 : Form
     {
         public static Camera? MainCamera;
-        public static int WindowWidth;
-        public static int WindowHeight;
+        public static int WindowWidth = 1920;
+        public static int WindowHeight = 1080;
         protected bool clicked = false;
         protected Point MousePrevPoint;
         public Form1()

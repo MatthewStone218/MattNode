@@ -37,10 +37,10 @@
             Step1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // MainCamera
+            // MainCamera1
             // 
             MainCamera1.Location = new Point(-2, 0);
-            MainCamera1.Name = "MainCamera";
+            MainCamera1.Name = "MainCamera1";
             MainCamera1.Size = new Size(0, 0);
             MainCamera1.TabIndex = 0;
             // 
@@ -48,7 +48,7 @@
             // 
             node1.Location = new Point(93, 203);
             node1.Name = "node1";
-            node1.Size = new Size(315, 143);
+            node1.Size = new Size(411, 299);
             node1.TabIndex = 1;
             // 
             // screenDragger1
@@ -63,14 +63,14 @@
             // 
             node2.Location = new Point(557, 203);
             node2.Name = "node2";
-            node2.Size = new Size(315, 143);
+            node2.Size = new Size(413, 299);
             node2.TabIndex = 3;
             // 
             // node3
             // 
             node3.Location = new Point(989, 203);
             node3.Name = "node3";
-            node3.Size = new Size(315, 143);
+            node3.Size = new Size(409, 299);
             node3.TabIndex = 4;
             // 
             // Step1

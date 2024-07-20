@@ -28,26 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            textBox = new TextBox();
+            NameBox = new TextBox();
+            TypeBox = new ComboBox();
             SuspendLayout();
             // 
-            // label1
+            // textBox
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 24F);
-            label1.Location = new Point(100, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 45);
-            label1.TabIndex = 0;
-            label1.Text = "Node";
+            textBox.Location = new Point(20, 106);
+            textBox.Multiline = true;
+            textBox.Name = "textBox";
+            textBox.ScrollBars = ScrollBars.Vertical;
+            textBox.Size = new Size(368, 162);
+            textBox.TabIndex = 1;
+            textBox.TextChanged += textBox_TextChanged;
+            // 
+            // NameBox
+            // 
+            NameBox.Location = new Point(20, 74);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(368, 23);
+            NameBox.TabIndex = 2;
+            // 
+            // TypeBox
+            // 
+            TypeBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            TypeBox.FormattingEnabled = true;
+            TypeBox.Location = new Point(20, 43);
+            TypeBox.Name = "TypeBox";
+            TypeBox.Size = new Size(368, 23);
+            TypeBox.TabIndex = 3;
             // 
             // Node
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
+            Controls.Add(TypeBox);
+            Controls.Add(NameBox);
+            Controls.Add(textBox);
             Name = "Node";
-            Size = new Size(315, 143);
+            Size = new Size(407, 289);
             MouseDown += Drag_MouseDown;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
@@ -57,7 +77,8 @@
         }
 
         #endregion
-
-        private Label label1;
+        private TextBox textBox;
+        private TextBox NameBox;
+        private ComboBox TypeBox;
     }
 }
