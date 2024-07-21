@@ -46,7 +46,7 @@ namespace MattNode
         {
             if (Clicked)
             {
-                dragPanel.Location = new Point(Cursor.Position.X-dragPanel.Size.Width/2,0);
+                dragPanel.Location = new Point(Form1.MainForm.PointToClient(Cursor.Position).X-dragPanel.Size.Width/2,0);
                 Size = new Size(dragPanel.Location.X + dragPanel.Size.Width, Form1.WindowHeight);
 
                 int DWidth = dragPanel.Location.X - InitDragpanelX;

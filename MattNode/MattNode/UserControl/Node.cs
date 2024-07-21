@@ -18,6 +18,8 @@ namespace MattNode
         public static long IdxCount = 0;
         public long Idx;
 
+        private bool NoneTextFocus = false;
+
         public static Node? FocusedNode;
         public static Node? LinkingNode = null;
         private short ClickedPos = 0;
@@ -127,9 +129,9 @@ namespace MattNode
 
         private void SetPositionToCursor()
         {
-            PositionToCursor = new Point(x - (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size), y - (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size));
+            PositionToCursor = new Point(x - (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size), y - (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size));
         }
-        private void Drag_MouseDown(object sender, MouseEventArgs e)
+        private void Drag_MouseDown()
         {
             if (!GlobalHooks.KeyboardSpaceDown)
             {
@@ -137,6 +139,7 @@ namespace MattNode
                 SetPositionToCursor();
             }
             ShowInspector();
+            Focused();
         }
 
         private void Drag_MouseLeave(object sender, EventArgs e)
@@ -153,8 +156,8 @@ namespace MattNode
         {
             if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
-                x = (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
-                y = (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
+                x = (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
+                y = (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
             }
         }
 
@@ -236,8 +239,8 @@ namespace MattNode
             }
             else
             {
-                x = (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
-                y = (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
+                x = (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
+                y = (int)((float)(Form1.MainForm.PointToClient(Cursor.Position).Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
             }
 
             MouseLeftDownPrev = GlobalHooks.MouseLeftDown;
@@ -245,7 +248,7 @@ namespace MattNode
 
         private void LinkButton_Click(short pos)
         {
-            if(LinkingNode == null)
+            if (LinkingNode == null)
             {
                 StartLink(pos);
             }
@@ -263,7 +266,7 @@ namespace MattNode
         private void Link(short pos)
         {
             bool AlreadyLinked = false;
-            for(int i = 0; i < LinkingNode.LinkLines.Count; i++)
+            for (int i = 0; i < LinkingNode.LinkLines.Count; i++)
             {
                 if (LinkingNode.LinkLines[i].LinkedNode2 == this)
                 {
@@ -272,8 +275,8 @@ namespace MattNode
                 }
             }
 
-            LinkLine linkLinke = new LinkLine(LinkingNode.ClickedPos,LinkingNode,pos,this);
-            linkLinke.Location = new Point(0,0);
+            LinkLine linkLinke = new LinkLine(LinkingNode.ClickedPos, LinkingNode, pos, this);
+            linkLinke.Location = new Point(0, 0);
             linkLinke.Size = new Size(300, 300);
             Form1.MainForm.Controls.Add(linkLinke);
             linkLinke.BringToFront();
@@ -326,6 +329,40 @@ namespace MattNode
         private void linkButtonTopRight_Click(object sender, EventArgs e)
         {
             LinkButton_Click(7);
+        }
+
+        private void NoneTextFocused(object sender, MouseEventArgs e)
+        {
+            this.BackColor = Color.FromArgb(235, 235, 250);
+            NoneTextFocus = true;
+            Focused();
+            Focus();
+            Drag_MouseDown();
+        }
+        private void NoneTextFocusLeaved()
+        {
+            this.BackColor = Color.FromArgb(240, 240, 240); ;
+            NoneTextFocus = false;
+        }
+        private void NoneTextFocusLeaved(object sender, EventArgs e)
+        {
+            NoneTextFocusLeaved();
+        }
+
+        private void node_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (NoneTextFocus || e.KeyCode == Keys.Delete)
+            {
+                Dispose();
+            }
+        }
+
+        private void NoneTextFocused(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(235, 235, 250);
+            NoneTextFocus = true;
+            Focused();
+            Drag_MouseDown();
         }
     }
 }

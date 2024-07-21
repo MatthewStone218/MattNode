@@ -31,7 +31,7 @@ namespace MattNode
             Node.LinkingNode = null;
 
             clicked = true;
-            MouseClickedPoint = Cursor.Position;
+            MouseClickedPoint = Form1.MainForm.PointToClient(Cursor.Position);
             CameraPositionAtClick = Camera.Position;
             Inspector.MainInspector.DisableInspector();
         }
@@ -50,7 +50,7 @@ namespace MattNode
         {
             if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
-                Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
+                Point delta = Point.Subtract(Form1.MainForm.PointToClient(Cursor.Position), new Size(MouseClickedPoint));
                 Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
                 Form1.MainCamera.x = Form1.MainCamera.Location.X;
                 Form1.MainCamera.y = Form1.MainCamera.Location.Y;
@@ -59,17 +59,17 @@ namespace MattNode
 
         private void Step(object sender, EventArgs e)
         {
-            if (Inspector.BboxRight < Cursor.Position.X)
+            if (Inspector.BboxRight < Form1.MainForm.PointToClient(Cursor.Position).X)
             {
                 if (!MouseLeftDownPrev && GlobalHooks.MouseLeftDown)
                 {
-                    MouseClickedPoint = Cursor.Position;
+                    MouseClickedPoint = Form1.MainForm.PointToClient(Cursor.Position);
                     CameraPositionAtClick = Camera.Position;
                 }
 
                 if (GlobalHooks.KeyboardSpaceDown && GlobalHooks.MouseLeftDown)
                 {
-                    Point delta = Point.Subtract(Cursor.Position, new Size(MouseClickedPoint));
+                    Point delta = Point.Subtract(Form1.MainForm.PointToClient(Cursor.Position), new Size(MouseClickedPoint));
                     Form1.MainCamera.Location = Point.Subtract(CameraPositionAtClick, new Size((int)((float)delta.X * Camera.size), (int)((float)delta.Y * Camera.size)));
                     Form1.MainCamera.x = Form1.MainCamera.Location.X;
                     Form1.MainCamera.y = Form1.MainCamera.Location.Y;

@@ -74,6 +74,7 @@
             textBox.TabIndex = 2;
             textBox.TextChanged += TextBox_TextChanged;
             textBox.Enter += ShowInspector;
+            textBox.MouseDown += NoneTextFocusLeaved;
             // 
             // TypeBox
             // 
@@ -83,6 +84,7 @@
             TypeBox.TabIndex = 1;
             TypeBox.TextChanged += TypeBox_TextChanged;
             TypeBox.Enter += ShowInspector;
+            TypeBox.MouseDown += NoneTextFocusLeaved;
             // 
             // NameBox
             // 
@@ -93,6 +95,7 @@
             NameBox.TabIndex = 0;
             NameBox.TextChanged += NameBox_TextChanged;
             NameBox.Enter += ShowInspector;
+            NameBox.MouseDown += NoneTextFocusLeaved;
             // 
             // NameLabel
             // 
@@ -103,9 +106,7 @@
             NameLabel.Size = new Size(53, 21);
             NameLabel.TabIndex = 4;
             NameLabel.Text = "Name";
-            NameLabel.Click += NameLabel_Click;
-            NameLabel.Enter += Focused;
-            NameLabel.MouseDown += Drag_MouseDown;
+            NameLabel.MouseDown += NoneTextFocused;
             NameLabel.MouseLeave += Drag_MouseLeave;
             NameLabel.MouseMove += Drag_MouseMove;
             NameLabel.MouseUp += Drag_MouseUp;
@@ -119,8 +120,7 @@
             TypeLabel.Size = new Size(46, 21);
             TypeLabel.TabIndex = 5;
             TypeLabel.Text = "Type";
-            TypeLabel.Enter += Focused;
-            TypeLabel.MouseDown += Drag_MouseDown;
+            TypeLabel.MouseDown += NoneTextFocused;
             TypeLabel.MouseLeave += Drag_MouseLeave;
             TypeLabel.MouseMove += Drag_MouseMove;
             TypeLabel.MouseUp += Drag_MouseUp;
@@ -221,8 +221,9 @@
             Controls.Add(textBox);
             Name = "Node";
             Size = new Size(421, 304);
-            Enter += Focused;
-            MouseDown += Drag_MouseDown;
+            KeyDown += node_KeyDown;
+            Leave += NoneTextFocusLeaved;
+            MouseDown += NoneTextFocused;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
             MouseUp += Drag_MouseUp;
