@@ -3,47 +3,83 @@
   "WorkspaceRootPath": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\mattnode.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\mattnode.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\linkline.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\linkline.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\linkline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\linkline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\node.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\node.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\linkline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\linkline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\instance.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\instance.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\inspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\inspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\newnodebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,24 +87,12 @@
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\globalhook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\newnodebutton.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\newnodebutton.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\newnodebutton.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\mattnode\\mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\node.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\node.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\inspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -79,20 +103,12 @@
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\inspector.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\screendragger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\camera.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\camera.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\instance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\usercontrol\\instance.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\usercontrol\\instance.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2E4ECEF-9595-4232-BE1B-BD4D86709750}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\mattnode\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
@@ -114,32 +130,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Instance.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Instance.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\Instance.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAABlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T10:42:06.182Z",
+              "DocumentIndex": 3,
+              "Title": "MattNode",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\MattNode.csproj",
+              "RelativeDocumentMoniker": "MattNode\\MattNode.csproj",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\MattNode.csproj",
+              "RelativeToolTip": "MattNode\\MattNode.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-21T11:08:19.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs",
-              "RelativeDocumentMoniker": "MattNode\\Form1.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs",
-              "RelativeToolTip": "MattNode\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAuAAAA",
+              "DocumentIndex": 12,
+              "Title": "Instance.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.Designer.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Instance.Designer.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.Designer.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\Instance.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T10:04:51.585Z",
+              "WhenOpened": "2024-07-16T10:40:16.331Z",
               "EditorCaption": ""
             },
             {
@@ -150,14 +166,52 @@
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Node.cs",
               "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.cs",
               "RelativeToolTip": "MattNode\\UserControl\\Node.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAmwMsAAACGAAAA",
+              "ViewState": "AQIAAO4AAAAAAAAAAAAiwP0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-17T06:25:53.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
+              "Title": "ScreenDragger.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\ScreenDragger.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "MattNode\\UserControl\\ScreenDragger.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T05:55:50.648Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "MattNode\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.Designer.cs",
+              "RelativeToolTip": "MattNode\\Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T09:50:38.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Camera.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\Camera.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAywEUAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T06:24:27.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Camera.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Camera.cs",
@@ -169,32 +223,134 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Form1.cs [\uB514\uC790\uC778]",
+              "DocumentIndex": 4,
+              "Title": "LinkLine.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.Designer.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\LinkLine.Designer.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.Designer.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\LinkLine.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T09:13:32.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LinkLine.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\LinkLine.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\LinkLine.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAYwDAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T07:21:52.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Node.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Node.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "MattNode\\UserControl\\Node.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T07:12:33.673Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs",
               "RelativeDocumentMoniker": "MattNode\\Form1.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "MattNode\\Form1.cs [\uB514\uC790\uC778]",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs",
+              "RelativeToolTip": "MattNode\\Form1.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAIA4wEAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T08:21:31.643Z",
+              "WhenOpened": "2024-07-15T10:04:51.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LinkLine.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\LinkLine.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\LinkLine.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "MattNode\\UserControl\\LinkLine.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T08:59:02.339Z",
               "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Inspector.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Inspector.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\Inspector.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAADwvwwAAAAnAAAA",
+              "Title": "Node.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.Designer.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Node.Designer.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.Designer.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\Node.Designer.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAgwA8AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T10:52:09.245Z",
+              "WhenOpened": "2024-07-17T06:47:46.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
+              "Title": "ScreenDragger.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\ScreenDragger.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\ScreenDragger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T05:56:03.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Instance.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Instance.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\Instance.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:42:06.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "NewNodeButton.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\NewNodeButton.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "MattNode\\UserControl\\NewNodeButton.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T05:07:33.401Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NewNodeButton.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\NewNodeButton.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\NewNodeButton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T05:09:00.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "NewNodeButton.Designer.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.Designer.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\NewNodeButton.Designer.cs",
@@ -207,70 +363,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Node.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Node.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "MattNode\\UserControl\\Node.cs [\uB514\uC790\uC778]",
+              "DocumentIndex": 17,
+              "Title": "Inspector.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs",
+              "RelativeDocumentMoniker": "MattNode\\UserControl\\Inspector.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs",
+              "RelativeToolTip": "MattNode\\UserControl\\Inspector.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAADwvwwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:12:33.673Z",
+              "WhenOpened": "2024-07-20T10:52:09.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Form1.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs",
+              "RelativeDocumentMoniker": "MattNode\\Form1.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "MattNode\\Form1.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T08:21:31.643Z",
               "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NewNodeButton.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\NewNodeButton.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\NewNodeButton.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T05:09:00.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ScreenDragger.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\ScreenDragger.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\ScreenDragger.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAA0wB0AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T05:56:03.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Camera.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Camera.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\Camera.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAIwDsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T06:24:27.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "UI.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\UI.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\UI.cs",
               "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\UI.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "MattNode\\UserControl\\UI.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T05:04:51.248Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-07-21T05:04:51.248Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "UI.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\UI.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\UI.cs",
@@ -278,37 +406,11 @@
               "RelativeToolTip": "MattNode\\UserControl\\UI.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T05:05:00.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T05:05:00.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NewNodeButton.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\NewNodeButton.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\NewNodeButton.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "MattNode\\UserControl\\NewNodeButton.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T05:07:33.401Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "MattNode\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.Designer.cs",
-              "RelativeToolTip": "MattNode\\Form1.Designer.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAIwDoAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T09:50:38.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "GlobalHook.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\GlobalHook.cs",
               "RelativeDocumentMoniker": "MattNode\\GlobalHook.cs",
@@ -316,49 +418,22 @@
               "RelativeToolTip": "MattNode\\GlobalHook.cs",
               "ViewState": "AQIAAFEAAAAAAAAAAAAiwGMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T06:11:19.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T06:11:19.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "Inspector.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Inspector.cs",
               "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "MattNode\\UserControl\\Inspector.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T10:37:21.373Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-07-20T10:37:21.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Node.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.Designer.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Node.Designer.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Node.Designer.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\Node.Designer.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T06:47:46.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ScreenDragger.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\ScreenDragger.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\ScreenDragger.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "MattNode\\UserControl\\ScreenDragger.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T05:55:50.648Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Inspector.Designer.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Inspector.Designer.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Inspector.Designer.cs",
@@ -366,12 +441,11 @@
               "RelativeToolTip": "MattNode\\UserControl\\Inspector.Designer.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAASwE4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T11:02:08.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-20T11:02:08.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "Camera.Designer.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Camera.Designer.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Camera.Designer.cs",
@@ -384,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Camera.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Camera.cs",
               "RelativeDocumentMoniker": "MattNode\\Camera.cs",
@@ -396,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "Instance.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.cs",
               "RelativeDocumentMoniker": "MattNode\\UserControl\\Instance.cs",
@@ -408,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "Camera.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Camera.cs",
               "RelativeDocumentMoniker": "MattNode\\Camera.cs",
@@ -419,20 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Instance.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.Designer.cs",
-              "RelativeDocumentMoniker": "MattNode\\UserControl\\Instance.Designer.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\UserControl\\Instance.Designer.cs",
-              "RelativeToolTip": "MattNode\\UserControl\\Instance.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T10:40:16.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Form1.resx",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\MattNode\\MattNode\\Form1.resx",
               "RelativeDocumentMoniker": "MattNode\\Form1.resx",

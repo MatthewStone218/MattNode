@@ -22,3 +22,4 @@ C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.Inspector.resources
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.NewNodeButton.resources
 C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.UI.resources
+C:\Users\matt\Desktop\physia\mattnode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.LinkLine.resources

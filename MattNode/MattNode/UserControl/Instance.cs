@@ -22,9 +22,12 @@ namespace MattNode
             InstanceList.Add(this);
         }
 
-        ~Instance()
+        public static void BringInstancesToFront()
         {
-            InstanceList.Remove(this);
+            for (int i = 0; i < InstanceList.Count; i++)
+            {
+                InstanceList[i].BringToFront();
+            }
         }
 
         public void SetPosition()

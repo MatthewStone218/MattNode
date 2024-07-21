@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accessibility;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace MattNode
 {
     public partial class ScreenDragger : UserControl
     {
+        public static ScreenDragger? MainScreenDrager;
+
         private bool clicked = false;
         private Point MouseClickedPoint;
         private Point CameraPositionAtClick;
@@ -20,10 +23,13 @@ namespace MattNode
         public ScreenDragger()
         {
             InitializeComponent();
+            MainScreenDrager = this;
         }
 
         private void Drag_MouseDown(object sender, MouseEventArgs e)
         {
+            Node.LinkingNode = null;
+
             clicked = true;
             MouseClickedPoint = Cursor.Position;
             CameraPositionAtClick = Camera.Position;
@@ -76,6 +82,25 @@ namespace MattNode
         public void EnableStep()
         {
             Step1.Enabled = true;
+        }
+
+        private void Arrow_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            using (Pen pen = new Pen(Color.White, 2))
+            {
+                for (int i = 0; i < LinkLine.LinkLines.Count; i++)
+                {
+                    pen.CustomEndCap = new System.Drawing.Drawing2D.AdjustableArrowCap(5, 5);
+                    g.DrawLine(pen, LinkLine.LinkLines[i].Point1.X, LinkLine.LinkLines[i].Point1.Y, LinkLine.LinkLines[i].Point2.X, LinkLine.LinkLines[i].Point2.Y);
+                }
+            }
+        }
+
+        public void UpdatePaint()
+        {
+            this.Invalidate(); // 전체 폼을 무효화
+            this.Update(); // 무효화된 영역을 즉시 다시 그림
         }
     }
 }

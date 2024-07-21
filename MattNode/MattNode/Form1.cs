@@ -62,7 +62,7 @@ namespace MattNode
         private void newNodeButton_Click(object sender, EventArgs e)
         {
             Node node = new Node();
-            node.Location = new Point(0,0);//Point.Subtract(Cursor.Position,new Size(10,10));
+            node.Location = new Point(0,0);
             node.Size = new Size(413, 299);
             Controls.Add(node);
             node.BringToFront();

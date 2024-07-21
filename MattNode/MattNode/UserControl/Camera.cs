@@ -52,11 +52,14 @@ namespace MattNode
             if (Math.Abs((double)(sizeGoal - size)) < 0.02) { size = sizeGoal; CameraResized = false; } else { CameraResized = true; }
             Position = new Point(x,y);
 
+            bool NeedUpdate = false;
+
             for (int i = 0; i < Instance.InstanceList.Count; i++)
             {
                 bool CameraMoved = Position.X != PositionPrev.X || Position.Y != PositionPrev.Y || CameraResized;
                 if (CameraMoved || Instance.InstanceList[i].Location.X != (int)((float)(Instance.InstanceList[i].x - x) / size) + (int)((float)Form1.WindowWidth / 2) || Instance.InstanceList[i].Location.Y != (int)((float)(Instance.InstanceList[i].y - y) / size) + (int)((float)Form1.WindowHeight / 2))
                 {
+                    NeedUpdate = true;
                     //MessageBox.Show(Position.X.ToString()+" "+ Position.Y.ToString());
                     Instance.InstanceList[i].Location = new Point((int)((float)(Instance.InstanceList[i].x - x) / size) + (int)((float)Form1.WindowWidth / 2), (int)((float)(Instance.InstanceList[i].y - y) / size) + (int)((float)Form1.WindowHeight / 2));
                     Instance.InstanceList[i].SetSize(size);
@@ -64,6 +67,7 @@ namespace MattNode
                 }
             }
 
+            if (NeedUpdate) { ScreenDragger.MainScreenDrager.UpdatePaint(); }
             PositionPrev = Position;
         }
     }

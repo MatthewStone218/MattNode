@@ -1,18 +1,29 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MattNode
 {
     public partial class Node : Instance
     {
+        public static long IdxCount = 0;
+        public long Idx;
+
         public static Node? FocusedNode;
+        public static Node? LinkingNode = null;
+        private short ClickedPos = 0;
+
+        public List<LinkLine> LinkLines = new List<LinkLine>();
+        public List<LinkLine> InvLinkLines = new List<LinkLine>();
 
         private bool clicked = false;
         private Point PositionToCursor;
@@ -41,6 +52,20 @@ namespace MattNode
         private float InitTypeLabelFontSize;
         public Node()
         {
+            Idx = IdxCount;
+            IdxCount++;
+
+            Initialize();
+        }
+        public Node(long idx)
+        {
+            Idx = idx;
+            if (IdxCount < Idx) { IdxCount = Idx; }
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             InitializeComponent();
             InitSize = Size;
 
@@ -64,6 +89,17 @@ namespace MattNode
             InitTypeLabelSize = TypeLabel.Size;
             InitTypeLabelFontSize = TypeLabel.Font.Size;
         }
+
+        private void DestroyLink(int index)
+        {
+            LinkLines[index].Dispose();
+        }
+
+        private void DestroyInvLink(int index)
+        {
+            InvLinkLines[index].Dispose();
+        }
+
         public override void SetSize(float size)
         {
             Size = new Size((int)(((float)InitSize.Width) / size), (int)(((float)InitSize.Height) / size));
@@ -205,6 +241,91 @@ namespace MattNode
             }
 
             MouseLeftDownPrev = GlobalHooks.MouseLeftDown;
+        }
+
+        private void LinkButton_Click(short pos)
+        {
+            if(LinkingNode == null)
+            {
+                StartLink(pos);
+            }
+            else
+            {
+                Link(pos);
+            }
+        }
+        private void StartLink(short pos)
+        {
+            LinkingNode = this;
+            ClickedPos = pos;
+        }
+
+        private void Link(short pos)
+        {
+            bool AlreadyLinked = false;
+            for(int i = 0; i < LinkingNode.LinkLines.Count; i++)
+            {
+                if (LinkingNode.LinkLines[i].LinkedNode2 == this)
+                {
+                    LinkingNode.LinkLines[i].Dispose();
+                    break;
+                }
+            }
+
+            LinkLine linkLinke = new LinkLine(LinkingNode.ClickedPos,LinkingNode,pos,this);
+            linkLinke.Location = new Point(0,0);
+            linkLinke.Size = new Size(300, 300);
+            Form1.MainForm.Controls.Add(linkLinke);
+            linkLinke.BringToFront();
+
+            UI.BringUiToFront();
+
+            LinkingNode.LinkLines.Add(linkLinke);
+            InvLinkLines.Add(linkLinke);
+
+            linkLinke.BringToFront();
+            Instance.BringInstancesToFront();
+            UI.BringUiToFront();
+        }
+
+        private void linkButtonTop_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(8);
+        }
+
+        private void linkButtonLeftTop_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(1);
+        }
+
+        private void linkButtonLeft_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(2);
+        }
+
+        private void linkButtonBottomLeft_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(3);
+        }
+
+        private void linkButtonBottom_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(4);
+        }
+
+        private void linkButtonBottomRight_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(5);
+        }
+
+        private void linkButtonRight_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(6);
+        }
+
+        private void linkButtonTopRight_Click(object sender, EventArgs e)
+        {
+            LinkButton_Click(7);
         }
     }
 }

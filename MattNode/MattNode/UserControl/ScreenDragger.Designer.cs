@@ -44,6 +44,7 @@
             BackColor = SystemColors.ActiveCaption;
             Name = "ScreenDragger";
             Size = new Size(1920, 1080);
+            Paint += Arrow_Paint;
             MouseDown += Drag_MouseDown;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
