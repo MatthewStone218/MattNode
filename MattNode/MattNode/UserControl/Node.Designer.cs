@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox = new TextBox();
             TypeBox = new TextBox();
             NameBox = new TextBox();
             NameLabel = new Label();
             TypeLabel = new Label();
+            step = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // textBox
@@ -57,9 +59,10 @@
             // 
             // NameBox
             // 
-            NameBox.Location = new Point(79, 41);
+            NameBox.Font = new Font("맑은 고딕", 24F);
+            NameBox.Location = new Point(79, 13);
             NameBox.Name = "NameBox";
-            NameBox.Size = new Size(309, 23);
+            NameBox.Size = new Size(309, 50);
             NameBox.TabIndex = 0;
             NameBox.TextChanged += NameBox_TextChanged;
             NameBox.Enter += ShowInspector;
@@ -68,11 +71,13 @@
             // 
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("맑은 고딕", 12F);
-            NameLabel.Location = new Point(20, 42);
+            NameLabel.Location = new Point(20, 26);
             NameLabel.Name = "NameLabel";
             NameLabel.Size = new Size(53, 21);
             NameLabel.TabIndex = 4;
             NameLabel.Text = "Name";
+            NameLabel.Click += NameLabel_Click;
+            NameLabel.Enter += Focused;
             NameLabel.MouseDown += Drag_MouseDown;
             NameLabel.MouseLeave += Drag_MouseLeave;
             NameLabel.MouseMove += Drag_MouseMove;
@@ -87,10 +92,16 @@
             TypeLabel.Size = new Size(46, 21);
             TypeLabel.TabIndex = 5;
             TypeLabel.Text = "Type";
+            TypeLabel.Enter += Focused;
             TypeLabel.MouseDown += Drag_MouseDown;
             TypeLabel.MouseLeave += Drag_MouseLeave;
             TypeLabel.MouseMove += Drag_MouseMove;
             TypeLabel.MouseUp += Drag_MouseUp;
+            // 
+            // step
+            // 
+            step.Interval = 1;
+            step.Tick += step_Step;
             // 
             // Node
             // 
@@ -103,6 +114,7 @@
             Controls.Add(textBox);
             Name = "Node";
             Size = new Size(407, 289);
+            Enter += Focused;
             MouseDown += Drag_MouseDown;
             MouseLeave += Drag_MouseLeave;
             MouseMove += Drag_MouseMove;
@@ -117,5 +129,6 @@
         private TextBox NameBox;
         private Label NameLabel;
         private Label TypeLabel;
+        private System.Windows.Forms.Timer step;
     }
 }

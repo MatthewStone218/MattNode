@@ -16,6 +16,7 @@ namespace MattNode
 
         private bool clicked = false;
         private Point PositionToCursor;
+        private bool MouseLeftDownPrev = false;
 
         private Size InitSize;
 
@@ -88,12 +89,16 @@ namespace MattNode
             TypeLabel.Font = new(TypeLabel.Font.FontFamily, InitTypeLabelFontSize / size);
         }
 
+        private void SetPositionToCursor()
+        {
+            PositionToCursor = new Point(x - (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size), y - (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size));
+        }
         private void Drag_MouseDown(object sender, MouseEventArgs e)
         {
             if (!GlobalHooks.KeyboardSpaceDown)
             {
                 clicked = true;
-                PositionToCursor = new Point(x - (int)((float)Cursor.Position.X * Camera.size), y - (int)((float)Cursor.Position.Y * Camera.size));
+                SetPositionToCursor();
             }
             ShowInspector();
         }
@@ -112,8 +117,8 @@ namespace MattNode
         {
             if (clicked && !GlobalHooks.KeyboardSpaceDown)
             {
-                x = (int)((float)Cursor.Position.X * Camera.size) + PositionToCursor.X;
-                y = (int)((float)Cursor.Position.Y * Camera.size) + PositionToCursor.Y;
+                x = (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
+                y = (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
             }
         }
 
@@ -128,6 +133,7 @@ namespace MattNode
         private void ShowInspector(object sender, EventArgs e)
         {
             ShowInspector();
+            Focused();
         }
 
         public void SetName(string text)
@@ -165,6 +171,40 @@ namespace MattNode
             {
                 Inspector.MainInspector.SetText(textBox.Text);
             }
+        }
+
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Focused()
+        {
+            BringToFront();
+            UI.BringUiToFront();
+        }
+        private void Focused(object sender, EventArgs e)
+        {
+            Focused();
+        }
+        public void EnableMouseTracking()
+        {
+            step.Enabled = true;
+            SetPositionToCursor();
+        }
+        private void step_Step(object sender, EventArgs e)
+        {
+            if (!GlobalHooks.MouseLeftDown && MouseLeftDownPrev)
+            {
+                step.Enabled = false;
+            }
+            else
+            {
+                x = (int)((float)(Cursor.Position.X - Camera.Position.X - Form1.WindowWidth / 2) * Camera.size) + PositionToCursor.X;
+                y = (int)((float)(Cursor.Position.Y - Camera.Position.Y - Form1.WindowHeight / 2) * Camera.size) + PositionToCursor.Y;
+            }
+
+            MouseLeftDownPrev = GlobalHooks.MouseLeftDown;
         }
     }
 }

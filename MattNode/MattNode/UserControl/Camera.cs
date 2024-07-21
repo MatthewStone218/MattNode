@@ -12,13 +12,13 @@ namespace MattNode
 {
     public partial class Camera : UserControl
     {
-        public int x = Form1.WindowWidth/2;
-        public int y = Form1.WindowHeight/2;
+        public int x = 0;
+        public int y = 0;
         public static float size = 1.0f;
         private static float sizeGoal = 1.0f;
         private bool CameraResized = false;
-        private Point PositionPrev = new Point(Form1.WindowWidth/2, Form1.WindowHeight/2);
-        public static Point Position = new Point(Form1.WindowWidth/2, Form1.WindowHeight/2);
+        private Point PositionPrev = new Point(0, 0);
+        public static Point Position = new Point(0, 0);
         public Camera()
         {
             InitializeComponent();
@@ -57,6 +57,7 @@ namespace MattNode
                 bool CameraMoved = Position.X != PositionPrev.X || Position.Y != PositionPrev.Y || CameraResized;
                 if (CameraMoved || Instance.InstanceList[i].Location.X != (int)((float)(Instance.InstanceList[i].x - x) / size) + (int)((float)Form1.WindowWidth / 2) || Instance.InstanceList[i].Location.Y != (int)((float)(Instance.InstanceList[i].y - y) / size) + (int)((float)Form1.WindowHeight / 2))
                 {
+                    //MessageBox.Show(Position.X.ToString()+" "+ Position.Y.ToString());
                     Instance.InstanceList[i].Location = new Point((int)((float)(Instance.InstanceList[i].x - x) / size) + (int)((float)Form1.WindowWidth / 2), (int)((float)(Instance.InstanceList[i].y - y) / size) + (int)((float)Form1.WindowHeight / 2));
                     Instance.InstanceList[i].SetSize(size);
                     Instance.InstanceList[i].Refresh();

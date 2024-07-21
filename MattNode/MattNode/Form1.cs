@@ -5,13 +5,16 @@ namespace MattNode
 {
     public partial class Form1 : Form
     {
+        public static Form1? MainForm;
         public static Camera? MainCamera;
         public static int WindowWidth = 1920;
         public static int WindowHeight = 1080;
+
         protected bool clicked = false;
         protected Point MousePrevPoint;
         public Form1()
         {
+            MainForm = this;
             GlobalHooks.Start();
             InitializeComponent();
             SetInstancesPosition();
@@ -54,6 +57,19 @@ namespace MattNode
         public void EnableStep()
         {
             Step1.Enabled = true;
+        }
+
+        private void newNodeButton_Click(object sender, EventArgs e)
+        {
+            Node node = new Node();
+            node.Location = new Point(0,0);//Point.Subtract(Cursor.Position,new Size(10,10));
+            node.Size = new Size(413, 299);
+            Controls.Add(node);
+            node.BringToFront();
+            node.SetPosition();
+            //node.Clicked();
+
+            Inspector.MainInspector.BringToFront();
         }
     }
 }

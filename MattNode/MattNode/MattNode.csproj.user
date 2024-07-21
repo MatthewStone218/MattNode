@@ -4,6 +4,12 @@
     <Compile Update="UserControl\Inspector.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControl\NewNodeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControl\UI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControl\Camera.cs">
       <SubType>UserControl</SubType>
     </Compile>

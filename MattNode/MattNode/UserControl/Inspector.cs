@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MattNode
 {
-    public partial class Inspector : UserControl
+    public partial class Inspector : UI
     {
         public static Inspector MainInspector;
         public static int BboxRight = 0;

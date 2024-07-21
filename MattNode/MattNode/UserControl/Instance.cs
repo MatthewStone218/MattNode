@@ -29,8 +29,10 @@ namespace MattNode
 
         public void SetPosition()
         {
-            x = Location.X;
-            y = Location.Y;
+            x = (int)((float)(Location.X - Form1.WindowWidth / 2) * Camera.size) + Camera.Position.X;
+            y = (int)((float)(Location.Y - Form1.WindowHeight / 2) * Camera.size) + Camera.Position.Y;
+            //x = Camera.Position.X - Form1.WindowWidth/2 + Location.X * Camera.size;
+            //y = Camera.Position.Y - Form1.WindowHeight/2 + Location.Y * Camera.size;
         }
 
         public virtual void SetSize(float size)

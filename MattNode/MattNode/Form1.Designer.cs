@@ -31,10 +31,9 @@
             components = new System.ComponentModel.Container();
             MainCamera1 = new Camera();
             screenDragger1 = new ScreenDragger();
-            node2 = new Node();
-            node3 = new Node();
             Step1 = new System.Windows.Forms.Timer(components);
             inspector = new Inspector();
+            newNodeButton1 = new NewNodeButton();
             SuspendLayout();
             // 
             // MainCamera1
@@ -52,20 +51,6 @@
             screenDragger1.Size = new Size(1920, 1080);
             screenDragger1.TabIndex = 2;
             // 
-            // node2
-            // 
-            node2.Location = new Point(1112, 533);
-            node2.Name = "node2";
-            node2.Size = new Size(413, 299);
-            node2.TabIndex = 3;
-            // 
-            // node3
-            // 
-            node3.Location = new Point(989, 203);
-            node3.Name = "node3";
-            node3.Size = new Size(409, 299);
-            node3.TabIndex = 4;
-            // 
             // Step1
             // 
             Step1.Interval = 1;
@@ -77,6 +62,14 @@
             inspector.Name = "inspector";
             inspector.Size = new Size(343, 1080);
             inspector.TabIndex = 5;
+            inspector.Visible = false;
+            // 
+            // newNodeButton1
+            // 
+            newNodeButton1.Location = new Point(1763, 12);
+            newNodeButton1.Name = "newNodeButton1";
+            newNodeButton1.Size = new Size(129, 30);
+            newNodeButton1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -84,9 +77,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1904, 1041);
+            Controls.Add(newNodeButton1);
             Controls.Add(inspector);
-            Controls.Add(node3);
-            Controls.Add(node2);
             Controls.Add(MainCamera1);
             Controls.Add(screenDragger1);
             Name = "Form1";
@@ -98,9 +90,8 @@
 
         private Camera MainCamera1;
         private ScreenDragger screenDragger1;
-        private Node node2;
-        private Node node3;
         private System.Windows.Forms.Timer Step1;
         private Inspector inspector;
+        private NewNodeButton newNodeButton1;
     }
 }
