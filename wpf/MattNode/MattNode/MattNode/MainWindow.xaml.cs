@@ -28,5 +28,14 @@ namespace MattNode
         {
             return Mouse.GetPosition(Application.Current.MainWindow);
         }
+
+        public static double GetWindowWidth()
+        {
+            return _MainWindow.Width;
+        }
+        public static double GetWindowHeight()
+        {
+            return _MainWindow.Height;
+        }
     }
 }
