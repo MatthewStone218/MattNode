@@ -20,18 +20,41 @@ namespace MattNode
     /// </summary>
     public partial class Instance : UserControl
     {
+        public List<CollisionNode> Nodes = new List<CollisionNode>();
         public Instance()
         {
             InitializeComponent();
         }
+        public Instance(double x, double y, double width, double height)
+        {
+            InitializeComponent();
+            
+        }
 
-        public bool Interacts(Instance other)
+        public void Dispose()
+        {
+            for(int i = 0; i < Nodes.Count; i++)
+            {
+                Nodes[i].RemoveInstance(this);
+            }
+        }
+        public bool Intersects(Instance other)
         {
             return !(
-                Margin.Left > other.Margin.Left+other.Width ||
-                Margin.Right+Width < other.Margin.Left ||
-                Margin.Top > other.Margin.Top+other.Height ||
-                Margin.Top+Height < other.Margin.Top
+                Margin.Left >= other.Margin.Left+other.Width ||
+                Margin.Right+Width <= other.Margin.Left ||
+                Margin.Top >= other.Margin.Top+other.Height ||
+                Margin.Top+Height <= other.Margin.Top
+                );
+        }
+
+        public bool Contain( Instance other )
+        {
+            return (
+                Margin.Left < other.Margin.Left &&
+                Margin.Left + Width > other.Margin.Left + other.Width &&
+                Margin.Top < other.Margin.Top &&
+                Margin.Top + Height > other.Margin.Top + other.Height
                 );
         }
     }

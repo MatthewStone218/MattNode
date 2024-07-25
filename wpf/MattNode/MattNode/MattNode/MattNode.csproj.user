@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CollisionTree.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="DesignMode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,9 +18,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CollisionTree.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="DesignMode.xaml">
       <SubType>Designer</SubType>
     </Page>
