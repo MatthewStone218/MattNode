@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\App.xaml
-3-1116194482
+5-842856260
 
-8-2106140112
+11-1551351098
 198155382431
-DesignMode.xaml;MainCanvas.xaml;MainWindow.xaml;
+CollisionTree.xaml;DesignMode.xaml;Instance.xaml;MainCanvas.xaml;MainWindow.xaml;
 
-True
+False
 
