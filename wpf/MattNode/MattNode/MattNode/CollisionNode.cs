@@ -35,10 +35,9 @@ namespace MattNode
 
                 return _result;
             }
-            else if(Capacity > Instances.Count)
+            else if(Capacity > Instances.Count || Boundary.Width <= 16)
             {
-                instance.Nodes.Add(this);
-                Instances.Add(instance);
+                AddInstance(instance);
 
                 return true;
             }
@@ -56,6 +55,12 @@ namespace MattNode
             }
         }
 
+        private void AddInstance(Instance instance)
+        {
+            instance.Nodes.Add(this);
+            Instances.Add(instance);
+        }
+
         private void Subdivide()
         {
             Children = new CollisionNode[4];
@@ -67,6 +72,7 @@ namespace MattNode
 
         public void RemoveInstance(Instance instance)
         {
+            instance.Nodes.Remove(this);
             Instances.Remove(instance);
             if(Parent == null) { return; }
 
