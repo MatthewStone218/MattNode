@@ -37,5 +37,14 @@ namespace MattNode
         {
             return _MainWindow.Height;
         }
+
+        private void NodeCreateButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            Node node = new Node(true,new Point(-50, -50));
+            node.Margin = new Thickness(MainCanvas.GetMousePos().X-50, MainCanvas.GetMousePos().Y-50, 0, 0); // 위치 설정
+            Panel.SetZIndex(node, 100);
+
+            mainCanvas.mainCanvas.Children.Add(node);
+        }
     }
 }

@@ -21,10 +21,11 @@ namespace MattNode
     /// </summary>
     public partial class MainCanvas : UserControl
     {
+        public static MainCanvas Canvas;
         private bool Dragging = false;
         private Point DragStartPoint = new Point(0, 0);
         private Point PosAtDragStart = new Point(0, 0);
-        private double RenderSize = 1.0f;
+        private static double RenderSize = 1.0f;
         private double RenderSizeGoal = 1.0f;
         private DispatcherTimer Timer;
         private double X = 0;
@@ -35,10 +36,13 @@ namespace MattNode
 
         public MainCanvas()
         {
+            Canvas = this;
             InitializeComponent();
             InitRanderTransform();
             Register_MouseWheelEvent();
             InitTimer();
+            rect1.HorizontalAlignment = HorizontalAlignment.Left;
+            rect1.VerticalAlignment = VerticalAlignment.Top;
         }
 
         private void InitTimer()
@@ -55,6 +59,38 @@ namespace MattNode
             _ScaleTransform.ScaleY = RenderSize;
             _TranslateTransform.X = X + MainWindow.GetWindowWidth() / (RenderSize * 2);
             _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
+
+            rect1.Margin = new Thickness(-X - 960, -Y - 540, 0, 0);
+            
+            
+            for(int i = 0; i < Node.NodeList.Count; i++)
+            {
+                Node.NodeList[i].IsEnabled = false;
+                Node.NodeList[i].Visibility = Visibility.Collapsed;
+
+                /*
+                if(Node.NodeList[i].Intersects(new Instance(-X - 960, -Y - 540, 1920, 1080)))
+                {
+                    Node.NodeList[i].IsEnabled = true;
+                    Node.NodeList[i].Visibility = Visibility.Visible;
+                }
+                */
+            }
+            
+            
+            List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960, -Y - 540, 1920, 1080));
+            
+            for (int i = 0; i < instances.Count; i++)
+            {
+                instances[i].IsEnabled = true;
+                instances[i].Visibility = Visibility.Visible;
+            }
+
+            if (Node.FocusedNode != null)
+            {
+                Node.FocusedNode.IsEnabled = true;
+                Node.FocusedNode.Visibility = Visibility.Visible;
+            }
         }
         private void Register_MouseWheelEvent()
         {
@@ -78,6 +114,11 @@ namespace MattNode
             _transformGroup.Children.Add(_ScaleTransform);
 
             mainCanvas.RenderTransform = _transformGroup;
+        }
+
+        public static Point GetMousePos()
+        {
+            return new Point( MainWindow.GetMousePos().X/RenderSize - Canvas.X - MainWindow.GetWindowWidth()/(RenderSize*2) , MainWindow.GetMousePos().Y/RenderSize - Canvas.Y - MainWindow.GetWindowHeight()/(RenderSize * 2));
         }
         private void DragSpace_MouseButtonDown(object sender, MouseButtonEventArgs e)
         {

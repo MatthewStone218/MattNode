@@ -9,12 +9,7 @@
     <Grid>
         <Canvas x:Name="dragSpace" Height="1080" Width="1920" Background="#FF7893CA" MouseDown="DragSpace_MouseButtonDown" MouseLeave="DragSpace_MouseButtonLeave" MouseUp="DragSpace_MouseButtonUp" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="DragSpace_MouseButtonMove"/>
         <Canvas x:Name="mainCanvas" Margin="0,0,-75,0">
-            <Rectangle HorizontalAlignment="Left" Height="100" Margin="-3714,-2421,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle HorizontalAlignment="Left" Height="100" Margin="4790,2851,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="568,1016,0,0" VerticalAlignment="Top" Height="131" Width="561"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="568,0,0,0" VerticalAlignment="Center" Height="131" Width="561"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="1732,550,0,0" VerticalAlignment="Top" Height="131" Width="561"/>
-            <Button Content="Button" Width="500" Height="500" Canvas.Top="295"/>
+            <Rectangle x:Name="rect1" Height="1080" Stroke="Black" Width="1920"/>
         </Canvas>
     </Grid>
 </UserControl>
