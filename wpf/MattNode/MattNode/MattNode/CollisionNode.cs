@@ -77,7 +77,7 @@ namespace MattNode
 
                 return _result;
             }
-            else if(Capacity > Instances.Count || Boundary.Width <= 16)
+            else if(Capacity > Instances.Count || Boundary.Width <= 256)
             {
                 //MessageBox.Show("나에게 넣음");
                 AddInstance(instance);
