@@ -15,12 +15,14 @@ namespace MattNode
         {//divied을 한 뒤 extend하면 오류.
             while (true)
             {
-                if (RootNode.Insert(instance)) { break; }
+                if (RootNode.Boundary.Contains(instance)) { break; }
                 else
                 {
                     RootNode.Extend();
                 }
             }
+
+            RootNode.Insert(instance);
         }
 
         public static List<Instance> GetInstancesInBoundaryList(Instance boundary)

@@ -46,5 +46,10 @@ namespace MattNode
 
             mainCanvas.mainCanvas.Children.Add(node);
         }
+
+        private void window_Closed(object sender, EventArgs e)
+        {
+            mainCanvas.FreeRenderEvent();
+        }
     }
 }

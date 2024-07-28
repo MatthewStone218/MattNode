@@ -58,7 +58,7 @@ namespace MattNode
                 );
         }
 
-        public bool Contain(Instance other)
+        public bool Contains(Instance other)
         {
             return (
                 Margin.Left < other.Margin.Left &&

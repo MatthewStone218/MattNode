@@ -25,7 +25,7 @@ namespace MattNode
         private bool Dragging = false;
         private Point DragStartPoint = new Point(0, 0);
         private Point PosAtDragStart = new Point(0, 0);
-        private static double RenderSize = 1.0f;
+        public static double RenderSize = 1.0f;
         private double RenderSizeGoal = 1.0f;
         private DispatcherTimer Timer;
         private double X = 0;
@@ -40,19 +40,13 @@ namespace MattNode
             InitializeComponent();
             InitRanderTransform();
             Register_MouseWheelEvent();
-            InitTimer();
+            CompositionTarget.Rendering += RenderTick;
+
             rect1.HorizontalAlignment = HorizontalAlignment.Left;
             rect1.VerticalAlignment = VerticalAlignment.Top;
         }
 
-        private void InitTimer()
-        {
-            Timer = new DispatcherTimer();
-            Timer.Interval = TimeSpan.FromMilliseconds(1);
-            Timer.Tick += Timer_Tick;
-            Timer.Start();
-        }
-        private void Timer_Tick(object sender, EventArgs e)
+        private void RenderTick(object sender, EventArgs e)
         {
             RenderSize += (RenderSizeGoal - RenderSize) / 10;
             _ScaleTransform.ScaleX = RenderSize;
@@ -91,6 +85,11 @@ namespace MattNode
                 Node.FocusedNode.IsEnabled = true;
                 Node.FocusedNode.Visibility = Visibility.Visible;
             }
+        }
+
+        public void FreeRenderEvent()
+        {
+            CompositionTarget.Rendering -= RenderTick;
         }
         private void Register_MouseWheelEvent()
         {
