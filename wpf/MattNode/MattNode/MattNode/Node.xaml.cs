@@ -314,6 +314,12 @@ namespace MattNode
 
         public void node_GotFocus()
         {
+            if(FocusedNode != null)
+            {
+                FocusedNode.focusRectangle1.Stroke = Brushes.White;
+            }
+            focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
+
             Inspector.SetType(typeComboBox.Text);
             Inspector.SetContent(contentTextBox.Text);
             FocusedNode = this;

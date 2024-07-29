@@ -50,7 +50,7 @@ namespace MattNode
             contentTextBox.Width = Width - 20;
             Canvas.SetLeft(resizeThumb, Width - 10);
         }
-
+        
         private void resizeThumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             double newWidth = Width + e.HorizontalChange;
@@ -68,24 +68,9 @@ namespace MattNode
             MainInspector.contentTextBox.Text = text;
         }
 
-        private void typeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (IsFocused)
-            {
-                if (Node.FocusedNode != null)
-                {
-                    Node.FocusedNode.SetType(typeComboBox.Text);
-                }
-                else
-                {
-                    typeComboBox.Text = "";
-                }
-            }
-        }
-
         private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (IsFocused)
+            if (contentTextBox.IsFocused)
             {
                 if (Node.FocusedNode != null)
                 {
@@ -94,6 +79,22 @@ namespace MattNode
                 else
                 {
                     contentTextBox.Text = "";
+                }
+            }
+        }
+
+        private void typeComboBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox);
+            if (textBox.IsFocused)
+            {
+                if (Node.FocusedNode != null)
+                {
+                    Node.FocusedNode.SetType(typeComboBox.Text);
+                }
+                else
+                {
+                    typeComboBox.Text = "";
                 }
             }
         }

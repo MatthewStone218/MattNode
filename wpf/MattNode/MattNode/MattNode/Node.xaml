@@ -5,21 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MattNode"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300" Width="300" Height="200" Cursor="">
-    <Canvas>
-        <Grid Width="300" Height="200" OpacityMask="Black"/>
-        <Canvas x:Name="bgCanvas" Height="200" Width="300" MouseDown="node_MouseDown" Background="White" GotFocus="node_GotFocus">
-            <ComboBox x:Name="typeComboBox" TextBoxBase.TextChanged="typeComboBox_TextChanged" Canvas.Left="15" Canvas.Top="34" Width="221" HorizontalAlignment="Center" VerticalAlignment="Top" IsEditable="True" GotFocus="node_GotFocus"/>
-            <TextBox x:Name="contentTextBox" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="61" Width="270" Height="125" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="contentTextBox_TextChanged" GotFocus="node_GotFocus"/>
+             d:DesignHeight="250" d:DesignWidth="300" Width="300" Height="250" Cursor="">
+    <Canvas Background="Black">
+        <Canvas x:Name="bgCanvas" Height="250" Width="300" MouseDown="node_MouseDown" Background="White" GotFocus="node_GotFocus">
+            <ComboBox x:Name="typeComboBox" TextBoxBase.TextChanged="typeComboBox_TextChanged" Canvas.Left="15" Canvas.Top="65" Width="221" HorizontalAlignment="Left" VerticalAlignment="Top" IsEditable="True" GotFocus="node_GotFocus"/>
+            <TextBox x:Name="contentTextBox" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="90" Width="270" Height="145" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="contentTextBox_TextChanged" GotFocus="node_GotFocus"/>
         </Canvas>
-        <Thumb x:Name="resizeThumb5" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb5_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb6" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb6_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" Canvas.Top="190" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb7" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb7_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" Canvas.Left="290" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb8" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb8_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb1" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb1_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb5" Width="10" Height="230" Background="Gray" DragDelta="resizeThumb5_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeWE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus" Canvas.Left="0" Canvas.Top="10"/>
+        <Thumb x:Name="resizeThumb6" Width="280" Height="10" Background="Gray" DragDelta="resizeThumb6_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNS" Canvas.Top="240" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus" Canvas.Left="10"/>
+        <Thumb x:Name="resizeThumb7" Width="10" Height="230" Background="Gray" DragDelta="resizeThumb7_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeWE" Canvas.Left="290" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus" Canvas.Top="10"/>
+        <Thumb x:Name="resizeThumb8" Width="280" Height="10" Background="Gray" DragDelta="resizeThumb8_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNS" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus" Canvas.Left="10" Canvas.Top="0"/>
+        <Thumb x:Name="resizeThumb1" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb1_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus" Canvas.Left="0" Canvas.Top="0"/>
         <Thumb x:Name="resizeThumb2" Canvas.Left="290" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb2_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb3" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb3_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Thumb x:Name="resizeThumb4" Canvas.Left="290" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb4_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
-        <Image x:Name="deleteButton" Height="27" Width="22" Source="/spr_delete.png" Canvas.Left="263" Canvas.Top="28" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="deleteButton_MouseDown" Cursor="No"/>
+        <Thumb x:Name="resizeThumb3" Canvas.Top="240" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb3_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb4" Canvas.Left="290" Canvas.Top="240" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb4_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Image x:Name="deleteButton" Height="27" Width="22" Source="/spr_delete.png" Canvas.Left="263" Canvas.Top="60" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="deleteButton_MouseDown" Cursor="No"/>
+
+        <Rectangle x:Name="focusRectangle2" Height="239" Stroke="White" Width="290" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="5" Canvas.Top="5" StrokeThickness="5"/>
+        <Rectangle Height="55" Width="300" Fill="#FFBFCCCB" MouseDown="node_MouseDown"/>
+        <Rectangle x:Name="focusRectangle1" Height="250" Stroke="#FF375CA9" Width="300" StrokeThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </local:Instance>
