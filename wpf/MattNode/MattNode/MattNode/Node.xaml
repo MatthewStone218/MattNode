@@ -8,18 +8,18 @@
              d:DesignHeight="200" d:DesignWidth="300" Width="300" Height="200" Cursor="">
     <Canvas>
         <Grid Width="300" Height="200" OpacityMask="Black"/>
-        <Canvas x:Name="bgCanvas" Height="200" Width="300" MouseDown="node_MouseDown" Background="White">
-            <ComboBox Canvas.Left="15" Canvas.Top="34" Width="221" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBox Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="61" Width="270" Height="125" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
+        <Canvas x:Name="bgCanvas" Height="200" Width="300" MouseDown="node_MouseDown" Background="White" GotFocus="node_GotFocus">
+            <ComboBox x:Name="typeComboBox" TextBoxBase.TextChanged="typeComboBox_TextChanged" Canvas.Left="15" Canvas.Top="34" Width="221" HorizontalAlignment="Center" VerticalAlignment="Top" IsEditable="True" GotFocus="node_GotFocus"/>
+            <TextBox x:Name="contentTextBox" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="61" Width="270" Height="125" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="contentTextBox_TextChanged" GotFocus="node_GotFocus"/>
         </Canvas>
-        <Thumb x:Name="resizeThumb5" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb5_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb6" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb6_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" Canvas.Top="190" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb7" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb7_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" Canvas.Left="290" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb8" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb8_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb1" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb1_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb2" Canvas.Left="290" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb2_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb3" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb3_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted"/>
-        <Thumb x:Name="resizeThumb4" Canvas.Left="290" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb4_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted"/>
+        <Thumb x:Name="resizeThumb5" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb5_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb6" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb6_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" Canvas.Top="190" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb7" Width="10" Height="200" Background="Gray" DragDelta="resizeThumb7_DragDelta" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="SizeWE" Canvas.Left="290" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb8" Width="300" Height="10" Background="Gray" DragDelta="resizeThumb8_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNS" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb1" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb1_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb2" Canvas.Left="290" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb2_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb3" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb3_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNESW" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
+        <Thumb x:Name="resizeThumb4" Canvas.Left="290" Canvas.Top="190" Width="10" Height="10" Background="Gray" DragDelta="resizeThumb4_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" DragCompleted="resizeThumb_DragCompleted" GotFocus="node_GotFocus"/>
         <Image x:Name="deleteButton" Height="27" Width="22" Source="/spr_delete.png" Canvas.Left="263" Canvas.Top="28" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="deleteButton_MouseDown" Cursor="No"/>
     </Canvas>
 </local:Instance>

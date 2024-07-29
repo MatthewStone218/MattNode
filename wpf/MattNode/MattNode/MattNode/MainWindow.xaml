@@ -9,6 +9,6 @@
     <Grid x:Name="mainGrid" Width="1920" Height="1080">
         <local:MainCanvas x:Name="mainCanvas"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="60" Margin="1660,38,0,0" VerticalAlignment="Top" Width="214" Click="NodeCreateButton_Clicked"/>
-        <local:Inspector HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <local:Inspector x:Name="mainInspector" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>

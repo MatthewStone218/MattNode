@@ -55,29 +55,39 @@ namespace MattNode
             _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
 
             rect1.Margin = new Thickness(-X - 960, -Y - 540, 0, 0);
-            
-            
-            for(int i = 0; i < Node.NodeList.Count; i++)
-            {
-                Node.NodeList[i].IsEnabled = false;
-                Node.NodeList[i].Visibility = Visibility.Collapsed;
 
-                /*
-                if(Node.NodeList[i].Intersects(new Instance(-X - 960, -Y - 540, 1920, 1080)))
-                {
-                    Node.NodeList[i].IsEnabled = true;
-                    Node.NodeList[i].Visibility = Visibility.Visible;
-                }
-                */
-            }
-            
-            
+            //화면 밖에 있는 노드 비활성화
             List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960, -Y - 540, 1920, 1080));
-            
+
+            for (int i = 0; i < Node.EnabledNodeList.Count; i++)
+            {
+                Node.EnabledNodeList[i]._IsEnabled = false;
+            }
+
             for (int i = 0; i < instances.Count; i++)
             {
-                instances[i].IsEnabled = true;
-                instances[i].Visibility = Visibility.Visible;
+                if (instances[i]._IsEnabled)
+                {
+                    Node.EnabledNodeList.Add((Node)instances[i]);
+                }
+                instances[i]._IsEnabled = true;
+            }
+
+            for (int i = 0; i < Node.EnabledNodeList.Count; i++)
+            {
+                if (Node.EnabledNodeList[i]._IsEnabled)
+                {
+                    Node.EnabledNodeList[i].IsEnabled = true;
+                    Node.EnabledNodeList[i].Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    Node.EnabledNodeList[i].IsEnabled = false;
+                    Node.EnabledNodeList[i].Visibility = Visibility.Collapsed;
+                    Node.EnabledNodeList[i]._IsEnabled = true;
+                    Node.EnabledNodeList.RemoveAt(i);
+                    i--;
+                }
             }
 
             if (Node.FocusedNode != null)

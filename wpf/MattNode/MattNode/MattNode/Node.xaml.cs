@@ -24,6 +24,7 @@ namespace MattNode
     {
         public static Node FocusedNode = null;
         public static List<Node> NodeList = new List<Node>();
+        public static List<Node> EnabledNodeList = new List<Node>();
         DispatcherTimer Timer;
         private bool MbLeftclicked = false;
         private Point DeltaMousePoint = new Point(0,0);
@@ -37,7 +38,7 @@ namespace MattNode
             { 
                 DeltaMousePoint = deltaMousePoint;
                 CompositionTarget.Rendering += UpdatePosition;
-                FocusedNode = this;
+                node_GotFocus();
                 FollowingMouse = true;
             }
         }
@@ -50,6 +51,7 @@ namespace MattNode
         public void Init()
         {
             NodeList.Add(this);
+            EnabledNodeList.Add(this);
             HorizontalAlignment = HorizontalAlignment.Left;
             VerticalAlignment = VerticalAlignment.Top;
             CompositionTarget.Rendering += RepositionElements;
@@ -70,6 +72,7 @@ namespace MattNode
             DetachUpdateEvent();
             if(FocusedNode == this) { FocusedNode = null; }
             NodeList.Remove(this);
+            EnabledNodeList.Remove(this);
         }
 
         private void UpdatePosition(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace MattNode
             {
                 ReregisterCollisionTree();
                 DetachUpdateEvent();
-                FocusedNode = null;
+                //FocusedNode = null;
                 FollowingMouse = false;
             }
 
@@ -273,8 +276,9 @@ namespace MattNode
             {
                 DeltaMousePoint = new Point(Margin.Left - MainCanvas.GetMousePos().X, Margin.Top - MainCanvas.GetMousePos().Y);
                 CompositionTarget.Rendering += UpdatePosition;
-                FocusedNode = this;
+                node_GotFocus();
                 FollowingMouse = true;
+                contentTextBox.Focus();
             }
         }
 
@@ -283,9 +287,40 @@ namespace MattNode
             Dispose();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        public void SetType(string text)
         {
+            typeComboBox.Text = text;
+        }
 
+        public void SetContent(string text)
+        {
+            contentTextBox.Text = text;
+        }
+        private void typeComboBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox);
+            if (typeComboBox.IsFocused || textBox.IsFocused)
+            {
+                Inspector.SetType(typeComboBox.Text);
+            }
+        }
+        private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (contentTextBox.IsFocused)
+            {
+                Inspector.SetContent(contentTextBox.Text);
+            }
+        }
+
+        public void node_GotFocus()
+        {
+            Inspector.SetType(typeComboBox.Text);
+            Inspector.SetContent(contentTextBox.Text);
+            FocusedNode = this;
+        }
+        public void node_GotFocus(object sender, RoutedEventArgs e)
+        {
+            node_GotFocus();
         }
     }
 }

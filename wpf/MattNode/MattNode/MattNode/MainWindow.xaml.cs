@@ -45,11 +45,14 @@ namespace MattNode
             Panel.SetZIndex(node, 100);
 
             mainCanvas.mainCanvas.Children.Add(node);
+            node.Focus();
+            node.node_GotFocus();
         }
 
         private void window_Closed(object sender, EventArgs e)
         {
             mainCanvas.FreeRenderEvent();
+            mainInspector.FreeRenderEvent();
         }
     }
 }

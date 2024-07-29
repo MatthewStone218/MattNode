@@ -21,6 +21,7 @@ namespace MattNode
     public partial class Instance : UserControl
     {
         public List<CollisionNode> Nodes = new List<CollisionNode>();
+        public bool _IsEnabled = true;
         public Instance()
         {
         }
