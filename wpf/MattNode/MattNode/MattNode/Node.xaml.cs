@@ -63,11 +63,13 @@ namespace MattNode
             resizeThumb7.Opacity = 0;
             resizeThumb8.Opacity = 0;
         }
-         
-        public void Dispose()
+        
+        public override void Dispose()
         {
+            base.Dispose();
             DetachUpdateEvent();
             if(FocusedNode == this) { FocusedNode = null; }
+            NodeList.Remove(this);
         }
 
         private void UpdatePosition(object sender, EventArgs e)
@@ -100,6 +102,9 @@ namespace MattNode
         }
         private void RepositionElements()
         {
+            bgCanvas.Width = Width;
+            bgCanvas.Height = Height;
+
             Canvas.SetLeft(resizeThumb1, 0);
             Canvas.SetTop(resizeThumb1, 0);
             resizeThumb1.Width = 10 / MainCanvas.RenderSize;
@@ -139,6 +144,9 @@ namespace MattNode
             Canvas.SetTop(resizeThumb8, 0);
             resizeThumb8.Height = 10 / MainCanvas.RenderSize;
             resizeThumb8.Width = Width - 20 / MainCanvas.RenderSize;
+
+            Canvas.SetLeft(deleteButton, Width-35);
+            Canvas.SetTop(deleteButton, 14);
         }
 
         private void resizeThumb1_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -268,6 +276,16 @@ namespace MattNode
                 FocusedNode = this;
                 FollowingMouse = true;
             }
+        }
+
+        private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Dispose();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

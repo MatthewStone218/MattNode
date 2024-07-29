@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="spr_delete.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="spr_delete.png" />
+  </ItemGroup>
+
 </Project>

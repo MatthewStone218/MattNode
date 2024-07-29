@@ -43,10 +43,11 @@ namespace MattNode
             }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             DeleteFromCollisionTree();
             MainWindow._MainWindow.mainGrid.Children.Remove(this);
+            MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Remove(this);
         }
         public bool Intersects(Instance other)
         {
