@@ -48,7 +48,7 @@ namespace MattNode
                 ExportOption = new List<FileExportOption>();
                 for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
                 {
-                    ExportOption.Add(new FileExportOption(ProjectProperty.ExportFiles[i].Name, false, false));
+                    ExportOption.Add(new FileExportOption(false, false));
                 }
             }
             else
@@ -83,16 +83,12 @@ namespace MattNode
 
             for (int i = 0; i < NodeTypes.Count; i++)
             {
-                NodeTypes[i].ExportOption.Add(new FileExportOption(name, false, false));
+                NodeTypes[i].ExportOption.Add(new FileExportOption(false, false));
             }
         }
 
         public static void ModifyExportFile(int num, string newName, string newExtension)
         {
-            for (int i = 0; i < NodeTypes.Count; i++)
-            {
-                NodeTypes[i].ExportOption[num] = new FileExportOption(newName, NodeTypes[i].ExportOption[num]);
-            }
             ExportFiles[num] = new ExportFile(newName, newExtension);
         }
 
