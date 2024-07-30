@@ -16,7 +16,22 @@
     <Compile Update="MainCanvas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MenuBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Node.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PropertyMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PropertyOutputNode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PropertyTypeNode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PropertyTypeNodeExportOptionNode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,7 +48,22 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="MenuBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Node.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PropertyMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PropertyOutputNode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PropertyTypeNode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PropertyTypeNodeExportOptionNode.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

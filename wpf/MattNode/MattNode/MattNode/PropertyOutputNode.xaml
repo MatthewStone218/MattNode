@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="MattNode.PropertyOutputNode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MattNode"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="890">
+    <Grid x:Name="mianGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="200" Background="#FFDCE6E8">
+        <Label x:Name="extensionLabel" Content="Extension" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,118,0,0"/>
+        <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Margin="25,18,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="843" FontSize="48" VerticalContentAlignment="Center" TextChanged="nameTextbox_TextChanged" Loaded="nameTextBox_Loaded"/>
+        <ComboBox x:Name="extensionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="59" Width="681" Margin="187,118,0,0" FontSize="36" SelectionChanged="extensionComboBox_SelectionChanged">
+            <ComboBoxItem Content=".csv"/>
+            <ComboBoxItem Content=".yymps(Script)"/>
+            <ComboBoxItem Content=".txt(Structure)"/>
+        </ComboBox>
+        <Rectangle Height="8" Width="890" Fill="#FF7893CA" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,192,0,0"/>
+    </Grid>
+</UserControl>

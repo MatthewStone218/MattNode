@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Packaging;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,25 +13,13 @@ namespace MattNode
 {
     public struct FileExportOption
     {
-        public string Name;
-        public bool WriteIndex;
         public bool WriteType;
         public bool WriteText;
 
-        public FileExportOption(string name)
+        public FileExportOption(bool writeType, bool writeText)
         {
-            Name = name;
-            WriteIndex = false;
-            WriteType = false;
-            WriteText = false;
-        }
-
-        public FileExportOption(string name, FileExportOption originalOption)
-        {
-            Name = name;
-            WriteIndex = originalOption.WriteIndex;
-            WriteType = originalOption.WriteType;
-            WriteText = originalOption.WriteText;
+            WriteType = writeType;
+            WriteText = writeText;
         }
     }
     public struct ExportFile
@@ -50,15 +39,21 @@ namespace MattNode
         public SolidColorBrush Color;
         public List<FileExportOption> ExportOption;
 
-        public NodeType(string name, SolidColorBrush color)
+        public NodeType(string name, SolidColorBrush color, List<FileExportOption> exportOptions)
         {
             Name = name;
             Color = color;
-            ExportOption = new List<FileExportOption>();
-
-            for(int i = 0; i < ProjectProperty.ExportFiles.Count; i++) 
+            if (exportOptions == null)
             {
-                ExportOption.Add(new FileExportOption(ProjectProperty.ExportFiles[i].Name));
+                ExportOption = new List<FileExportOption>();
+                for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
+                {
+                    ExportOption.Add(new FileExportOption(ProjectProperty.ExportFiles[i].Name, false, false));
+                }
+            }
+            else
+            {
+                ExportOption = exportOptions;
             }
         }
     }
@@ -79,7 +74,7 @@ namespace MattNode
             }
             while (ExportFileExists(name));
 
-            AddExportFile(name,"csv");
+            AddExportFile(name,".csv");
         }
 
         public static void AddExportFile(string name, string extension)
@@ -88,40 +83,26 @@ namespace MattNode
 
             for (int i = 0; i < NodeTypes.Count; i++)
             {
-                NodeTypes[i].ExportOption.Add(new FileExportOption(name));
+                NodeTypes[i].ExportOption.Add(new FileExportOption(name, false, false));
             }
         }
 
-        public static void ModifyExportFile(string name, string newName, string newExtension)
+        public static void ModifyExportFile(int num, string newName, string newExtension)
         {
-            for (int i = 0; i < ExportFiles.Count; i++)
+            for (int i = 0; i < NodeTypes.Count; i++)
             {
-                if (ExportFiles[i].Name == name)
-                {
-                    for (int ii = 0; ii < NodeTypes.Count; ii++)
-                    {
-                        NodeTypes[ii].ExportOption[i] = new FileExportOption(newName, NodeTypes[ii].ExportOption[i]);
-                    }
-                    ExportFiles[i] = new ExportFile(newName, newExtension);
-                    break;
-                }
+                NodeTypes[i].ExportOption[num] = new FileExportOption(newName, NodeTypes[i].ExportOption[num]);
             }
+            ExportFiles[num] = new ExportFile(newName, newExtension);
         }
 
-        public static void RemoveExportFile(string name)
+        public static void RemoveExportFile(int num)
         {
-            for (int i = 0; i < ExportFiles.Count; i++)
+            for (int i = 0; i < NodeTypes.Count; i++)
             {
-                if (ExportFiles[i].Name == name)
-                {
-                    for (int ii = 0; ii < NodeTypes.Count; ii++)
-                    {
-                        NodeTypes[ii].ExportOption.RemoveAt(i);
-                    }
-                    ExportFiles.RemoveAt(i);
-                    break;
-                }
+                NodeTypes[i].ExportOption.RemoveAt(num);
             }
+            ExportFiles.RemoveAt(num);
         }
 
         public static bool ExportFileExists(string name)
@@ -158,31 +139,17 @@ namespace MattNode
         }
         public static void AddNodeType(string name, SolidColorBrush color)
         {
-            NodeTypes.Add(new NodeType(name,color));
+            NodeTypes.Add(new NodeType(name,color,null));
         }
 
-        public static void ModifyNodeType(string name, string newName, SolidColorBrush newColor)
+        public static void ModifyNodeType(int num, string newName, SolidColorBrush newColor, List<FileExportOption> exportOptions)
         {
-            for (int i = 0; i < NodeTypes.Count; i++)
-            {
-                if (NodeTypes[i].Name == name)
-                {
-                    NodeTypes[i] = new NodeType(newName, newColor);
-                    break;
-                }
-            }
+            NodeTypes[num] = new NodeType(newName, newColor, exportOptions);
         }
 
-        public static void RemoveNodeType(string name)
+        public static void RemoveNodeType(int num)
         {
-            for (int i = 0; i < NodeTypes.Count; i++)
-            {
-                if (NodeTypes[i].Name == name)
-                {
-                    NodeTypes.RemoveAt(i);
-                    break;
-                }
-            }
+            NodeTypes.RemoveAt(num);
         }
 
         public static void SwapNodeType(int index, int newIndex)
@@ -200,6 +167,21 @@ namespace MattNode
             }
 
             return false;
+        }
+
+        public static void CleanProperty()
+        {
+            ExportFiles = new List<ExportFile>();
+            NodeTypes = new List<NodeType>();
+        }
+
+        public static void ApplyDefaultProperty()
+        {
+            CleanProperty();
+            AddExportFile("TextTable", ".csv");
+            AddExportFile("Script", ".yymps(Script)");
+            AddNodeType("Text", new SolidColorBrush(Color.FromRgb(255,255,255)));
+            AddNodeType("Script", new SolidColorBrush(Color.FromRgb(193, 102, 107)));
         }
     }
 }

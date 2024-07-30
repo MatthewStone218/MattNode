@@ -22,6 +22,12 @@ namespace MattNode
         {
             _MainWindow = this;
             InitializeComponent();
+            Init();
+        }
+
+        private void Init()
+        {
+            ProjectProperty.ApplyDefaultProperty();
         }
 
         public static Point GetMousePos()

@@ -73,6 +73,43 @@ namespace MattNode
             if(FocusedNode == this) { FocusedNode = null; }
             NodeList.Remove(this);
             EnabledNodeList.Remove(this);
+
+            topRectangle.MouseDown -= node_MouseDown;
+
+            focusRectangle2.MouseDown -= node_MouseDown;
+
+            deleteButton.MouseDown -= deleteButton_MouseDown;
+
+            contentTextBox.TextChanged -= contentTextBox_TextChanged;
+            contentTextBox.GotFocus -= node_GotFocus;
+
+            var textBox = typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox) as TextBox;
+            if (textBox != null)
+            {
+                textBox.TextChanged -= typeComboBox_TextChanged;
+            }
+            typeComboBox.GotFocus -= node_GotFocus;
+
+            bgCanvas.MouseDown -= node_MouseDown;
+            bgCanvas.GotFocus -= node_GotFocus;
+
+            resizeThumb1.DragDelta -= resizeThumb1_DragDelta;
+            resizeThumb1.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb2.DragDelta -= resizeThumb2_DragDelta;
+            resizeThumb2.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb3.DragDelta -= resizeThumb3_DragDelta;
+            resizeThumb3.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb4.DragDelta -= resizeThumb4_DragDelta;
+            resizeThumb4.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb5.DragDelta -= resizeThumb5_DragDelta;
+            resizeThumb5.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb6.DragDelta -= resizeThumb6_DragDelta;
+            resizeThumb6.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb7.DragDelta -= resizeThumb7_DragDelta;
+            resizeThumb7.DragCompleted -= resizeThumb_DragCompleted;
+            resizeThumb8.DragDelta -= resizeThumb8_DragDelta;
+            resizeThumb8.DragCompleted -= resizeThumb_DragCompleted;
+
         }
 
         private void UpdatePosition(object sender, EventArgs e)
