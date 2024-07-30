@@ -5,15 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MattNode"
              mc:Ignorable="d" d:DesignWidth="890" Height="150" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top">
-    <Grid x:Name="mainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="890" ClipToBounds="True">
-        <Canvas>
-            <Canvas x:Name="dropDownCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="0">
-                <Button x:Name="leftButton" Height="150" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Content="↳" FontSize="24"/>
+    <Canvas>
+        <Grid x:Name="mainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="890" ClipToBounds="True">
+            <Canvas>
+                <Canvas x:Name="dropDownCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="0">
+                    <Button x:Name="leftButton" Height="150" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Content="↳" FontSize="24"/>
+                </Canvas>
             </Canvas>
-        </Canvas>
-        <Rectangle Height="150" Stroke="Black" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFDCE6E8"/>
-        <Label x:Name="typeNameLabel" Content="Type Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="22,22,0,0"/>
-        <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="660" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" TextChanged="typeNameTextBox_TextChanged" Loaded="typeNameTextBox_Loaded"/>
-        <Button x:Name="foldButton" Content="▼" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,125,0,0" Height="25" Width="890" Click="foldButton_Click"/>
-    </Grid>
+            <Rectangle Height="150" Stroke="Black" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFDCE6E8"/>
+            <Label x:Name="typeNameLabel" Content="Type Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="22,22,0,0"/>
+            <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="576" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" TextChanged="typeNameTextBox_TextChanged" Loaded="typeNameTextBox_Loaded"/>
+            <Button x:Name="foldButton" Content="▼" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,125,0,0" Height="25" Width="890" Click="foldButton_Click"/>
+        </Grid>
+        <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" Height="80" Canvas.Left="805" Canvas.Top="10" Width="67"/>
+    </Canvas>
 </UserControl>

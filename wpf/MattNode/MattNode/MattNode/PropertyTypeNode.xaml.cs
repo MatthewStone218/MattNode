@@ -70,6 +70,7 @@ namespace MattNode
             ((Canvas)Parent).Children.Remove(this);
 
             typeNameTextBox.TextChanged -= typeNameTextBox_TextChanged;
+            deleteButton.MouseDown -= deleteButton_MouseDown;
         }
         public double Step(double height)
         {
@@ -118,6 +119,11 @@ namespace MattNode
         {
             if (InitTextFocus) { typeNameTextBox.Focus(); }
             typeNameTextBox.CaretIndex = typeNameTextBox.Text.Length;
+        }
+
+        private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

@@ -46,6 +46,7 @@ namespace MattNode
             nameTextBox.TextChanged -= nameTextbox_TextChanged;
             nameTextBox.Loaded -= nameTextBox_Loaded;
             extensionComboBox.SelectionChanged -= extensionComboBox_SelectionChanged;
+            deleteButton.MouseDown -= deleteButton_MouseDown;
             ((Canvas)Parent).Children.Remove(this);
         }
 
@@ -70,6 +71,12 @@ namespace MattNode
         {
             if (InitTextFocus) { nameTextBox.Focus(); }
             nameTextBox.CaretIndex = nameTextBox.Text.Length;
+        }
+
+        private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ProjectProperty.RemoveExportFile(Num);
+            PropertyMenu.mainProperty.SetPropertyNodes();
         }
     }
 }

@@ -22,6 +22,15 @@
     <Compile Update="Node.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="NodeTypeDeletionAsk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NodeTypeDeletionAsk2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NodeTypeMigrationAsk2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PropertyMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +61,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Node.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NodeTypeDeletionAsk.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NodeTypeDeletionAsk2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NodeTypeMigrationAsk2.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PropertyMenu.xaml">

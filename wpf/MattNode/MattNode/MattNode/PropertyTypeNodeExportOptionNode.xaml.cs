@@ -31,6 +31,7 @@ namespace MattNode
             Num = num;
             OptionNum = optionNum;
 
+            exportFileNameLabel.Content = ProjectProperty.ExportFiles[OptionNum].Name;
             typeCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
             textCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
         }
@@ -60,16 +61,14 @@ namespace MattNode
                 ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(false, ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText);
             }
         }
-
-        private void textCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        private void textCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             if (!PropertyMenu.SettingNodes)
             {
                 ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType, true);
             }
         }
-
-        private void textCheckBox_Checked(object sender, RoutedEventArgs e)
+        private void textCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             if (!PropertyMenu.SettingNodes)
             {

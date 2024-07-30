@@ -1,3 +1,8 @@
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.exe
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.deps.json
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.runtimeconfig.json
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.dll
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.pdb
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\DesignMode.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Inspector.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MainCanvas.g.cs
@@ -12,11 +17,6 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode_MarkupCompile.cache
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode_MarkupCompile.lref
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.exe
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.deps.json
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.runtimeconfig.json
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.dll
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\MattNode.pdb
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\DesignMode.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Inspector.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MainCanvas.baml
