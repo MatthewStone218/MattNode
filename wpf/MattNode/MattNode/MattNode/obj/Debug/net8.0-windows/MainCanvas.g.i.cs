@@ -77,7 +77,7 @@ namespace MattNode {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MattNode;V1.0.0.0;component/maincanvas.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MattNode;component/maincanvas.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainCanvas.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

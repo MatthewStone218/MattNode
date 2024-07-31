@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ColorSelection.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="DesignMode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -57,9 +54,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ColorSelection.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="DesignMode.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpftoolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:local="clr-namespace:MattNode"
              mc:Ignorable="d" d:DesignWidth="890" Height="150" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top">
     <Canvas>
@@ -20,6 +21,6 @@
         <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" Height="80" Canvas.Left="717" Canvas.Top="10" Width="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Button x:Name="upButton" Content="▲" Canvas.Left="798" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="39" Click="upButton_Click"/>
         <Button x:Name="downButton" Content="▼" Canvas.Left="798" Canvas.Top="51" Width="82" Height="39" HorizontalAlignment="Center" VerticalAlignment="Top" Click="downButton_Click"/>
-        <Rectangle x:Name="colorRectangle" Height="64" Width="65" Canvas.Left="644" Canvas.Top="27" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="Black"/>
+        <wpftoolkit:ColorPicker Name="colorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged" Height="70" Width="70" Canvas.Left="641" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </UserControl>

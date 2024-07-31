@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace MattNode
 {
@@ -25,6 +26,7 @@ namespace MattNode
         private bool Fold;
         private int Num;
         private List<PropertyTypeNodeExportOptionNode> ExportOptionNodes = new List<PropertyTypeNodeExportOptionNode>();
+        private bool IsInitializingColor = false;
         public PropertyTypeNode(int num, bool fold)
         {
             InitializeComponent();
@@ -37,7 +39,10 @@ namespace MattNode
         public void Init()
         {
             typeNameTextBox.Text = ProjectProperty.NodeTypes[Num].Name;
-            colorRectangle.Fill = ProjectProperty.NodeTypes[Num].Color;
+            IsInitializingColor = true;
+            colorPicker.SelectedColor = ProjectProperty.NodeTypes[Num].Color.Color;
+            colorPicker.Background = ProjectProperty.NodeTypes[Num].Color;
+            IsInitializingColor = false;
 
             for (int i = 0; i < ProjectProperty.NodeTypes[Num].ExportOption.Count; i++)
             {
@@ -156,6 +161,26 @@ namespace MattNode
                 ProjectProperty.SwapNodeType(Num, Num + 1);
                 PropertyMenu.mainProperty.SwapNodeTypeFold(Num, Num + 1);
                 PropertyMenu.mainProperty.SetPropertyTypeNodes();
+            }
+        }
+        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e)
+        {
+            if (!IsInitializingColor)
+            {
+                if (e.NewValue.HasValue)
+                {
+                    SolidColorBrush newBrush = new SolidColorBrush(e.NewValue.Value);
+                    colorPicker.Background = newBrush;
+                    ProjectProperty.NodeTypes[Num] = new NodeType(ProjectProperty.NodeTypes[Num].Name,newBrush, ProjectProperty.NodeTypes[Num].ExportOption);
+
+                    for (int i = 0; i < Node.NodeList.Count; i++)
+                    {
+                        if (Node.NodeList[i].typeComboBox.SelectedValue == ProjectProperty.NodeTypes[Num].Name)
+                        {
+                            Node.NodeList[i].SetColor();
+                        }
+                    }
+                }
             }
         }
     }

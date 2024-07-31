@@ -85,7 +85,7 @@ namespace MattNode {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MattNode;V1.0.0.0;component/inspector.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MattNode;component/inspector.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Inspector.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

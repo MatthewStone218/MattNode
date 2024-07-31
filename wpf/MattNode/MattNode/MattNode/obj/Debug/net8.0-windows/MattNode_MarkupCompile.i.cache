@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\App.xaml
-17-1658491370
+16218586585
 
-25-1073842754
+24840427352
 203-687759240
-ColorSelection.xaml;DesignMode.xaml;DoneWindow.xaml;Inspector.xaml;MainCanvas.xaml;MainWindow.xaml;MenuBar.xaml;Node.xaml;NodeTypeDeleter.xaml;NodeTypeDeletionAsk.xaml;NodeTypeDeletionAsk2.xaml;NodeTypeMigrateAsk.xaml;NodeTypeMigrator.xaml;PropertyMenu.xaml;PropertyOutputNode.xaml;PropertyTypeNode.xaml;PropertyTypeNodeExportOptionNode.xaml;
+DesignMode.xaml;DoneWindow.xaml;Inspector.xaml;MainCanvas.xaml;MainWindow.xaml;MenuBar.xaml;Node.xaml;NodeTypeDeleter.xaml;NodeTypeDeletionAsk.xaml;NodeTypeDeletionAsk2.xaml;NodeTypeMigrateAsk.xaml;NodeTypeMigrator.xaml;PropertyMenu.xaml;PropertyOutputNode.xaml;PropertyTypeNode.xaml;PropertyTypeNodeExportOptionNode.xaml;
 
-False
+True
 

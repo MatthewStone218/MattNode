@@ -53,7 +53,7 @@ namespace MattNode {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MattNode;V1.0.0.0;component/designmode.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MattNode;component/designmode.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DesignMode.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
