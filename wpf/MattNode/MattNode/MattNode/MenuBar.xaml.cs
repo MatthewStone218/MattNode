@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using System.Text.Json;
+using Newtonsoft.Json;
 using System.IO;
 
 namespace MattNode
@@ -24,6 +24,7 @@ namespace MattNode
     /// </summary>
     public partial class MenuBar : UserControl
     {
+        public static string ?SavePath = null;
         public MenuBar()
         {
             InitializeComponent();
@@ -52,50 +53,136 @@ namespace MattNode
             MainWindow._MainWindow.mainGrid.Children.Add(propertyMenu);
         }
 
-        public void ExportProperties(object sender, RoutedEventArgs e)
+        public static void SaveProject()
+        {
+            if(SavePath == null)
+            {
+                SaveProjectAs();
+            }
+            else
+            {
+                SaveProject(SavePath);
+            }
+        }
+        public static void SaveProject(string path)
+        {
+            string text = "";
+
+            text += "\n[ExportFiles]";
+
+            for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
+            {
+                text += $"\nName:{ProjectProperty.ExportFiles[i].Name}" +
+                        $"\nExtension:{ProjectProperty.ExportFiles[i].Extension}" +
+                        $"\n***";
+            }
+
+            text += "\n[/ExportFiles]" +
+                    "\n[NodeTypes]";
+
+            for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
+            {
+                text += $"\nName:{ProjectProperty.NodeTypes[i].Name}" +
+                        $"\nColor:{ProjectProperty.NodeTypes[i].Color.Color.R} {ProjectProperty.NodeTypes[i].Color.Color.G} {ProjectProperty.NodeTypes[i].Color.Color.B}";
+
+                for (int ii = 0; ii < ProjectProperty.NodeTypes[i].ExportOption.Count; ii++)
+                {
+                    text += $"\n>>ExportOption{ii}:" +
+                            $"\n>>>>WriteType:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteType}" +
+                            $"\n>>>>WriteText:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteText}" +
+                            $"\n>>>>WritePrevNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WritePrevNodes}" +
+                            $"\n>>>>WriteNextNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteNextNodes}";
+                }
+                text += $"\n***";
+            }
+
+            text += $"\n[/NodeTypes]" +
+                    $"\n[Nodes]";
+                    for (int i = 0; i < Node.NodeList.Count; i++)
+                    {
+                        text += $"\nNodePos:{Node.NodeList[i].Margin.Left} {Node.NodeList[i].Margin.Top}" +
+                                $"\nNodeSize:{Node.NodeList[i].Width} {Node.NodeList[i].Height}" +
+                                $"\nNodeType:{Node.NodeList[i].typeComboBox.SelectedValue}" +
+                                $"\nNodeText:{Node.NodeList[i].contentTextBox.Text}" +
+                                $"\n***";
+                    }
+
+            text += $"\n[/Nodes]";
+
+
+            File.WriteAllText(path, text);
+        }
+
+        public static void SaveProjectAs()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
-            saveFileDialog.Filter = "MattNode Properties file (*.MattNodeProperties)|*.MattNodeProperties";
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // 초기 디렉토리 설정
+            saveFileDialog.Filter = "MattNode file (*.MattNode)|*.MattNode";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            if (saveFileDialog.ShowDialog() == true) // 대화 상자를 표시하고 사용자 입력을 받음
+            if (saveFileDialog.ShowDialog() == true)
             {
-                string text = "";
-                
-                text += "\n[ExportFiles]";
-
-                for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
-                {
-                    text += $"\n***" +
-                            $"\nName:{ProjectProperty.ExportFiles[i].Name}" +
-                            $"\nExtension:{ProjectProperty.ExportFiles[i].Extension}";
-                }
-
-                text += "\n***" +
-                        "\n[NodeTypes]";
-
-                for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
-                {
-                    text += $"\n***" +
-                            $"\nName:{ProjectProperty.NodeTypes[i].Name}" +
-                            $"\nColor:{ProjectProperty.NodeTypes[i].Color.Color.R} {ProjectProperty.NodeTypes[i].Color.Color.G} {ProjectProperty.NodeTypes[i].Color.Color.B}";
-
-                    for(int ii = 0; ii <  ProjectProperty.NodeTypes[i].ExportOption.Count; ii++)
-                    {
-                        text += $"\n>>ExportOption{ii}:" +
-                                $"\n>>>>WriteType:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteType}" +
-                                $"\n>>>>WriteText:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteText}" +
-                                $"\n>>>>WritePrevNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WritePrevNodes}" +
-                                $"\n>>>>WriteNextNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteNextNodes}";
-                    }
-                }
-
-                text += $"\n***\n[EOF]";
-
-
-                File.WriteAllText(saveFileDialog.FileName, text);
+                SaveProject(saveFileDialog.FileName);
+                SavePath = saveFileDialog.FileName;
             }
+        }
+
+        private void SaveProjectAs(object sender, RoutedEventArgs e)
+        {
+            SaveProjectAs();
+        }
+
+        public static void OpenProject()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MattNode Properties file (*.MattNodeProperties)|*.MattNodeProperties";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                {
+                    if (!File.Exists(openFileDialog.FileName))
+                    {
+                        MessageBox.Show("Failed to load property file.");
+                        return;
+                    }
+
+                    string line;
+
+                    ProjectProperty.ExportFiles = new List<ExportFile>();
+                    ProjectProperty.NodeTypes = new List<NodeType>();
+                    
+                    for(int i = 0; i < Node.NodeList.Count; i++)
+                    {
+                        Node.NodeList[i].Dispose();
+                        i--;
+                    }
+                    //
+                }
+
+                SavePath = openFileDialog.FileName;
+            }
+        }
+
+        private static string GetStringAfter(string text, string substring)
+        {
+            return text.Substring(text.IndexOf(substring) + substring.Length, text.Length - (text.IndexOf(substring) + substring.Length));
+        }
+
+        private void SaveProject(object sender, RoutedEventArgs e)
+        {
+            SaveProject();
+        }
+
+        private void OpenProject(object sender, RoutedEventArgs e)
+        {
+            SaveAsk saveAsk = new SaveAsk();
+            saveAsk.HorizontalAlignment = HorizontalAlignment.Left;
+            saveAsk.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(saveAsk, 0);
+            Canvas.SetBottom(saveAsk, 0);
+            Grid.SetZIndex(saveAsk, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(saveAsk);
         }
     }
 }

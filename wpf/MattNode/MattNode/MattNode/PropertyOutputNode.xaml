@@ -11,8 +11,10 @@
         <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Margin="25,18,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="751" FontSize="48" VerticalContentAlignment="Center" TextChanged="nameTextbox_TextChanged" Loaded="nameTextBox_Loaded"/>
         <ComboBox x:Name="extensionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="59" Width="681" Margin="187,118,0,0" FontSize="36" SelectionChanged="extensionComboBox_SelectionChanged">
             <ComboBoxItem Content=".csv"/>
+            <ComboBoxItem Content=".yymps(Structure containing functions)"/>
+            <ComboBoxItem Content=".yymps(Structure)"/>
+            <ComboBoxItem Content=".yymps(Structure without indexing)"/>
             <ComboBoxItem Content=".yymps(Script)"/>
-            <ComboBoxItem Content=".txt(Structure)"/>
         </ComboBox>
         <Rectangle Height="8" Width="890" Fill="#FF7893CA" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,192,0,0"/>
         <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" VerticalAlignment="Top" HorizontalAlignment="Left" Height="82" Margin="800,18,0,0" Width="68"/>

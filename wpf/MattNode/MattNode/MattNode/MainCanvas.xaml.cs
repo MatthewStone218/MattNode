@@ -69,7 +69,6 @@ namespace MattNode
 
             //화면 밖에 있는 노드 비활성화
             List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960, -Y - 540, 1920, 1080));
-
             for (int i = 0; i < Node.EnabledNodeList.Count; i++)
             {
                 Node.EnabledNodeList[i]._IsEnabled = false;
@@ -77,7 +76,7 @@ namespace MattNode
 
             for (int i = 0; i < instances.Count; i++)
             {
-                if (instances[i]._IsEnabled)
+                if (!Node.EnabledNodeList.Contains(instances[i]))
                 {
                     Node.EnabledNodeList.Add((Node)instances[i]);
                 }
@@ -95,7 +94,7 @@ namespace MattNode
                 {
                     Node.EnabledNodeList[i].IsEnabled = false;
                     Node.EnabledNodeList[i].Visibility = Visibility.Collapsed;
-                    Node.EnabledNodeList[i]._IsEnabled = true;
+                    Node.EnabledNodeList[i]._IsEnabled = false;
                     Node.EnabledNodeList.RemoveAt(i);
                     i--;
                 }

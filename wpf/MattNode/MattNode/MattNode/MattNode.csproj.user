@@ -52,6 +52,9 @@
     <Compile Update="PropertyTypeNodeExportOptionNode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SaveAsk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DesignMode.xaml">
@@ -100,6 +103,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PropertyTypeNodeExportOptionNode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SaveAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

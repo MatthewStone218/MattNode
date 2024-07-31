@@ -79,6 +79,7 @@ namespace MattNode
             deleteButton.MouseDown -= deleteButton_MouseDown;
             upButton.Click -= upButton_Click;
             downButton.Click -= downButton_Click;
+            colorPicker.SelectedColorChanged -= ColorPicker_SelectedColorChanged;
         }
         public double Step(double height)
         {

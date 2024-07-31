@@ -308,6 +308,7 @@ namespace MattNode
 
         private void node_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            
             if (!FollowingMouse)
             {
                 DeltaMousePoint = new Point(Margin.Left - MainCanvas.GetMousePos().X, Margin.Top - MainCanvas.GetMousePos().Y);
@@ -316,6 +317,7 @@ namespace MattNode
                 FollowingMouse = true;
                 contentTextBox.Focus();
             }
+            
         }
 
         private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)

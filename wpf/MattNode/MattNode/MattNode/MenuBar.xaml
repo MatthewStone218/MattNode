@@ -10,14 +10,12 @@
         <Menu>
             <MenuItem Header="File">
                 <MenuItem Header="New File"/>
-                <MenuItem Header="Open File"/>
-                <MenuItem Header="Save"/>
-                <MenuItem Header="Save as"/>
+                <MenuItem Header="Open File" Click="OpenProject"/>
+                <MenuItem Header="Save" Click="SaveProject"/>
+                <MenuItem Header="Save as" Click="SaveProjectAs"/>
             </MenuItem>
             <MenuItem Header="Property">
                 <MenuItem Header="Modify Properties" Click="OpenPropertyMenu"/>
-                <MenuItem Header="Export Properties" Click="ExportProperties"/>
-                <MenuItem Header="Import Properties"/>
             </MenuItem>
             <MenuItem Header="Contact">
                 <MenuItem Header="Copy Discord name" Click="CopyDiscordName"/>
