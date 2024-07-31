@@ -77,8 +77,6 @@ namespace MattNode
 
             topRectangle.MouseDown -= node_MouseDown;
 
-            focusRectangle2.MouseDown -= node_MouseDown;
-
             deleteButton.MouseDown -= deleteButton_MouseDown;
 
             contentTextBox.TextChanged -= contentTextBox_TextChanged;
@@ -90,6 +88,7 @@ namespace MattNode
                 textBox.TextChanged -= typeComboBox_TextChanged;
             }
             typeComboBox.GotFocus -= node_GotFocus;
+            typeComboBox.SelectionChanged -= typeComboBox_SelectionChanged;
 
             bgCanvas.MouseDown -= node_MouseDown;
             bgCanvas.GotFocus -= node_GotFocus;
@@ -353,9 +352,9 @@ namespace MattNode
         {
             if (!SettingNodeTypeItems)
             {
-                if (FocusedNode != null)
+                if (FocusedNode != null && FocusedNode.typeComboBox.SelectedIndex >= 0)
                 {
-                    FocusedNode.focusRectangle1.Stroke = Brushes.White;
+                    FocusedNode.focusRectangle1.Stroke = ProjectProperty.NodeTypes[FocusedNode.typeComboBox.SelectedIndex].Color;
                 }
                 focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
 
@@ -405,6 +404,27 @@ namespace MattNode
         public void node_GotFocus(object sender, RoutedEventArgs e)
         {
             node_GotFocus();
+        }
+
+        private void typeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (typeComboBox.IsFocused)
+            {
+                Inspector.SetType(typeComboBox.Text);
+            }
+
+            SetColor();
+        }
+
+        public void SetColor()
+        {
+            if (typeComboBox.SelectedIndex >= 0)
+            {
+                SolidColorBrush color = ProjectProperty.NodeTypes[typeComboBox.SelectedIndex].Color;
+                bgCanvas.Background = color;
+                topRectangle.Fill = new SolidColorBrush(Color.FromArgb(255, (Byte)((double)color.Color.R * 0.8), (Byte)((double)color.Color.G * 0.8), (Byte)((double)color.Color.B * 0.8)));
+                focusRectangle1.Stroke = new SolidColorBrush(Color.FromArgb(255, (Byte)((double)color.Color.R * 0.3), (Byte)((double)color.Color.G * 0.3), (Byte)((double)color.Color.B * 0.3)));
+            }
         }
     }
 }

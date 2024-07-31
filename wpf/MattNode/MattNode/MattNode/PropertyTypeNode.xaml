@@ -14,11 +14,12 @@
             </Canvas>
             <Rectangle Height="150" Stroke="Black" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFDCE6E8"/>
             <Label x:Name="typeNameLabel" Content="Type Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="22,22,0,0"/>
-            <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="491" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" TextChanged="typeNameTextBox_TextChanged" Loaded="typeNameTextBox_Loaded"/>
+            <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="424" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" TextChanged="typeNameTextBox_TextChanged" Loaded="typeNameTextBox_Loaded"/>
             <Button x:Name="foldButton" Content="▼" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,125,0,0" Height="25" Width="890" Click="foldButton_Click"/>
         </Grid>
         <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" Height="80" Canvas.Left="717" Canvas.Top="10" Width="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Button x:Name="upButton" Content="▲" Canvas.Left="798" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="39" Click="upButton_Click"/>
         <Button x:Name="downButton" Content="▼" Canvas.Left="798" Canvas.Top="51" Width="82" Height="39" HorizontalAlignment="Center" VerticalAlignment="Top" Click="downButton_Click"/>
+        <Rectangle x:Name="colorRectangle" Height="64" Width="65" Canvas.Left="644" Canvas.Top="27" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="Black"/>
     </Canvas>
 </UserControl>

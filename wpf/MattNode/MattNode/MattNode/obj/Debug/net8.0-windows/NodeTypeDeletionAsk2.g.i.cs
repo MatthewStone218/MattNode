@@ -85,7 +85,7 @@ namespace MattNode {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MattNode;component/nodetypedeletionask2.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MattNode;V1.0.0.0;component/nodetypedeletionask2.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NodeTypeDeletionAsk2.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

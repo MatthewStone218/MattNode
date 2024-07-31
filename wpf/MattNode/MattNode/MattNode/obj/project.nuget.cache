@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "09aAzBIKPFHeVmNFfnKsMtFzfAuVcT/AJXlWqRn/SlYVMlomu1Ss2TR9KJ+lmrXV6pMdqWgpCSFFTn8H85NHJw==",
+  "dgSpecHash": "bl/dIAK7mmnepUcjrppQjuaj9Fr/V9HO1WzpIgQjUqyGnCNHcdu+R1UmUU71I13vncS2gy2a7IqcAFaG2llRwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MattNode.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\matt\\.nuget\\packages\\extended.wpf.toolkit\\4.6.1\\extended.wpf.toolkit.4.6.1.nupkg.sha512"
+  ],
   "logs": []
 }

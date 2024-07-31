@@ -37,6 +37,7 @@ namespace MattNode
         public void Init()
         {
             typeNameTextBox.Text = ProjectProperty.NodeTypes[Num].Name;
+            colorRectangle.Fill = ProjectProperty.NodeTypes[Num].Color;
 
             for (int i = 0; i < ProjectProperty.NodeTypes[Num].ExportOption.Count; i++)
             {

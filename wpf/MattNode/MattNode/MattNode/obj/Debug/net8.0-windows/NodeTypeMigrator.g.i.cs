@@ -61,7 +61,7 @@ namespace MattNode {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MattNode;component/nodetypemigrator.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MattNode;V1.0.0.0;component/nodetypemigrator.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NodeTypeMigrator.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

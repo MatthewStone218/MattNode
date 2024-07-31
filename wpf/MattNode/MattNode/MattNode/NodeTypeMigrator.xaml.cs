@@ -40,6 +40,7 @@ namespace MattNode
                 {
                     Node.NodeList[i].SetTypeItems();
                     Node.NodeList[i].typeComboBox.SelectedValue = newName;
+                    Node.NodeList[i].SetColor();
                 }
             }
         }
