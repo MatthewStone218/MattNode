@@ -178,10 +178,18 @@ namespace MattNode
         public static void ApplyDefaultProperty()
         {
             CleanProperty();
+            
             AddExportFile("TextTable", ".csv");
             AddExportFile("Script", ".yymps(Script)");
+            
             AddNodeType("Text", new SolidColorBrush(Color.FromRgb(255,255,255)));
             AddNodeType("Script", new SolidColorBrush(Color.FromRgb(193, 102, 107)));
+
+            NodeTypes[0].ExportOption[0] = new FileExportOption(true, true, true, true);
+            NodeTypes[0].ExportOption[1] = new FileExportOption(false, false, false, false);
+
+            NodeTypes[1].ExportOption[0] = new FileExportOption(true, false, true, true);
+            NodeTypes[1].ExportOption[1] = new FileExportOption(false, true, false, false);
         }
     }
 }

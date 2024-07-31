@@ -12,11 +12,31 @@
         <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="80" Margin="1556,935,0,0" FontSize="24" Click="CloseMenuWithSave"/>
 
         <Canvas x:Name="outputFileCanvas" Margin="64,178,64,158" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Background="White" ClipToBounds="True">
-            <Canvas x:Name="Canvas1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744"/>
+            <Canvas.Style>
+                <Style TargetType="Canvas">
+                    <Setter Property="Background" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
+                            <Setter Property="Background" Value="LightGray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Canvas.Style>
+            <Canvas x:Name="Canvas1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Canvas.Top="0" Canvas.Left="0"/>
         </Canvas>
 
-        <Canvas x:Name="NodeTypeCanvas" Margin="967,178,64,158" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" ClipToBounds="True">
-            <Canvas x:Name="Canvas2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744"/>
+        <Canvas x:Name="nodeTypeCanvas" Margin="967,178,64,158" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" ClipToBounds="True">
+            <Canvas.Style>
+                <Style TargetType="Canvas">
+                    <Setter Property="Background" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
+                            <Setter Property="Background" Value="LightGray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Canvas.Style>
+            <Canvas x:Name="Canvas2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Canvas.Left="0" Canvas.Top="0"/>
         </Canvas>
 
         <Label Content="Output Files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="100" Margin="259,64,0,0" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

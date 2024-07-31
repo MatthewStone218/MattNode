@@ -16,7 +16,7 @@
             </MenuItem>
             <MenuItem Header="Property">
                 <MenuItem Header="Modify Properties" Click="OpenPropertyMenu"/>
-                <MenuItem Header="Export Properties"/>
+                <MenuItem Header="Export Properties" Click="ExportProperties"/>
                 <MenuItem Header="Import Properties"/>
             </MenuItem>
             <MenuItem Header="Contact">

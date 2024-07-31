@@ -423,7 +423,15 @@ namespace MattNode
                 SolidColorBrush color = ProjectProperty.NodeTypes[typeComboBox.SelectedIndex].Color;
                 bgCanvas.Background = color;
                 topRectangle.Fill = new SolidColorBrush(Color.FromArgb(255, (Byte)((double)color.Color.R * 0.8), (Byte)((double)color.Color.G * 0.8), (Byte)((double)color.Color.B * 0.8)));
-                focusRectangle1.Stroke = new SolidColorBrush(Color.FromArgb(255, (Byte)((double)color.Color.R * 0.3), (Byte)((double)color.Color.G * 0.3), (Byte)((double)color.Color.B * 0.3)));
+
+                if (FocusedNode == this)
+                {
+                    focusRectangle1.Stroke = new SolidColorBrush(Color.FromArgb(255, (Byte)((double)color.Color.R * 0.3), (Byte)((double)color.Color.G * 0.3), (Byte)((double)color.Color.B * 0.3)));
+                }
+                else
+                {
+                    focusRectangle1.Stroke = color;
+                }
             }
         }
     }

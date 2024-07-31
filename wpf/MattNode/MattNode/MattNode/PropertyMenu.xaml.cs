@@ -26,6 +26,7 @@ namespace MattNode
         public static PropertyMenu ?mainProperty = null;
         private List<PropertyOutputNode> PropertyOutputNodes = new List<PropertyOutputNode>();
         private List<PropertyTypeNode> PropertyTypeNodes = new List<PropertyTypeNode>();
+        private double TypeNodeHeight = 0;
         public PropertyMenu()
         {
             mainProperty = this;
@@ -37,6 +38,7 @@ namespace MattNode
         {
             CompositionTarget.Rendering += RenderNodes;
             SetPropertyNodes();
+            MainWindow._MainWindow.MouseWheel += ScrollMenu;
         }
         private void RenderNodes(object sender, EventArgs e)
         {
@@ -45,9 +47,23 @@ namespace MattNode
             {
                 height = PropertyTypeNodes[i].Step(height);
             }
+
+            TypeNodeHeight = height;
+
+            double top = Canvas.GetTop(Canvas2);
+
+            if (top + TypeNodeHeight < nodeTypeCanvas.Height)
+            {
+                top = nodeTypeCanvas.Height - TypeNodeHeight;
+            }
+
+            if (top > 0) { top = 0; }
+
+            Canvas.SetTop(Canvas2, top);
         }
         public void Dispose()
         {
+            MainWindow._MainWindow.MouseWheel -= ScrollMenu;
             CompositionTarget.Rendering -= RenderNodes;
             saveButton.Click -= CloseMenuWithSave;
             addOutputFileButton.Click -= addOutputFileButton_Click;
@@ -70,6 +86,36 @@ namespace MattNode
             ((Grid)Parent).Children.Remove(this);
 
             mainProperty = null;
+        }
+
+        private void ScrollMenu(object sender, MouseWheelEventArgs e)
+        {
+            if (outputFileCanvas.IsMouseOver)
+            {
+                double newTop = Canvas.GetTop(Canvas1) + e.Delta / 2;
+
+                if(newTop + PropertyOutputNodes.Count * 150 < outputFileCanvas.Height)
+                {
+                    newTop = outputFileCanvas.Height - PropertyOutputNodes.Count * 150;
+                }
+                
+                if (newTop > 0) { newTop = 0; }
+
+                Canvas.SetTop(Canvas1, newTop);
+            }
+            else if (nodeTypeCanvas.IsMouseOver)
+            {
+                double newTop = Canvas.GetTop(Canvas2) + e.Delta / 2;
+
+                if (newTop + TypeNodeHeight < nodeTypeCanvas.Height)
+                {
+                    newTop = nodeTypeCanvas.Height - TypeNodeHeight;
+                }
+                
+                if (newTop > 0) { newTop = 0; }
+
+                Canvas.SetTop(Canvas2, newTop);
+            }
         }
 
         public void SetPropertyNodes()
