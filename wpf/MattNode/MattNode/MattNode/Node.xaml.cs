@@ -29,6 +29,7 @@ namespace MattNode
         private bool MbLeftclicked = false;
         private Point DeltaMousePoint = new Point(0,0);
         private bool FollowingMouse = false;
+        private bool SettingNodeTypeItems = false;
         public Node(bool followMouse, Point deltaMousePoint)
         {
             InitializeComponent();
@@ -350,22 +351,39 @@ namespace MattNode
 
         public void node_GotFocus()
         {
-            if(FocusedNode != null)
+            if (!SettingNodeTypeItems)
             {
-                FocusedNode.focusRectangle1.Stroke = Brushes.White;
+                if (FocusedNode != null)
+                {
+                    FocusedNode.focusRectangle1.Stroke = Brushes.White;
+                }
+                focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
+
+                Inspector.SetType(typeComboBox.Text);
+                Inspector.SetContent(contentTextBox.Text);
+
+                SetTypeItems();
+
+                FocusedNode = this;
             }
-            focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
-
-            Inspector.SetType(typeComboBox.Text);
-            Inspector.SetContent(contentTextBox.Text);
-
-            SetTypeItems();
-
-            FocusedNode = this;
         }
 
         public void SetTypeItems()
         {
+            SettingNodeTypeItems = true;
+
+            object obj = null;
+            if (typeComboBox.SelectedIndex >= 0)
+            {
+                obj = typeComboBox.Items[typeComboBox.SelectedIndex];
+            }
+            string name = null;
+
+            if (obj != null)
+            {
+                name = obj.ToString();
+            }
+
             for (int i = 0; i < typeComboBox.Items.Count; i++)
             {
                 typeComboBox.Items.RemoveAt(i);
@@ -376,6 +394,13 @@ namespace MattNode
             {
                 typeComboBox.Items.Add(ProjectProperty.NodeTypes[i].Name);
             }
+
+            if(name != null)
+            {
+                typeComboBox.SelectedValue = name;
+            }
+
+            SettingNodeTypeItems = false;
         }
         public void node_GotFocus(object sender, RoutedEventArgs e)
         {

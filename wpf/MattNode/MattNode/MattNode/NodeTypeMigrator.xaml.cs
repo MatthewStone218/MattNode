@@ -36,9 +36,10 @@ namespace MattNode
         {
             for (int i = 0; i < Node.NodeList.Count; i++)
             {
-                if (Node.NodeList[i].typeComboBox.Text == name)
+                if (Node.NodeList[i].typeComboBox.SelectedValue == name)
                 {
-                    Node.NodeList[i].typeComboBox.Text = newName;
+                    Node.NodeList[i].SetTypeItems();
+                    Node.NodeList[i].typeComboBox.SelectedValue = newName;
                 }
             }
         }

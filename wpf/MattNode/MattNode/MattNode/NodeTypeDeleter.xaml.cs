@@ -39,6 +39,7 @@ namespace MattNode
                 if (Node.NodeList[i].typeComboBox.Text == name)
                 {
                     Node.NodeList[i].Dispose();
+                    i--;
                 }
             }
         }
