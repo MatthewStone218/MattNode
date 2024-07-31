@@ -6,16 +6,16 @@
              xmlns:local="clr-namespace:MattNode"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920" Height="1080" Background="#7F000000">
+    <Canvas x:Name="mainCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920" Height="1080" Background="#7F000000">
         <Rectangle Height="500" Stroke="Black" Width="1000" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="460" Canvas.Top="290" Fill="#FFC4CED2"/>
         <Label Content="Node Type migration" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="721" Canvas.Top="290" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="newTypeComboBox" Width="900" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48" Canvas.Left="510" Canvas.Top="511"/>
+        <ComboBox x:Name="newTypeComboBox" Width="900" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48" Canvas.Left="510" Canvas.Top="511" Loaded="newTypeComboBox_Loaded" FontSize="32"/>
         <Rectangle Height="48" Width="900" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="510" Canvas.Top="412" Fill="#FF7893CA"/>
-        <Label Content="awefwafef" FontSize="32" Canvas.Left="510" Canvas.Top="412" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="900" Height="48"/>
+        <Label x:Name="originalTypeLabel" Content="awefwafef" FontSize="32" Canvas.Left="510" Canvas.Top="412" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Width="900" Height="48" Loaded="originalTypeLabel_Loaded"/>
         <Label Content="▼" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="943" Canvas.Top="464"/>
-        <Button x:Name="cancelButton" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Left" Width="440" Height="60" Canvas.Left="510" Canvas.Top="644" FontSize="24"/>
-        <Button x:Name="migrateButton" Content="Migrate" Width="440" Height="60" Canvas.Left="970" Canvas.Top="644" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button x:Name="deleteButton" Content="No, just delete the nodes." Width="900" Height="60" Canvas.Left="510" Canvas.Top="713" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFBB4949"/>
+        <Button x:Name="cancelButton" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Left" Width="440" Height="60" Canvas.Left="510" Canvas.Top="644" FontSize="24" Click="cancelButton_Click"/>
+        <Button x:Name="migrateButton" Content="Migrate" Width="440" Height="60" Canvas.Left="970" Canvas.Top="644" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Click="migrateButton_Click"/>
+        <Button x:Name="deleteButton" Content="No, just delete the nodes." Width="900" Height="60" Canvas.Left="510" Canvas.Top="713" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFBB4949" Click="deleteButton_Click"/>
 
     </Canvas>
 </UserControl>

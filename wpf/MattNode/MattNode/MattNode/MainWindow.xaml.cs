@@ -53,12 +53,14 @@ namespace MattNode
             mainCanvas.mainCanvas.Children.Add(node);
             node.Focus();
             node.node_GotFocus();
+            node.SetTypeItems();
+            node.typeComboBox.SelectedIndex = 0;
         }
 
         private void window_Closed(object sender, EventArgs e)
         {
-            mainCanvas.FreeRenderEvent();
-            mainInspector.FreeRenderEvent();
+            //mainCanvas.FreeRenderEvent();
+            //mainInspector.FreeRenderEvent();
         }
     }
 }

@@ -46,6 +46,17 @@ namespace MattNode
             rect1.VerticalAlignment = VerticalAlignment.Top;
         }
 
+        public void Dispose()
+        {
+            CompositionTarget.Rendering -= RenderTick;
+            MainWindow._MainWindow.MouseWheel -= Global_MouseWheel;
+            dragSpace.MouseDown -= DragSpace_MouseButtonDown;
+            dragSpace.MouseLeave -= DragSpace_MouseButtonLeave;
+            dragSpace.MouseMove -= DragSpace_MouseButtonMove;
+            dragSpace.MouseUp -= DragSpace_MouseButtonUp;
+
+            ((Grid)Parent).Children.Remove(this);
+        }
         private void RenderTick(object sender, EventArgs e)
         {
             RenderSize += (RenderSizeGoal - RenderSize) / 10;
@@ -96,21 +107,19 @@ namespace MattNode
                 Node.FocusedNode.Visibility = Visibility.Visible;
             }
         }
-
-        public void FreeRenderEvent()
-        {
-            CompositionTarget.Rendering -= RenderTick;
-        }
         private void Register_MouseWheelEvent()
         {
             MainWindow._MainWindow.MouseWheel += Global_MouseWheel;
         }
         private void Global_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            RenderSizeGoal += e.Delta / 3000.0f;
+            if (PropertyMenu.mainProperty == null)
+            {
+                RenderSizeGoal += e.Delta / 3000.0f;
 
-            if (RenderSizeGoal < 0.2) { RenderSizeGoal = 0.2; }
-            else if (RenderSizeGoal > 5) { RenderSizeGoal = 5; }
+                if (RenderSizeGoal < 0.2) { RenderSizeGoal = 0.2; }
+                else if (RenderSizeGoal > 5) { RenderSizeGoal = 5; }
+            }
         }
         private void InitRanderTransform()
         {

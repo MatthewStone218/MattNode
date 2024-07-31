@@ -10,6 +10,9 @@
     <Compile Update="DesignMode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DoneWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Inspector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,13 +25,19 @@
     <Compile Update="Node.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="NodeTypeDeleter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NodeTypeDeletionAsk.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="NodeTypeDeletionAsk2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeMigrationAsk2.xaml.cs">
+    <Compile Update="NodeTypeMigrateAsk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NodeTypeMigrator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PropertyMenu.xaml.cs">
@@ -48,6 +57,9 @@
     <Page Update="DesignMode.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="DoneWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Inspector.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -63,13 +75,19 @@
     <Page Update="Node.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="NodeTypeDeleter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="NodeTypeDeletionAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NodeTypeDeletionAsk2.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeMigrationAsk2.xaml">
+    <Page Update="NodeTypeMigrateAsk.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NodeTypeMigrator.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PropertyMenu.xaml">

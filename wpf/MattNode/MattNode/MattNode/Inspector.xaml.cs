@@ -28,13 +28,23 @@ namespace MattNode
             RegisterRenderEvent();
         }
 
+        public void Dispose()
+        {
+            CompositionTarget.Rendering -= SetTextWithFocus;
+            resizeThumb.DragDelta -= resizeThumb_DragDelta;
+            contentTextBox.TextChanged -= contentTextBox_TextChanged;
+
+            var textBox = typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox) as TextBox;
+            if (textBox != null)
+            {
+                textBox.TextChanged -= typeComboBox_TextChanged;
+            }
+
+            ((Grid)Parent).Children.Remove(this);
+        }
         private void RegisterRenderEvent()
         {
             CompositionTarget.Rendering += SetTextWithFocus;
-        }
-        public void FreeRenderEvent()
-        {
-            CompositionTarget.Rendering -= SetTextWithFocus;
         }
         private void SetTextWithFocus(object sender, EventArgs e)
         {

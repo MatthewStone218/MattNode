@@ -71,6 +71,8 @@ namespace MattNode
 
             typeNameTextBox.TextChanged -= typeNameTextBox_TextChanged;
             deleteButton.MouseDown -= deleteButton_MouseDown;
+            upButton.Click -= upButton_Click;
+            downButton.Click -= downButton_Click;
         }
         public double Step(double height)
         {
@@ -114,6 +116,10 @@ namespace MattNode
         {
             return Fold;
         }
+        public void SetFold(bool fold)
+        {
+            Fold = fold;
+        }
 
         private void typeNameTextBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -123,7 +129,33 @@ namespace MattNode
 
         private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            NodeTypeDeletionAsk askWindow = new NodeTypeDeletionAsk(Num);
+            askWindow.HorizontalAlignment = HorizontalAlignment.Left;
+            askWindow.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(askWindow, 0);
+            Canvas.SetBottom(askWindow, 0);
+            Grid.SetZIndex(askWindow, 2000);
+            MainWindow._MainWindow.mainGrid.Children.Add(askWindow);
+        }
 
+        private void upButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(Num > 0)
+            {
+                ProjectProperty.SwapNodeType(Num,Num-1);
+                PropertyMenu.mainProperty.SwapNodeTypeFold(Num, Num - 1);
+                PropertyMenu.mainProperty.SetPropertyTypeNodes();
+            }
+        }
+
+        private void downButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Num < ProjectProperty.NodeTypes.Count-1)
+            {
+                ProjectProperty.SwapNodeType(Num, Num + 1);
+                PropertyMenu.mainProperty.SwapNodeTypeFold(Num, Num + 1);
+                PropertyMenu.mainProperty.SetPropertyTypeNodes();
+            }
         }
     }
 }

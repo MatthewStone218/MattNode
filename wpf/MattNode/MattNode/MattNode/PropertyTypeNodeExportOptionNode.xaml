@@ -12,7 +12,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label x:Name="exportFileNameLabel" Content="Label" FontSize="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="840" Margin="17,6,0,0" Grid.RowSpan="2"/>
-        <Label Content="Type" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="89,68,0,0" Grid.RowSpan="2"/>
+        <Label Content="Type" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="82,70,0,0" Grid.RowSpan="2"/>
         <CheckBox x:Name="typeCheckBox" Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" FontSize="48" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Margin="46,98,0,0" Checked="typeCheckBox_Checked" Unchecked="typeCheckBox_Unchecked">
             <CheckBox.RenderTransform>
                 <TransformGroup>
@@ -23,8 +23,30 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <Label Content="Text" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="293,71,0,0" Grid.RowSpan="2"/>
-        <CheckBox x:Name="textCheckBox" Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" FontSize="48" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Margin="250,98,0,0" Unchecked="textCheckBox_Unchecked" Checked="textCheckBox_Checked">
+        <Label Content="Text" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="236,71,0,0" Grid.RowSpan="2"/>
+        <CheckBox x:Name="textCheckBox" Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" FontSize="48" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Margin="200,98,0,0" Unchecked="textCheckBox_Unchecked" Checked="textCheckBox_Checked">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="4" ScaleY="4"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Label Content="PrevNodes" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="384,72,0,0" Grid.RowSpan="2"/>
+        <CheckBox x:Name="prevNodesCheckBox" Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" FontSize="48" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Margin="348,98,0,0" Unchecked="prevNodesCheckBox_Unchecked" Checked="prevNodesCheckBox_Checked">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="4" ScaleY="4"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Label x:Name="___이름_없음_" Content="NextNodes" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="634,71,0,0" Grid.RowSpan="2"/>
+        <CheckBox x:Name="nextNodesCheckBox" Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" FontSize="48" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Margin="597,98,0,0" Unchecked="nextNodesCheckBox_Unchecked" Checked="nextNodesCheckBox_Checked">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="4" ScaleY="4"/>

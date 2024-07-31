@@ -109,7 +109,6 @@ namespace MattNode
             resizeThumb7.DragCompleted -= resizeThumb_DragCompleted;
             resizeThumb8.DragDelta -= resizeThumb8_DragDelta;
             resizeThumb8.DragCompleted -= resizeThumb_DragCompleted;
-
         }
 
         private void UpdatePosition(object sender, EventArgs e)
@@ -186,7 +185,7 @@ namespace MattNode
             resizeThumb8.Width = Width - 20 / MainCanvas.RenderSize;
 
             Canvas.SetLeft(deleteButton, Width-35);
-            Canvas.SetTop(deleteButton, 14);
+            Canvas.SetTop(deleteButton, 60);
         }
 
         private void resizeThumb1_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -359,7 +358,24 @@ namespace MattNode
 
             Inspector.SetType(typeComboBox.Text);
             Inspector.SetContent(contentTextBox.Text);
+
+            SetTypeItems();
+
             FocusedNode = this;
+        }
+
+        public void SetTypeItems()
+        {
+            for (int i = 0; i < typeComboBox.Items.Count; i++)
+            {
+                typeComboBox.Items.RemoveAt(i);
+                i--;
+            }
+
+            for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
+            {
+                typeComboBox.Items.Add(ProjectProperty.NodeTypes[i].Name);
+            }
         }
         public void node_GotFocus(object sender, RoutedEventArgs e)
         {

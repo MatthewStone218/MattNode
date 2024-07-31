@@ -15,11 +15,15 @@ namespace MattNode
     {
         public bool WriteType;
         public bool WriteText;
+        public bool WritePrevNodes;
+        public bool WriteNextNodes;
 
-        public FileExportOption(bool writeType, bool writeText)
+        public FileExportOption(bool writeType, bool writeText, bool writePrevNodes, bool writeNextNodes)
         {
             WriteType = writeType;
             WriteText = writeText;
+            WritePrevNodes = writePrevNodes;
+            WriteNextNodes = writeNextNodes;
         }
     }
     public struct ExportFile
@@ -48,7 +52,7 @@ namespace MattNode
                 ExportOption = new List<FileExportOption>();
                 for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
                 {
-                    ExportOption.Add(new FileExportOption(false, false));
+                    ExportOption.Add(new FileExportOption(false, false, false, false));
                 }
             }
             else
@@ -83,7 +87,7 @@ namespace MattNode
 
             for (int i = 0; i < NodeTypes.Count; i++)
             {
-                NodeTypes[i].ExportOption.Add(new FileExportOption(false, false));
+                NodeTypes[i].ExportOption.Add(new FileExportOption(false, false, false, false));
             }
         }
 

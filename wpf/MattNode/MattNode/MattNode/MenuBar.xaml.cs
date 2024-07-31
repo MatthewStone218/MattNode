@@ -44,7 +44,7 @@ namespace MattNode
             propertyMenu.Margin = new Thickness(0, 0, 0, 0); // 위치 설정
             propertyMenu.HorizontalAlignment = HorizontalAlignment.Left;
             propertyMenu.VerticalAlignment = VerticalAlignment.Top;
-            Panel.SetZIndex(propertyMenu, 1000);
+            Grid.SetZIndex(propertyMenu, 1000);
             MainWindow._MainWindow.mainGrid.Children.Add(propertyMenu);
         }
     }

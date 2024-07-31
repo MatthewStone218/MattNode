@@ -34,6 +34,8 @@ namespace MattNode
             exportFileNameLabel.Content = ProjectProperty.ExportFiles[OptionNum].Name;
             typeCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
             textCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+            prevNodesCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+            nextNodesCheckBox.IsChecked = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
         }
         public void Dispose()
         {
@@ -50,7 +52,11 @@ namespace MattNode
         {
             if (!PropertyMenu.SettingNodes)
             {
-                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(true, ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText);
+                bool writeType = true;
+                bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+                bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+                bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
             }
         }
 
@@ -58,22 +64,68 @@ namespace MattNode
         {
             if (!PropertyMenu.SettingNodes)
             {
-                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(false, ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText);
+                bool writeType = false;
+                bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+                bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+                bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
             }
         }
         private void textCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             if (!PropertyMenu.SettingNodes)
             {
-                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType, true);
+                bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+                bool writeText = true;
+                bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+                bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
             }
         }
         private void textCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             if (!PropertyMenu.SettingNodes)
             {
-                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType, false);
+                bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+                bool writeText = false;
+                bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+                bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+                ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
             }
+        }
+
+        private void prevNodesCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+            bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+            bool writePrevNodes = true;
+            bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+            ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
+        }
+
+        private void prevNodesCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+            bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+            bool writePrevNodes = false;
+            bool writeNextNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteNextNodes;
+            ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
+        }
+        private void nextNodesCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+            bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+            bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+            bool writeNextNodes = true;
+            ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
+        }
+        private void nextNodesCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            bool writeType = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteType;
+            bool writeText = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WriteText;
+            bool writePrevNodes = ProjectProperty.NodeTypes[Num].ExportOption[OptionNum].WritePrevNodes;
+            bool writeNextNodes = false;
+            ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
         }
     }
 }

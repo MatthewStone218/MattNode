@@ -10,7 +10,6 @@
         <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920" Height="1080" Background="#7F000000"/>
         <Rectangle Height="980" Width="1820" Fill="#FFE5E7EA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
         <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="80" Margin="1556,935,0,0" FontSize="24" Click="CloseMenuWithSave"/>
-        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="80" Margin="1240,935,0,0" FontSize="24" Click="CloseMenuWithoutSave"/>
 
         <Canvas x:Name="outputFileCanvas" Margin="64,178,64,158" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Background="White" ClipToBounds="True">
             <Canvas x:Name="Canvas1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744"/>

@@ -24,8 +24,6 @@ namespace MattNode
     {
         public static bool SettingNodes = false;
         public static PropertyMenu ?mainProperty = null;
-        private List<ExportFile> ExportFilesBackup = ProjectProperty.ExportFiles;
-        private List<NodeType> NodeTypesBackup = ProjectProperty.NodeTypes;
         private List<PropertyOutputNode> PropertyOutputNodes = new List<PropertyOutputNode>();
         private List<PropertyTypeNode> PropertyTypeNodes = new List<PropertyTypeNode>();
         public PropertyMenu()
@@ -52,7 +50,6 @@ namespace MattNode
         {
             CompositionTarget.Rendering -= RenderNodes;
             saveButton.Click -= CloseMenuWithSave;
-            cancelButton.Click -= CloseMenuWithoutSave;
             addOutputFileButton.Click -= addOutputFileButton_Click;
             addNodeTypeButton.Click -= addNodeTypeButton_Click;
 
@@ -122,7 +119,6 @@ namespace MattNode
             }
 
             PropertyTypeNodes = new List<PropertyTypeNode>();
-
             for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
             {
                 bool fold = true;
@@ -143,6 +139,13 @@ namespace MattNode
             SettingNodes = false;
         }
 
+        public void SwapNodeTypeFold(int num, int newNum)
+        {
+            bool temp = PropertyTypeNodes[num].GetFold();
+            PropertyTypeNodes[num].SetFold(PropertyTypeNodes[newNum].GetFold());
+            PropertyTypeNodes[newNum].SetFold(temp);
+        }
+
         private void CloseMenuWithoutSave(object sender, RoutedEventArgs e)
         {
             CloseMenu();
@@ -150,8 +153,6 @@ namespace MattNode
 
         private void CloseMenuWithSave(object sender, RoutedEventArgs e)
         {
-            ProjectProperty.ExportFiles = ExportFilesBackup;
-            ProjectProperty.NodeTypes = NodeTypesBackup;
             CloseMenu();
         }
 

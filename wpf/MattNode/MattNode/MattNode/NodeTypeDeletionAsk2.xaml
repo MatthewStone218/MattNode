@@ -8,9 +8,11 @@
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Canvas Background="#7F000000">
         <Rectangle Height="500" Width="1000" Fill="#FFC4CED2" Canvas.Left="460" Canvas.Top="290"/>
-        <Label x:Name="cautionLabel" Content="Are you sure you want to&#xD;&#xA;DELETE ALL &quot;asdf&quot; type NODES?" Canvas.Left="510" Canvas.Top="318" Background="{x:Null}" Width="900" Height="342" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
-        <Button x:Name="noButton" Content="No" Height="88" Width="384" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="542" Canvas.Top="660" FontSize="48"/>
-        <Button x:Name="yesButton" Content="Yes" Height="88" Width="384" Canvas.Left="986" Canvas.Top="660" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label x:Name="cautionLabel" Canvas.Left="510" Canvas.Top="318" Background="{x:Null}" Width="900" Height="342" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" MaxWidth="900">
+            <TextBlock x:Name="cautionTextBlock" Text="Are you sure you want to&#xD;&#xA;DELETE ALL &quot;asdf&quot; type NODES?" TextWrapping="Wrap" Loaded="cautionText_Loaded" FontSize="36" TextAlignment="Center"/>
+        </Label>
+        <Button x:Name="noButton" Content="No" Height="88" Width="384" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="542" Canvas.Top="660" FontSize="48" Click="noButton_Click"/>
+        <Button x:Name="yesButton" Content="Yes" Height="88" Width="384" Canvas.Left="986" Canvas.Top="660" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Click="yesButton_Click"/>
 
     </Canvas>
 
