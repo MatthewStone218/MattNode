@@ -10,49 +10,52 @@
     <Compile Update="DesignMode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DoneWindow.xaml.cs">
+    <Compile Update="Main\NodeArrow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Inspector.xaml.cs">
+    <Compile Update="Property\DoneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MainCanvas.xaml.cs">
+    <Compile Update="Main\Inspector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MenuBar.xaml.cs">
+    <Compile Update="Main\MainCanvas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Node.xaml.cs">
+    <Compile Update="Main\MenuBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeDeleter.xaml.cs">
+    <Compile Update="Main\Node.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeDeletionAsk.xaml.cs">
+    <Compile Update="Property\NodeTypeDeleter.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeDeletionAsk2.xaml.cs">
+    <Compile Update="Property\NodeTypeDeletionAsk.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeMigrateAsk.xaml.cs">
+    <Compile Update="Property\NodeTypeDeletionAsk2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NodeTypeMigrator.xaml.cs">
+    <Compile Update="Property\NodeTypeMigrateAsk.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PropertyMenu.xaml.cs">
+    <Compile Update="Property\NodeTypeMigrator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PropertyOutputNode.xaml.cs">
+    <Compile Update="Property\PropertyMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PropertyTypeNode.xaml.cs">
+    <Compile Update="Property\PropertyOutputNode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PropertyTypeNodeExportOptionNode.xaml.cs">
+    <Compile Update="Property\PropertyTypeNode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SaveAsk.xaml.cs">
+    <Compile Update="Property\PropertyTypeNodeExportOptionNode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Main\SaveAsk.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -60,52 +63,55 @@
     <Page Update="DesignMode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DoneWindow.xaml">
+    <Page Update="Main\NodeArrow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Inspector.xaml">
+    <Page Update="Property\DoneWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainCanvas.xaml">
+    <Page Update="Main\Inspector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Main\MainCanvas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MenuBar.xaml">
+    <Page Update="Main\MenuBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Node.xaml">
+    <Page Update="Main\Node.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeDeleter.xaml">
+    <Page Update="Property\NodeTypeDeleter.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeDeletionAsk.xaml">
+    <Page Update="Property\NodeTypeDeletionAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeDeletionAsk2.xaml">
+    <Page Update="Property\NodeTypeDeletionAsk2.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeMigrateAsk.xaml">
+    <Page Update="Property\NodeTypeMigrateAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NodeTypeMigrator.xaml">
+    <Page Update="Property\NodeTypeMigrator.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PropertyMenu.xaml">
+    <Page Update="Property\PropertyMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PropertyOutputNode.xaml">
+    <Page Update="Property\PropertyOutputNode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PropertyTypeNode.xaml">
+    <Page Update="Property\PropertyTypeNode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PropertyTypeNodeExportOptionNode.xaml">
+    <Page Update="Property\PropertyTypeNodeExportOptionNode.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SaveAsk.xaml">
+    <Page Update="Main\SaveAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
