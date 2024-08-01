@@ -75,7 +75,8 @@ namespace MattNode
         {
             base.Dispose();
             DetachUpdateEvent();
-            if(FocusedNode == this) { FocusedNode = null; }
+            CompositionTarget.Rendering -= RepositionElements;
+            if (FocusedNode == this) { FocusedNode = null; }
             NodeList.Remove(this);
             EnabledNodeList.Remove(this);
 
@@ -143,7 +144,7 @@ namespace MattNode
         {
             RepositionElements();
         }
-        private void RepositionElements()
+        public void RepositionElements()
         {
             bgCanvas.Width = Width;
             bgCanvas.Height = Height;
@@ -190,6 +191,16 @@ namespace MattNode
 
             Canvas.SetLeft(deleteButton, Width-35);
             Canvas.SetTop(deleteButton, 60);
+
+            focusRectangle1.Width = Width;
+            focusRectangle1.Height = Height;
+
+            topRectangle.Width = Width;
+
+            typeComboBox.Width = Width-79;
+
+            contentTextBox.Width = Width-30;
+            contentTextBox.Height = Height-105;
         }
 
         private void resizeThumb1_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -197,13 +208,13 @@ namespace MattNode
             double newWidth = this.Width - e.HorizontalChange;
             double newHeight = this.Height - e.VerticalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
                 Width = newWidth;
             }
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
                 Height = newHeight;
@@ -216,12 +227,12 @@ namespace MattNode
             double newWidth = this.Width + e.HorizontalChange;
             double newHeight = this.Height - e.VerticalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Width = newWidth;
             }
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
                 Height = newHeight;
@@ -233,13 +244,13 @@ namespace MattNode
             double newWidth = this.Width - e.HorizontalChange;
             double newHeight = this.Height + e.VerticalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
                 Width = newWidth;
             }
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Height = newHeight;
             }
@@ -250,12 +261,12 @@ namespace MattNode
             double newWidth = this.Width + e.HorizontalChange;
             double newHeight = this.Height + e.VerticalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Width = newWidth;
             }
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Height = newHeight;
             }
@@ -265,7 +276,7 @@ namespace MattNode
         {
             double newWidth = this.Width - e.HorizontalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
                 Width = newWidth;
@@ -277,7 +288,7 @@ namespace MattNode
         {
             double newHeight = this.Height + e.VerticalChange;
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Height = newHeight;
             }
@@ -287,7 +298,7 @@ namespace MattNode
         {
             double newWidth = this.Width + e.HorizontalChange;
 
-            if (newWidth > 100)
+            if (newWidth > 250)
             {
                 Width = newWidth;
             }
@@ -297,7 +308,7 @@ namespace MattNode
         {
             double newHeight = this.Height - e.VerticalChange;
 
-            if (newHeight > 100)
+            if (newHeight > 150)
             {
                 Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
                 Height = newHeight;
@@ -329,9 +340,9 @@ namespace MattNode
             Dispose();
         }
 
-        public void SetType(string text)
+        public void SetType(object selectedValue)
         {
-            typeComboBox.Text = text;
+            typeComboBox.SelectedValue = selectedValue;
         }
 
         public void SetContent(string text)
@@ -340,10 +351,9 @@ namespace MattNode
         }
         private void typeComboBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox);
-            if (typeComboBox.IsFocused || textBox.IsFocused)
+            if (typeComboBox.IsFocused)
             {
-                Inspector.SetType(typeComboBox.Text);
+                Inspector.SetType(typeComboBox.SelectedValue);
             }
         }
         private void contentTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -364,9 +374,9 @@ namespace MattNode
                     FocusedNode.focusRectangle1.Stroke = ProjectProperty.NodeTypes[FocusedNode.typeComboBox.SelectedIndex].Color;
                 }
                 focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
-                Inspector.SetType(typeComboBox.Text);
-                Inspector.SetContent(contentTextBox.Text);
                 SetTypeItems();
+                Inspector.SetType(typeComboBox.SelectedValue);
+                Inspector.SetContent(contentTextBox.Text);
 
                 FocusedNode = this;
             }
@@ -415,7 +425,7 @@ namespace MattNode
         {
             if (typeComboBox.IsFocused)
             {
-                Inspector.SetType(typeComboBox.Text);
+                Inspector.SetType(typeComboBox.SelectedValue);
             }
 
             SetColor();

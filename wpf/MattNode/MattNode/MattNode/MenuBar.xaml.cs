@@ -152,6 +152,7 @@ namespace MattNode
                     node.Margin = new Thickness(saveData.NodeDatas[i].Left, saveData.NodeDatas[i].Top, 0, 0);
                     node.Width = saveData.NodeDatas[i].Width;
                     node.Height = saveData.NodeDatas[i].Height;
+                    node.RepositionElements();
                     Panel.SetZIndex(node, 100);
 
                     MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);

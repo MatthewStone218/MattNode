@@ -20,6 +20,7 @@ namespace MattNode
     /// </summary>
     public partial class Inspector : UserControl
     {
+        private bool SettingNodeTypeItems = false;
         private static Inspector MainInspector;
         public Inspector()
         {
@@ -34,11 +35,7 @@ namespace MattNode
             resizeThumb.DragDelta -= resizeThumb_DragDelta;
             contentTextBox.TextChanged -= contentTextBox_TextChanged;
 
-            var textBox = typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox) as TextBox;
-            if (textBox != null)
-            {
-                textBox.TextChanged -= typeComboBox_TextChanged;
-            }
+            typeComboBox.SelectionChanged -= typeComboBox_SelectionChanged;
 
             ((Grid)Parent).Children.Remove(this);
         }
@@ -50,7 +47,7 @@ namespace MattNode
         {
             if(Node.FocusedNode == null)
             {
-                SetType("");
+                SetType(-1);
                 SetContent("");
             }
         }
@@ -68,9 +65,14 @@ namespace MattNode
             if (newWidth > 200 && newWidth < MainWindow.GetWindowWidth()) { Width = newWidth; RepositionElements(); }
         }
 
-        public static void SetType(string text)
+        public static void SetType(object selectedValue)
         {
-            MainInspector.typeComboBox.Text = text;
+            MainInspector.SetTypeItems();
+            MainInspector.typeComboBox.SelectedValue = selectedValue;
+        }
+        public static void SetType()
+        {
+            MainInspector.typeComboBox.SelectedIndex = -1;
         }
 
         public static void SetContent(string text)
@@ -92,15 +94,48 @@ namespace MattNode
                 }
             }
         }
-
-        private void typeComboBox_TextChanged(object sender, TextChangedEventArgs e)
+        public void SetTypeItems()
         {
-            TextBox textBox = (TextBox)typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox);
-            if (textBox.IsFocused)
+            SettingNodeTypeItems = true;
+
+            object obj = null;
+            if (typeComboBox.SelectedIndex >= 0)
             {
+                obj = typeComboBox.Items[typeComboBox.SelectedIndex];
+            }
+            string name = null;
+
+            if (obj != null)
+            {
+                name = obj.ToString();
+            }
+
+            for (int i = 0; i < typeComboBox.Items.Count; i++)
+            {
+                typeComboBox.Items.RemoveAt(i);
+                i--;
+            }
+
+            for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
+            {
+                typeComboBox.Items.Add(ProjectProperty.NodeTypes[i].Name);
+            }
+
+            if (name != null)
+            {
+                typeComboBox.SelectedValue = name;
+            }
+
+            SettingNodeTypeItems = false;
+        }
+        private void typeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (typeComboBox.IsFocused && !SettingNodeTypeItems)
+            {
+                MessageBox.Show(typeComboBox.IsFocused.ToString());
                 if (Node.FocusedNode != null)
                 {
-                    Node.FocusedNode.SetType(typeComboBox.Text);
+                    Node.FocusedNode.SetType(typeComboBox.SelectedValue);
                 }
                 else
                 {
