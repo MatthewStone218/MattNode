@@ -47,7 +47,8 @@ namespace MattNode
         private void NodeCreateButton_Clicked(object sender, RoutedEventArgs e)
         {
             Node node = new Node(true,new Point(-50, -20));
-            node.Margin = new Thickness(MainCanvas.GetMousePos().X-50, MainCanvas.GetMousePos().Y-20, 0, 0); // 위치 설정
+            Canvas.SetLeft(node, MainCanvas.GetMousePos().X - 50);
+            Canvas.SetTop(node, MainCanvas.GetMousePos().Y - 20);
             Panel.SetZIndex(node, 100);
 
             mainCanvas.mainCanvas.Children.Add(node);

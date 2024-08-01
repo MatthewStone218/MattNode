@@ -130,9 +130,8 @@ namespace MattNode
         }
         private void typeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (typeComboBox.IsFocused && !SettingNodeTypeItems)
+            if (!SettingNodeTypeItems && typeComboBox.SelectedIndex != -1 && typeComboBox.IsMouseOver)
             {
-                MessageBox.Show(typeComboBox.IsFocused.ToString());
                 if (Node.FocusedNode != null)
                 {
                     Node.FocusedNode.SetType(typeComboBox.SelectedValue);

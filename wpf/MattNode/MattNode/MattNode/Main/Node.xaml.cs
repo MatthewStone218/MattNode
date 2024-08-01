@@ -24,7 +24,6 @@ namespace MattNode
     {
         public static Node FocusedNode = null;
         public static List<Node> NodeList = new List<Node>();
-        public static List<Node> EnabledNodeList = new List<Node>();
         DispatcherTimer Timer;
         private bool MbLeftclicked = false;
         private Point DeltaMousePoint = new Point(0,0);
@@ -58,7 +57,7 @@ namespace MattNode
         public void Init()
         {
             NodeList.Add(this);
-            EnabledNodeList.Add(this);
+            EnabledInstanceList.Add(this);
             HorizontalAlignment = HorizontalAlignment.Left;
             VerticalAlignment = VerticalAlignment.Top;
 
@@ -78,7 +77,7 @@ namespace MattNode
             DetachUpdateEvent();
             if (FocusedNode == this) { FocusedNode = null; }
             NodeList.Remove(this);
-            EnabledNodeList.Remove(this);
+            EnabledInstanceList.Remove(this);
 
             topRectangle.MouseDown -= node_MouseDown;
 
@@ -87,11 +86,6 @@ namespace MattNode
             contentTextBox.TextChanged -= contentTextBox_TextChanged;
             contentTextBox.GotFocus -= node_GotFocus;
 
-            var textBox = typeComboBox.Template.FindName("PART_EditableTextBox", typeComboBox) as TextBox;
-            if (textBox != null)
-            {
-                textBox.TextChanged -= typeComboBox_TextChanged;
-            }
             typeComboBox.GotFocus -= node_GotFocus;
             typeComboBox.SelectionChanged -= typeComboBox_SelectionChanged;
 
@@ -135,7 +129,7 @@ namespace MattNode
                 ArrowsFromMe[i].Dispose();
                 i--;//화살표의 dispose가 ArrowFromMe에서 그 화살표를 빼게 하므로, i값을 땡겨야함.
             }
-            for (int i = 0; i < ArrowsFromMe.Count; i++)
+            for (int i = 0; i < ArrowsFromOther.Count; i++)
             {
                 ArrowsFromOther[i].Dispose();
                 i--;//화살표의 dispose가 ArrowFromOther에서 그 화살표를 빼게 하므로, i값을 땡겨야함.
@@ -144,7 +138,8 @@ namespace MattNode
 
         private void UpdatePosition(object sender, EventArgs e)
         {
-            Margin = new Thickness(MainCanvas.GetMousePos().X+ DeltaMousePoint.X, MainCanvas.GetMousePos().Y+ DeltaMousePoint.Y, 0, 0);
+            Canvas.SetLeft(this, MainCanvas.GetMousePos().X + DeltaMousePoint.X);
+            Canvas.SetTop(this, MainCanvas.GetMousePos().Y + DeltaMousePoint.Y);
 
             SetArrowPos();
 
@@ -164,11 +159,6 @@ namespace MattNode
             CompositionTarget.Rendering -= UpdatePosition;
         }
 
-        private void ReregisterCollisionTree()
-        {
-            DeleteFromCollisionTree();
-            InsertInCollisionTree();
-        }
         private void RepositionElements(object sender, EventArgs e)
         {
             RepositionElements();
@@ -241,13 +231,13 @@ namespace MattNode
 
             if (newWidth > 250)
             {
-                Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
+                Canvas.SetLeft(this, Canvas.GetLeft(this) + e.HorizontalChange);
                 Width = newWidth;
             }
 
             if (newHeight > 150)
             {
-                Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
+                Canvas.SetTop(this, Canvas.GetTop(this) + e.VerticalChange);
                 Height = newHeight;
             }
 
@@ -265,7 +255,7 @@ namespace MattNode
 
             if (newHeight > 150)
             {
-                Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
+                Canvas.SetTop(this, Canvas.GetTop(this) + e.VerticalChange);
                 Height = newHeight;
             }
             RepositionElements();
@@ -277,7 +267,7 @@ namespace MattNode
 
             if (newWidth > 250)
             {
-                Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
+                Canvas.SetLeft(this, Canvas.GetLeft(this) + e.HorizontalChange);
                 Width = newWidth;
             }
 
@@ -309,7 +299,7 @@ namespace MattNode
 
             if (newWidth > 250)
             {
-                Margin = new Thickness(Margin.Left + e.HorizontalChange, Margin.Top, 0, 0);
+                Canvas.SetLeft(this, Canvas.GetLeft(this) + e.HorizontalChange);
                 Width = newWidth;
             }
 
@@ -341,7 +331,7 @@ namespace MattNode
 
             if (newHeight > 150)
             {
-                Margin = new Thickness(Margin.Left, Margin.Top + e.VerticalChange, 0, 0);
+                Canvas.SetTop(this, Canvas.GetTop(this) + e.VerticalChange);
                 Height = newHeight;
             }
 
@@ -357,7 +347,7 @@ namespace MattNode
             
             if (!FollowingMouse)
             {
-                DeltaMousePoint = new Point(Margin.Left - MainCanvas.GetMousePos().X, Margin.Top - MainCanvas.GetMousePos().Y);
+                DeltaMousePoint = new Point(Canvas.GetLeft(this) - MainCanvas.GetMousePos().X, Canvas.GetTop(this) - MainCanvas.GetMousePos().Y);
                 CompositionTarget.Rendering += UpdatePosition;
                 node_GotFocus();
                 FollowingMouse = true;
@@ -399,17 +389,16 @@ namespace MattNode
         {
             if (!SettingNodeTypeItems)
             {
-
                 if (FocusedNode != null && FocusedNode.typeComboBox.SelectedIndex >= 0)
                 {
                     FocusedNode.focusRectangle1.Stroke = ProjectProperty.NodeTypes[FocusedNode.typeComboBox.SelectedIndex].Color;
                 }
-                focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
                 SetTypeItems();
                 Inspector.SetType(typeComboBox.SelectedValue);
                 Inspector.SetContent(contentTextBox.Text);
 
                 FocusedNode = this;
+                SetColor();
             }
         }
 
@@ -493,6 +482,7 @@ namespace MattNode
                 FocusedNode.ArrowsFromMe.Add(nodeArrow);
             }
 
+            node_GotFocus();
             e.Handled = true;
         }
 

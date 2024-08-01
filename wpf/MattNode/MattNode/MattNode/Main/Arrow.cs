@@ -75,6 +75,8 @@ namespace MattNode
 
             ArrowHead2.X2 = ArrowHead2.X1 + Math.Cos(Math.Atan((ArrowLine.Y2 - ArrowLine.Y1) / (ArrowLine.X2 - ArrowLine.X1)) - (x1 < x2 ? (Math.PI * 3 / 4) : (Math.PI * 1 / 4))) * 15;
             ArrowHead2.Y2 = ArrowHead2.Y1 + Math.Sin(Math.Atan((ArrowLine.Y2 - ArrowLine.Y1) / (ArrowLine.X2 - ArrowLine.X1)) - (x1 < x2 ? (Math.PI * 3 / 4) : (Math.PI * 1 / 4))) * 15;
+
+            ReregisterCollisionTree();
         }
 
         private Point GetLocalPosFromMainCanvas(Point point)

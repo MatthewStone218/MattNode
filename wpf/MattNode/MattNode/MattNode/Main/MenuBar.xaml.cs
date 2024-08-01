@@ -99,7 +99,7 @@ namespace MattNode
 
             for (int i = 0; i < Node.NodeList.Count; i++)
             {
-                nodeDatas.Add(new NodeData(Node.NodeList[i].Margin.Left, Node.NodeList[i].Margin.Top, Node.NodeList[i].Width, Node.NodeList[i].Height, Node.NodeList[i].typeComboBox.SelectedValue.ToString(), Node.NodeList[i].contentTextBox.Text));
+                nodeDatas.Add(new NodeData(Canvas.GetLeft(Node.NodeList[i]), Canvas.GetTop(Node.NodeList[i]), Node.NodeList[i].Width, Node.NodeList[i].Height, Node.NodeList[i].typeComboBox.SelectedValue.ToString(), Node.NodeList[i].contentTextBox.Text));
             }
 
             SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, nodeDatas);
@@ -149,7 +149,8 @@ namespace MattNode
                 for (int i = 0; i < saveData.NodeDatas.Count; i++)
                 {
                     Node node = new Node(false, new Point(0, 0));
-                    node.Margin = new Thickness(saveData.NodeDatas[i].Left, saveData.NodeDatas[i].Top, 0, 0);
+                    Canvas.SetLeft(node, saveData.NodeDatas[i].Left);
+                    Canvas.SetTop(node, saveData.NodeDatas[i].Top);
                     node.Width = saveData.NodeDatas[i].Width;
                     node.Height = saveData.NodeDatas[i].Height;
                     node.RepositionElements();

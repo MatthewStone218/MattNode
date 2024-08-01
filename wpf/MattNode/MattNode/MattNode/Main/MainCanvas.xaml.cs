@@ -67,43 +67,45 @@ namespace MattNode
 
             rect1.Margin = new Thickness(-X - 960, -Y - 540, 0, 0);
 
-            //화면 밖에 있는 노드 비활성화
             List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960, -Y - 540, 1920, 1080));
-            for (int i = 0; i < Node.EnabledNodeList.Count; i++)
+            for (int i = 0; i < Instance.EnabledInstanceList.Count; i++)
             {
-                Node.EnabledNodeList[i]._IsEnabled = false;
+                Instance.EnabledInstanceList[i]._IsEnabled = false;
             }
 
             for (int i = 0; i < instances.Count; i++)
             {
-                if (!Node.EnabledNodeList.Contains(instances[i]))
+                if (!Instance.EnabledInstanceList.Contains(instances[i]))
                 {
-                    Node.EnabledNodeList.Add((Node)instances[i]);
+                    Instance.EnabledInstanceList.Add(instances[i]);
                 }
                 instances[i]._IsEnabled = true;
             }
 
-            for (int i = 0; i < Node.EnabledNodeList.Count; i++)
+            if (Node.FocusedNode != null)
             {
-                if (Node.EnabledNodeList[i]._IsEnabled)
+                if (!Instance.EnabledInstanceList.Contains(Node.FocusedNode))
                 {
-                    Node.EnabledNodeList[i].IsEnabled = true;
-                    Node.EnabledNodeList[i].Visibility = Visibility.Visible;
+                    Instance.EnabledInstanceList.Add(Node.FocusedNode);
+                }
+                Node.FocusedNode._IsEnabled = true;
+            }
+
+            for (int i = 0; i < Instance.EnabledInstanceList.Count; i++)
+            {
+                if (Instance.EnabledInstanceList[i]._IsEnabled)
+                {
+                    Instance.EnabledInstanceList[i].IsEnabled = true;
+                    Instance.EnabledInstanceList[i].Visibility = Visibility.Visible;
                 }
                 else
                 {
-                    Node.EnabledNodeList[i].IsEnabled = false;
-                    Node.EnabledNodeList[i].Visibility = Visibility.Collapsed;
-                    Node.EnabledNodeList[i]._IsEnabled = false;
-                    Node.EnabledNodeList.RemoveAt(i);
+                    Instance.EnabledInstanceList[i].IsEnabled = false;
+                    Instance.EnabledInstanceList[i].Visibility = Visibility.Collapsed;
+                    Instance.EnabledInstanceList[i]._IsEnabled = false;
+                    Instance.EnabledInstanceList.RemoveAt(i);
                     i--;
                 }
-            }
-
-            if (Node.FocusedNode != null)
-            {
-                Node.FocusedNode.IsEnabled = true;
-                Node.FocusedNode.Visibility = Visibility.Visible;
             }
         }
         private void Register_MouseWheelEvent()

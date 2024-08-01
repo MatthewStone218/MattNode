@@ -20,6 +20,7 @@ namespace MattNode
     /// </summary>
     public partial class Instance : UserControl
     {
+        public static List<Instance> EnabledInstanceList = new List<Instance>();
         public List<CollisionNode> Nodes = new List<CollisionNode>();
         public bool _IsEnabled = true;
         public Instance()
@@ -27,11 +28,16 @@ namespace MattNode
         }
         public Instance(double x, double y, double width, double height)
         {
-            Margin = new Thickness(x, y, 0, 0);
+            Canvas.SetLeft(this, x);
+            Canvas.SetTop(this, y);
             Width = width;
             Height = height;
         }
-
+        protected void ReregisterCollisionTree()
+        {
+            DeleteFromCollisionTree();
+            InsertInCollisionTree();
+        }
         public void InsertInCollisionTree()
         {
             CollisionTree.Instert(this);
@@ -53,20 +59,20 @@ namespace MattNode
         public bool Intersects(Instance other)
         {
             return !(
-                Margin.Left >= other.Margin.Left + other.Width ||
-                Margin.Left + Width <= other.Margin.Left ||
-                Margin.Top >= other.Margin.Top + other.Height ||
-                Margin.Top + Height <= other.Margin.Top
+                Canvas.GetLeft(this) >= Canvas.GetLeft(other) + other.Width ||
+                Canvas.GetLeft(this) + Width <= Canvas.GetLeft(other) ||
+                Canvas.GetTop(this) >= Canvas.GetTop(other) + other.Height ||
+                Canvas.GetTop(this) + Height <= Canvas.GetTop(other)
                 );
         }
 
         public bool Contains(Instance other)
         {
             return (
-                Margin.Left < other.Margin.Left &&
-                Margin.Left + Width > other.Margin.Left + other.Width &&
-                Margin.Top < other.Margin.Top &&
-                Margin.Top + Height > other.Margin.Top + other.Height
+                Canvas.GetLeft(this) < Canvas.GetLeft(other) &&
+                Canvas.GetLeft(this) + Width > Canvas.GetLeft(other) + other.Width &&
+                Canvas.GetTop(this) < Canvas.GetTop(other) &&
+                Canvas.GetTop(this) + Height > Canvas.GetTop(other) + other.Height
                 );
         }
     }

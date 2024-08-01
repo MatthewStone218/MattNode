@@ -24,6 +24,7 @@ namespace MattNode
         private Node EndNode;
         public NodeArrow(Node startNode, Node endNode)
         {
+            EnabledInstanceList.Add(this);
             StartNode = startNode;
             EndNode = endNode;
             InitializeComponent();
@@ -36,28 +37,28 @@ namespace MattNode
 
             SetArrow();
         }
-
         public override void Dispose()
         {
             base.Dispose();
             StartNode.ArrowsFromMe.Remove(this);
             EndNode.ArrowsFromOther.Remove(this);
+            EnabledInstanceList.Remove(this);
         }
 
         public void SetArrow()
         {
-            double x1 = StartNode.Margin.Left + StartNode.Width / 2;
-            double y1 = StartNode.Margin.Top + StartNode.Height / 2;
+            double x1 = Canvas.GetLeft(StartNode) + StartNode.Width / 2;
+            double y1 = Canvas.GetTop(StartNode) + StartNode.Height / 2;
 
-            double x2 = EndNode.Margin.Left + EndNode.Width / 2;
-            double y2 = EndNode.Margin.Top + EndNode.Height / 2;
+            double x2 = Canvas.GetLeft(EndNode) + EndNode.Width / 2;
+            double y2 = Canvas.GetTop(EndNode) + EndNode.Height / 2;
 
             double margin = 10;
 
-            double left = EndNode.Margin.Left - margin;
-            double right = EndNode.Margin.Left + EndNode.Width + margin;
-            double top = EndNode.Margin.Top - margin;
-            double bottom = EndNode.Margin.Top + EndNode.Height + margin;
+            double left = Canvas.GetLeft(EndNode) - margin;
+            double right = Canvas.GetLeft(EndNode) + EndNode.Width + margin;
+            double top = Canvas.GetTop(EndNode) - margin;
+            double bottom = Canvas.GetTop(EndNode) + EndNode.Height + margin;
 
             double goalX = x2;
             double goalY = y2;

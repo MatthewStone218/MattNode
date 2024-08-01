@@ -54,8 +54,8 @@ namespace MattNode
                 Fill = new SolidColorBrush(Color.FromRgb(r, g, b))
         };
             // 위치 설정 (Canvas.SetLeft, Canvas.SetTop 사용 가능)
-            Canvas.SetLeft(GraphicRectangle, Boundary.Margin.Left);
-            Canvas.SetTop(GraphicRectangle, Boundary.Margin.Top);
+            Canvas.SetLeft(GraphicRectangle, Canvas.GetLeft(Boundary));
+            Canvas.SetTop(GraphicRectangle, Canvas.GetTop(Boundary));
             
 
             MainCanvas.Canvas.mainCanvas.Children.Add(GraphicRectangle);
@@ -148,10 +148,10 @@ namespace MattNode
         {
             Divided = true;
             Children = new CollisionNode[4];
-            Children[0] = new CollisionNode(this, Boundary.Margin.Left, Boundary.Margin.Top, Boundary.Width / 2, Boundary.Height / 2);
-            Children[1] = new CollisionNode(this, Boundary.Margin.Left + Boundary.Width / 2, Boundary.Margin.Top, Boundary.Width / 2, Boundary.Height / 2);
-            Children[2] = new CollisionNode(this, Boundary.Margin.Left, Boundary.Margin.Top + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
-            Children[3] = new CollisionNode(this, Boundary.Margin.Left + Boundary.Width / 2, Boundary.Margin.Top + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
+            Children[0] = new CollisionNode(this, Canvas.GetLeft(Boundary), Canvas.GetTop(Boundary), Boundary.Width / 2, Boundary.Height / 2);
+            Children[1] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary), Boundary.Width / 2, Boundary.Height / 2);
+            Children[2] = new CollisionNode(this, Canvas.GetLeft(Boundary), Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
+            Children[3] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
         }
 
         public void RemoveInstance(Instance instance)
@@ -210,16 +210,16 @@ namespace MattNode
 
         public void Extend()
         {
-            Boundary = new Instance(Boundary.Margin.Left * 2, Boundary.Margin.Top * 2, Boundary.Width * 2, Boundary.Height * 2);
+            Boundary = new Instance(Canvas.GetLeft(Boundary) * 2, Canvas.GetTop(Boundary) * 2, Boundary.Width * 2, Boundary.Height * 2);
             //...............................................................................................................................
             //CreateGraphicRectangle();
             if (Divided)
             {
                 CollisionNode[] newChildren = new CollisionNode[4];
-                newChildren[0] = new CollisionNode(this, Boundary.Margin.Left, Boundary.Margin.Top, Boundary.Width / 2, Boundary.Height / 2);
-                newChildren[1] = new CollisionNode(this, Boundary.Margin.Left + Boundary.Width / 2, Boundary.Margin.Top, Boundary.Width / 2, Boundary.Height / 2);
-                newChildren[2] = new CollisionNode(this, Boundary.Margin.Left, Boundary.Margin.Top + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
-                newChildren[3] = new CollisionNode(this, Boundary.Margin.Left + Boundary.Width / 2, Boundary.Margin.Top + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
+                newChildren[0] = new CollisionNode(this, Canvas.GetLeft(Boundary), Canvas.GetTop(Boundary), Boundary.Width / 2, Boundary.Height / 2);
+                newChildren[1] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary), Boundary.Width / 2, Boundary.Height / 2);
+                newChildren[2] = new CollisionNode(this, Canvas.GetLeft(Boundary), Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
+                newChildren[3] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
 
                 newChildren[0].Subdivide();
                 newChildren[0].Children[3] = Children[0];
