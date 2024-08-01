@@ -43,9 +43,13 @@ namespace MattNode
             {
                 extensionComboBox.SelectedIndex = 4;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Script)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Script containing functions)")
             {
                 extensionComboBox.SelectedIndex = 5;
+            }
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Script without indexing)")
+            {
+                extensionComboBox.SelectedIndex = 6;
             }
         }
 
