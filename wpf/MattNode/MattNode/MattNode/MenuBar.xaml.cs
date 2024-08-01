@@ -16,12 +16,41 @@ using System.Windows.Shapes;
 
 using Newtonsoft.Json;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MattNode
 {
     /// <summary>
     /// MenuBar.xaml에 대한 상호 작용 논리
     /// </summary>
+    public class SaveData
+    {
+        public List<ExportFile> ExportFiles;
+        public List<NodeType> NodeTypes;
+        public List<NodeData> NodeDatas;
+        public SaveData(List<ExportFile> exportFiles, List<NodeType> nodeTypes, List<NodeData> nodeDatas) 
+        {
+            ExportFiles = exportFiles;
+            NodeTypes = nodeTypes;
+            NodeDatas = nodeDatas;
+        }
+    }
+
+    public class NodeData
+    {
+        public double Top,Left,Width,Height;
+        public string Type, Text;
+
+        public NodeData(double left, double top, double width, double height, string type, string text)
+        {
+            Left = left;
+            Top = top;
+            Width = width;
+            Height = height;
+            Type = type;
+            Text = text;
+        }
+    }
     public partial class MenuBar : UserControl
     {
         public static string ?SavePath = null;
@@ -66,51 +95,17 @@ namespace MattNode
         }
         public static void SaveProject(string path)
         {
-            string text = "";
+            List<NodeData> nodeDatas = new List<NodeData>();
 
-            text += "\n[ExportFiles]";
-
-            for (int i = 0; i < ProjectProperty.ExportFiles.Count; i++)
+            for (int i = 0; i < Node.NodeList.Count; i++)
             {
-                text += $"\nName:{ProjectProperty.ExportFiles[i].Name}" +
-                        $"\nExtension:{ProjectProperty.ExportFiles[i].Extension}" +
-                        $"\n***";
+                nodeDatas.Add(new NodeData(Node.NodeList[i].Margin.Left, Node.NodeList[i].Margin.Top, Node.NodeList[i].Width, Node.NodeList[i].Height, Node.NodeList[i].typeComboBox.SelectedValue.ToString(), Node.NodeList[i].contentTextBox.Text));
             }
 
-            text += "\n[/ExportFiles]" +
-                    "\n[NodeTypes]";
+            SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, nodeDatas);
+            string json = JsonConvert.SerializeObject(saveData);
 
-            for (int i = 0; i < ProjectProperty.NodeTypes.Count; i++)
-            {
-                text += $"\nName:{ProjectProperty.NodeTypes[i].Name}" +
-                        $"\nColor:{ProjectProperty.NodeTypes[i].Color.Color.R} {ProjectProperty.NodeTypes[i].Color.Color.G} {ProjectProperty.NodeTypes[i].Color.Color.B}";
-
-                for (int ii = 0; ii < ProjectProperty.NodeTypes[i].ExportOption.Count; ii++)
-                {
-                    text += $"\n>>ExportOption{ii}:" +
-                            $"\n>>>>WriteType:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteType}" +
-                            $"\n>>>>WriteText:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteText}" +
-                            $"\n>>>>WritePrevNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WritePrevNodes}" +
-                            $"\n>>>>WriteNextNodes:{ProjectProperty.NodeTypes[i].ExportOption[ii].WriteNextNodes}";
-                }
-                text += $"\n***";
-            }
-
-            text += $"\n[/NodeTypes]" +
-                    $"\n[Nodes]";
-                    for (int i = 0; i < Node.NodeList.Count; i++)
-                    {
-                        text += $"\nNodePos:{Node.NodeList[i].Margin.Left} {Node.NodeList[i].Margin.Top}" +
-                                $"\nNodeSize:{Node.NodeList[i].Width} {Node.NodeList[i].Height}" +
-                                $"\nNodeType:{Node.NodeList[i].typeComboBox.SelectedValue}" +
-                                $"\nNodeText:{Node.NodeList[i].contentTextBox.Text}" +
-                                $"\n***";
-                    }
-
-            text += $"\n[/Nodes]";
-
-
-            File.WriteAllText(path, text);
+            File.WriteAllText(path, json);
         }
 
         public static void SaveProjectAs()
@@ -135,32 +130,35 @@ namespace MattNode
         public static void OpenProject()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "MattNode Properties file (*.MattNodeProperties)|*.MattNodeProperties";
+            openFileDialog.Filter = "MattNode file (*.MattNode)|*.MattNode";
 
             if (openFileDialog.ShowDialog() == true)
             {
-                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                SavePath = openFileDialog.FileName;
+                string json = File.ReadAllText(SavePath);
+                SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
+
+                ProjectProperty.ExportFiles = saveData.ExportFiles;
+                ProjectProperty.NodeTypes = saveData.NodeTypes;
+
+                for(int i = 0; i < Node.NodeList.Count; i++)
                 {
-                    if (!File.Exists(openFileDialog.FileName))
-                    {
-                        MessageBox.Show("Failed to load property file.");
-                        return;
-                    }
-
-                    string line;
-
-                    ProjectProperty.ExportFiles = new List<ExportFile>();
-                    ProjectProperty.NodeTypes = new List<NodeType>();
-                    
-                    for(int i = 0; i < Node.NodeList.Count; i++)
-                    {
-                        Node.NodeList[i].Dispose();
-                        i--;
-                    }
-                    //
+                    Node.NodeList[i].Dispose();
                 }
 
-                SavePath = openFileDialog.FileName;
+                for (int i = 0; i < saveData.NodeDatas.Count; i++)
+                {
+                    Node node = new Node(false, new Point(0, 0));
+                    node.Margin = new Thickness(saveData.NodeDatas[i].Left, saveData.NodeDatas[i].Top, 0, 0);
+                    node.Width = saveData.NodeDatas[i].Width;
+                    node.Height = saveData.NodeDatas[i].Height;
+                    Panel.SetZIndex(node, 100);
+
+                    MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
+                    node.SetTypeItems();
+                    node.typeComboBox.SelectedValue = saveData.NodeDatas[i].Type;
+                    node.SetContent(saveData.NodeDatas[i].Text);
+                }
             }
         }
 

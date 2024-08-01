@@ -42,6 +42,10 @@ namespace MattNode
                 node_GotFocus();
                 FollowingMouse = true;
             }
+            else
+            {
+                ReregisterCollisionTree();
+            }
         }
         public Node()
         {
@@ -354,15 +358,14 @@ namespace MattNode
         {
             if (!SettingNodeTypeItems)
             {
+
                 if (FocusedNode != null && FocusedNode.typeComboBox.SelectedIndex >= 0)
                 {
                     FocusedNode.focusRectangle1.Stroke = ProjectProperty.NodeTypes[FocusedNode.typeComboBox.SelectedIndex].Color;
                 }
                 focusRectangle1.Stroke = new SolidColorBrush(Color.FromRgb(55, 92, 169));
-
                 Inspector.SetType(typeComboBox.Text);
                 Inspector.SetContent(contentTextBox.Text);
-
                 SetTypeItems();
 
                 FocusedNode = this;

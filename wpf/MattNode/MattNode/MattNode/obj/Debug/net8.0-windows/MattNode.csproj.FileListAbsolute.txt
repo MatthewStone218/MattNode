@@ -8,6 +8,7 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
@@ -37,6 +38,7 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyOutputNode.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyTypeNode.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyTypeNodeExportOptionNode.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\SaveAsk.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode_MarkupCompile.cache
@@ -57,6 +59,7 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyOutputNode.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyTypeNode.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\PropertyTypeNodeExportOptionNode.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\SaveAsk.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.g.resources
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.AssemblyInfoInputs.cache
@@ -69,6 +72,3 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.pdb
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.genruntimeconfig.cache
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\ref\MattNode.dll
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\SaveAsk.g.cs
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\SaveAsk.baml
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
