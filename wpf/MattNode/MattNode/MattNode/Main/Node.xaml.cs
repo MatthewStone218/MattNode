@@ -137,6 +137,8 @@ namespace MattNode
                 ArrowsFromOther[i].Dispose();
                 i--;//화살표의 dispose가 ArrowFromOther에서 그 화살표를 빼게 하므로, i값을 땡겨야함.
             }
+
+            //MessageBox.Show($"{Nodes.Count} {NodeList.Contains(this)} {Instance.EnabledInstanceList.Contains(this)} {FocusedNode}");
         }
 
         private void UpdatePosition(object sender, EventArgs e)

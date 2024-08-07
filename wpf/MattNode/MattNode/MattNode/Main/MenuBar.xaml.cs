@@ -17,6 +17,8 @@ using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using MattNode.Property;
+using System.Windows.Threading;
 
 namespace MattNode
 {
@@ -97,15 +99,41 @@ namespace MattNode
         {
             List<NodeData> nodeDatas = new List<NodeData>();
 
-            for (int i = 0; i < Node.NodeList.Count; i++)
+            ProjectSaveLoading saveLoadingWindow = new ProjectSaveLoading(Node.NodeList.Count);
+            saveLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+            saveLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(saveLoadingWindow, 0);
+            Canvas.SetBottom(saveLoadingWindow, 0);
+            Grid.SetZIndex(saveLoadingWindow, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(saveLoadingWindow);
+
+            DispatcherTimer _timer = new DispatcherTimer();
+            int a = 0;
+            _timer.Interval = TimeSpan.FromMilliseconds(1);
+            _timer.Tick += (s, args) =>
             {
-                nodeDatas.Add(new NodeData(Canvas.GetLeft(Node.NodeList[i]), Canvas.GetTop(Node.NodeList[i]), Node.NodeList[i].Width, Node.NodeList[i].Height, Node.NodeList[i].typeComboBox.SelectedValue.ToString(), Node.NodeList[i].contentTextBox.Text));
-            }
+                for (int i = 0; i < 100; i++)
+                {
+                    if (a >= Node.NodeList.Count)
+                    {
+                        _timer.Stop();
+                        saveLoadingWindow.Dispose();
 
-            SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, nodeDatas);
-            string json = JsonConvert.SerializeObject(saveData);
+                        SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, nodeDatas);
+                        string json = JsonConvert.SerializeObject(saveData);
 
-            File.WriteAllText(path, json);
+                        File.WriteAllText(path, json);
+
+                        break;
+                    }
+                    nodeDatas.Add(new NodeData(Canvas.GetLeft(Node.NodeList[a]), Canvas.GetTop(Node.NodeList[a]), Node.NodeList[a].Width, Node.NodeList[a].Height, Node.NodeList[a].typeComboBox.SelectedValue.ToString(), Node.NodeList[a].contentTextBox.Text));
+
+                    a++;
+                    saveLoadingWindow.SetNodeCount(a);
+                }
+            };
+
+            _timer.Start();
         }
 
         public static void SaveProjectAs()
@@ -141,27 +169,78 @@ namespace MattNode
                 ProjectProperty.ExportFiles = saveData.ExportFiles;
                 ProjectProperty.NodeTypes = saveData.NodeTypes;
 
-                for(int i = 0; i < Node.NodeList.Count; i++)
-                {
-                    Node.NodeList[i].Dispose();
-                }
+                ProjectCleanLoading cleanLoadingWindow = new ProjectCleanLoading(Node.NodeList.Count);
+                cleanLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                cleanLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+                Canvas.SetTop(cleanLoadingWindow, 0);
+                Canvas.SetBottom(cleanLoadingWindow, 0);
+                Grid.SetZIndex(cleanLoadingWindow, 4000);
+                MainWindow._MainWindow.mainGrid.Children.Add(cleanLoadingWindow);
 
-                for (int i = 0; i < saveData.NodeDatas.Count; i++)
+                DispatcherTimer _timer = new DispatcherTimer();
+                int a = 0;
+                _timer.Interval = TimeSpan.FromMilliseconds(1);
+                _timer.Tick += (s, args) =>
                 {
-                    Node node = new Node(false, new Point(0, 0));
-                    Canvas.SetLeft(node, saveData.NodeDatas[i].Left);
-                    Canvas.SetTop(node, saveData.NodeDatas[i].Top);
-                    node.Width = saveData.NodeDatas[i].Width;
-                    node.Height = saveData.NodeDatas[i].Height;
-                    node.RepositionElements();
-                    Panel.SetZIndex(node, 100);
+                    for (int i = 0; i < 100; i++)
+                    {
+                        if (Node.NodeList.Count <= 0)
+                        {
+                            ProjectOpenLoading openLoadingWindow = new ProjectOpenLoading(saveData.NodeDatas.Count);
+                            openLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                            openLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+                            Canvas.SetTop(openLoadingWindow, 0);
+                            Canvas.SetBottom(openLoadingWindow, 0);
+                            Grid.SetZIndex(openLoadingWindow, 4000);
+                            MainWindow._MainWindow.mainGrid.Children.Add(openLoadingWindow);
 
-                    //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
-                    node.SetTypeItems();
-                    node.typeComboBox.SelectedValue = saveData.NodeDatas[i].Type;
-                    node.SetContent(saveData.NodeDatas[i].Text);
-                    node.ReregisterCollisionTree();
-                }
+                            DispatcherTimer _timer2 = new DispatcherTimer();
+                            int b = 0;
+                            _timer2.Interval = TimeSpan.FromMilliseconds(1);
+                            _timer2.Tick += (s, args) =>
+                            {
+                                for (int i = 0; i < 100; i++)
+                                {
+                                    if (b >= saveData.NodeDatas.Count)
+                                    {
+                                        _timer2.Stop();
+                                        openLoadingWindow.Dispose();
+                                        break;
+                                    }
+
+                                    Node node = new Node(false, new Point(0, 0));
+                                    Canvas.SetLeft(node, saveData.NodeDatas[b].Left);
+                                    Canvas.SetTop(node, saveData.NodeDatas[b].Top);
+                                    node.Width = saveData.NodeDatas[b].Width;
+                                    node.Height = saveData.NodeDatas[b].Height;
+                                    node.RepositionElements();
+                                    Panel.SetZIndex(node, 100);
+
+                                    //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
+                                    node.SetTypeItems();
+                                    node.typeComboBox.SelectedValue = saveData.NodeDatas[b].Type;
+                                    node.SetContent(saveData.NodeDatas[b].Text);
+                                    node.ReregisterCollisionTree();
+
+                                    b++;
+                                    openLoadingWindow.SetNodeCount(b);
+                                }
+                            };
+
+                            _timer2.Start();
+                            _timer.Stop();
+                            cleanLoadingWindow.Dispose();
+                            break;
+                        }
+
+                        Node.NodeList[0].Dispose();
+
+                        a++;
+                        cleanLoadingWindow.SetNodeCount(a);
+                    }
+                };
+
+                _timer.Start();
             }
         }
 

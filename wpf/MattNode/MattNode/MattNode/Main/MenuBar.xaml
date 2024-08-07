@@ -11,8 +11,8 @@
             <MenuItem Header="File">
                 <MenuItem Header="New File"/>
                 <MenuItem Header="Open File" Click="OpenProject"/>
-                <MenuItem Header="Save" Click="SaveProject"/>
-                <MenuItem Header="Save as" Click="SaveProjectAs"/>
+                <MenuItem Header="Save File" Click="SaveProject"/>
+                <MenuItem Header="Save File as" Click="SaveProjectAs"/>
             </MenuItem>
             <MenuItem Header="Property">
                 <MenuItem Header="Modify Properties" Click="OpenPropertyMenu"/>

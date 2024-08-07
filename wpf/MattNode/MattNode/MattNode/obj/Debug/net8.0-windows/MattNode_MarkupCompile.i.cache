@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\App.xaml
-18-1894403328
+21858680472
 
-27392491197
+30-2032117982
 2041801503662
-DesignMode.xaml;MainWindow.xaml;Main\Inspector.xaml;Main\MainCanvas.xaml;Main\MenuBar.xaml;Main\Node.xaml;Main\NodeArrow.xaml;Main\SaveAsk.xaml;Property\DoneWindow.xaml;Property\NodeTypeDeleter.xaml;Property\NodeTypeDeletionAsk.xaml;Property\NodeTypeDeletionAsk2.xaml;Property\NodeTypeMigrateAsk.xaml;Property\NodeTypeMigrator.xaml;Property\PropertyMenu.xaml;Property\PropertyOutputNode.xaml;Property\PropertyTypeNode.xaml;Property\PropertyTypeNodeExportOptionNode.xaml;
+DesignMode.xaml;MainWindow.xaml;Main\Inspector.xaml;Main\MainCanvas.xaml;Main\MenuBar.xaml;Main\Node.xaml;Main\NodeArrow.xaml;Main\SaveAsk.xaml;Property\DoneWindow.xaml;Property\NodeTypeDeleter.xaml;Property\NodeTypeDeletionAsk.xaml;Property\NodeTypeDeletionAsk2.xaml;Property\NodeTypeMigrateAsk.xaml;Property\NodeTypeMigrator.xaml;Property\ProjectCleanLoading.xaml;Property\ProjectOpenLoading.xaml;Property\ProjectSaveLoading.xaml;Property\PropertyMenu.xaml;Property\PropertyOutputNode.xaml;Property\PropertyTypeNode.xaml;Property\PropertyTypeNodeExportOptionNode.xaml;
 
 True
 

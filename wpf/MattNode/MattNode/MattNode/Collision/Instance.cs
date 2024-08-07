@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace MattNode
 {
@@ -44,15 +45,16 @@ namespace MattNode
         }
         public void DeleteFromCollisionTree()
         {
-            for (int i = 0; i < Nodes.Count; i++)
+            while(Nodes.Count > 0)
             {
-                Nodes[i].RemoveInstance(this);
+                Nodes[0].RemoveInstance(this);
             }
         }
 
         public virtual void Dispose()
         {
             DeleteFromCollisionTree();
+            EnabledInstanceList.Remove(this);
             MainWindow._MainWindow.mainGrid.Children.Remove(this);
             MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Remove(this);
         }

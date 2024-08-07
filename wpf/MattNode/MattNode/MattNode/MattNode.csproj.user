@@ -13,6 +13,15 @@
     <Compile Update="Main\NodeArrow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Property\ProjectCleanLoading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Property\ProjectOpenLoading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Property\ProjectSaveLoading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Property\DoneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +73,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Main\NodeArrow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Property\ProjectCleanLoading.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Property\ProjectOpenLoading.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Property\ProjectSaveLoading.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Property\DoneWindow.xaml">
