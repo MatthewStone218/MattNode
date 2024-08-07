@@ -97,12 +97,14 @@ namespace MattNode
                 {
                     Instance.EnabledInstanceList[i].IsEnabled = true;
                     Instance.EnabledInstanceList[i].Visibility = Visibility.Visible;
+                    if (!Canvas.mainCanvas.Children.Contains(Instance.EnabledInstanceList[i])) { Canvas.mainCanvas.Children.Add(Instance.EnabledInstanceList[i]); }
                 }
                 else
                 {
                     Instance.EnabledInstanceList[i].IsEnabled = false;
                     Instance.EnabledInstanceList[i].Visibility = Visibility.Collapsed;
                     Instance.EnabledInstanceList[i]._IsEnabled = false;
+                    if (Canvas.mainCanvas.Children.Contains(Instance.EnabledInstanceList[i])) { Canvas.mainCanvas.Children.Remove(Instance.EnabledInstanceList[i]); }
                     Instance.EnabledInstanceList.RemoveAt(i);
                     i--;
                 }

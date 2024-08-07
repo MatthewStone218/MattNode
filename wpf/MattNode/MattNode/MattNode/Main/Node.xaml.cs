@@ -36,6 +36,9 @@ namespace MattNode
             InitializeComponent();
             Init();
 
+            Canvas.SetLeft(this, 0);
+            Canvas.SetTop(this, 0);
+
             if (followMouse)
             { 
                 DeltaMousePoint = deltaMousePoint;

@@ -33,7 +33,7 @@ namespace MattNode
             Width = width;
             Height = height;
         }
-        protected void ReregisterCollisionTree()
+        public void ReregisterCollisionTree()
         {
             DeleteFromCollisionTree();
             InsertInCollisionTree();

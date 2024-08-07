@@ -51,7 +51,7 @@ namespace MattNode
             Canvas.SetTop(node, MainCanvas.GetMousePos().Y - 20);
             Panel.SetZIndex(node, 100);
 
-            mainCanvas.mainCanvas.Children.Add(node);
+            //mainCanvas.mainCanvas.Children.Add(node);
             node.Focus();
             node.typeComboBox.SelectedIndex = 0;
             node.node_GotFocus();
@@ -59,6 +59,30 @@ namespace MattNode
 
         private void window_Closed(object sender, EventArgs e)
         {
+        }
+
+        private void TestPerformance()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                for (int ii = 0; ii < 100; ii++)
+                {
+                    Node node = new Node(false, new Point(0, 0));
+                    Canvas.SetLeft(node, i*300);
+                    Canvas.SetTop(node, ii*300);
+                    Panel.SetZIndex(node, 100);
+
+                    //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
+                    node.SetTypeItems();
+                    node.typeComboBox.SelectedIndex = 0;
+                    node.ReregisterCollisionTree();
+                }
+            }
+        }
+
+        private void TestPerformance(object sender, RoutedEventArgs e)
+        {
+            TestPerformance();
         }
     }
 }

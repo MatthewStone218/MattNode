@@ -156,10 +156,11 @@ namespace MattNode
                     node.RepositionElements();
                     Panel.SetZIndex(node, 100);
 
-                    MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
+                    //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
                     node.SetTypeItems();
                     node.typeComboBox.SelectedValue = saveData.NodeDatas[i].Type;
                     node.SetContent(saveData.NodeDatas[i].Text);
+                    node.ReregisterCollisionTree();
                 }
             }
         }

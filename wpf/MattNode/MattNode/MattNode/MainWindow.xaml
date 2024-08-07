@@ -11,5 +11,6 @@
         <Button Content="New Node" HorizontalAlignment="Left" Height="60" Margin="1660,38,0,0" VerticalAlignment="Top" Width="214" Click="NodeCreateButton_Clicked"/>
         <local:Inspector x:Name="mainInspector" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,18,0,0"/>
         <local:MenuBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920"/>
+        <Button Content="test performance" Margin="1614,180,46,786" Click="TestPerformance"/>
     </Grid>
 </Window>
