@@ -169,6 +169,9 @@ namespace MattNode
                 ProjectProperty.ExportFiles = saveData.ExportFiles;
                 ProjectProperty.NodeTypes = saveData.NodeTypes;
 
+                MainCanvas.Canvas.X = 0;
+                MainCanvas.Canvas.Y = 0;
+
                 ProjectCleanLoading cleanLoadingWindow = new ProjectCleanLoading(Node.NodeList.Count);
                 cleanLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
                 cleanLoadingWindow.VerticalAlignment = VerticalAlignment.Top;

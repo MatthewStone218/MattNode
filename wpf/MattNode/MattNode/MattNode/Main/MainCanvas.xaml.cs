@@ -28,8 +28,8 @@ namespace MattNode
         public static double RenderSize = 1.0f;
         private double RenderSizeGoal = 1.0f;
         private DispatcherTimer Timer;
-        private double X = 0;
-        private double Y = 0;
+        public double X = 0;
+        public double Y = 0;
 
         private TranslateTransform _TranslateTransform;
         private ScaleTransform _ScaleTransform;
