@@ -84,5 +84,13 @@ namespace MattNode
         {
             TestPerformance();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.S && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                MenuBar.SaveProject(); // 여기서 SaveDocument는 작업을 수행하는 메소드입니다.
+            }
+        }
     }
 }

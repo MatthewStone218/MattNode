@@ -19,12 +19,14 @@ using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using MattNode.Property;
 using System.Windows.Threading;
+using static MattNode.MenuBar;
 
 namespace MattNode
 {
     /// <summary>
     /// MenuBar.xaml에 대한 상호 작용 논리
     /// </summary>
+    /// 
     public class SaveData
     {
         public List<ExportFile> ExportFiles;
@@ -55,6 +57,15 @@ namespace MattNode
     }
     public partial class MenuBar : UserControl
     {
+        public enum STATE
+        {
+            NORMAL,
+            PROPERTY,
+            CLEAN,
+            SAVE,
+            OPEN
+        }
+        public static STATE State = STATE.NORMAL;
         public static string ?SavePath = null;
         public MenuBar()
         {
@@ -76,6 +87,7 @@ namespace MattNode
 
         private void OpenPropertyMenu(object sender, RoutedEventArgs e)
         {
+            State = STATE.PROPERTY;
             PropertyMenu propertyMenu = new PropertyMenu();
             propertyMenu.Margin = new Thickness(0, 0, 0, 0); // 위치 설정
             propertyMenu.HorizontalAlignment = HorizontalAlignment.Left;
@@ -97,6 +109,8 @@ namespace MattNode
         }
         public static void SaveProject(string path)
         {
+            State = STATE.SAVE;
+
             List<NodeData> nodeDatas = new List<NodeData>();
 
             ProjectSaveLoading saveLoadingWindow = new ProjectSaveLoading(Node.NodeList.Count);
@@ -116,6 +130,7 @@ namespace MattNode
                 {
                     if (a >= Node.NodeList.Count)
                     {
+                        State = STATE.NORMAL;
                         _timer.Stop();
                         saveLoadingWindow.Dispose();
 
@@ -162,6 +177,7 @@ namespace MattNode
 
             if (openFileDialog.ShowDialog() == true)
             {
+                State = STATE.CLEAN;
                 SavePath = openFileDialog.FileName;
                 string json = File.ReadAllText(SavePath);
                 SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
@@ -189,6 +205,8 @@ namespace MattNode
                     {
                         if (Node.NodeList.Count <= 0)
                         {
+                            State = STATE.OPEN;
+
                             ProjectOpenLoading openLoadingWindow = new ProjectOpenLoading(saveData.NodeDatas.Count);
                             openLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
                             openLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
@@ -206,6 +224,7 @@ namespace MattNode
                                 {
                                     if (b >= saveData.NodeDatas.Count)
                                     {
+                                        State = STATE.NORMAL;
                                         _timer2.Stop();
                                         openLoadingWindow.Dispose();
                                         break;
@@ -266,6 +285,49 @@ namespace MattNode
             Canvas.SetBottom(saveAsk, 0);
             Grid.SetZIndex(saveAsk, 4000);
             MainWindow._MainWindow.mainGrid.Children.Add(saveAsk);
+        }
+
+        private void NewProject(object sender, RoutedEventArgs e)
+        {
+            State = STATE.CLEAN;
+
+            SavePath = null;
+            ProjectProperty.ApplyDefaultProperty();
+
+            MainCanvas.Canvas.X = 0;
+            MainCanvas.Canvas.Y = 0;
+
+            ProjectCleanLoading cleanLoadingWindow = new ProjectCleanLoading(Node.NodeList.Count);
+            cleanLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+            cleanLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(cleanLoadingWindow, 0);
+            Canvas.SetBottom(cleanLoadingWindow, 0);
+            Grid.SetZIndex(cleanLoadingWindow, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(cleanLoadingWindow);
+
+            DispatcherTimer _timer = new DispatcherTimer();
+            int a = 0;
+            _timer.Interval = TimeSpan.FromMilliseconds(1);
+            _timer.Tick += (s, args) =>
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    if (Node.NodeList.Count <= 0)
+                    {
+                        State = STATE.NORMAL;
+                        _timer.Stop();
+                        cleanLoadingWindow.Dispose();
+                        break;
+                    }
+
+                    Node.NodeList[0].Dispose();
+
+                    a++;
+                    cleanLoadingWindow.SetNodeCount(a);
+                }
+            };
+
+            _timer.Start();
         }
     }
 }

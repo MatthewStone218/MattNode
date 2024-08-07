@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MattNode.MenuBar;
 
 namespace MattNode
 {
@@ -204,6 +205,7 @@ namespace MattNode
 
         private void CloseMenu()
         {
+            MenuBar.State = STATE.NORMAL;
             Dispose();
         }
 
