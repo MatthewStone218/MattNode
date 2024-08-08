@@ -32,27 +32,33 @@ namespace MattNode
         public List<ExportFile> ExportFiles;
         public List<NodeType> NodeTypes;
         public List<NodeData> NodeDatas;
-        public SaveData(List<ExportFile> exportFiles, List<NodeType> nodeTypes, List<NodeData> nodeDatas) 
+        public int NodeCount;
+        public SaveData(List<ExportFile> exportFiles, List<NodeType> nodeTypes, int nodeCount, List<NodeData> nodeDatas) 
         {
             ExportFiles = exportFiles;
             NodeTypes = nodeTypes;
+            NodeCount = nodeCount;
             NodeDatas = nodeDatas;
         }
     }
 
     public class NodeData
     {
+        public int Num;
         public double Top,Left,Width,Height;
         public string Type, Text;
+        public List<int> NextNodes;
 
-        public NodeData(double left, double top, double width, double height, string type, string text)
+        public NodeData(int num, double left, double top, double width, double height, string type, string text, List<int> nextNodes)
         {
+            Num = num;
             Left = left;
             Top = top;
             Width = width;
             Height = height;
             Type = type;
             Text = text;
+            NextNodes = nextNodes;
         }
     }
     public partial class MenuBar : UserControl
@@ -134,14 +140,31 @@ namespace MattNode
                         _timer.Stop();
                         saveLoadingWindow.Dispose();
 
-                        SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, nodeDatas);
+                        SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, Node.NodeCount, nodeDatas);
                         string json = JsonConvert.SerializeObject(saveData);
 
                         File.WriteAllText(path, json);
 
                         break;
                     }
-                    nodeDatas.Add(new NodeData(Canvas.GetLeft(Node.NodeList[a]), Canvas.GetTop(Node.NodeList[a]), Node.NodeList[a].Width, Node.NodeList[a].Height, Node.NodeList[a].typeComboBox.SelectedValue.ToString(), Node.NodeList[a].contentTextBox.Text));
+
+                    List<int> nextNodes = new List<int>();
+
+                    for (int ii = 0; ii < Node.NodeList[a].ArrowsFromMe.Count; ii++)
+                    {
+                        nextNodes.Add(Node.NodeList[a].ArrowsFromMe[ii].EndNode.Num);
+                    }
+
+                    nodeDatas.Add(new NodeData(
+                        Node.NodeList[a].Num,
+                        Canvas.GetLeft(Node.NodeList[a]), 
+                        Canvas.GetTop(Node.NodeList[a]), 
+                        Node.NodeList[a].Width, 
+                        Node.NodeList[a].Height, 
+                        Node.NodeList[a].typeComboBox.SelectedValue.ToString(), 
+                        Node.NodeList[a].contentTextBox.Text,
+                        nextNodes
+                        ));
 
                     a++;
                     saveLoadingWindow.SetNodeCount(a);
@@ -184,6 +207,7 @@ namespace MattNode
 
                 ProjectProperty.ExportFiles = saveData.ExportFiles;
                 ProjectProperty.NodeTypes = saveData.NodeTypes;
+                Node.NodeCount = saveData.NodeCount;
 
                 MainCanvas.Canvas.X = 0;
                 MainCanvas.Canvas.Y = 0;
@@ -220,11 +244,70 @@ namespace MattNode
                             _timer2.Interval = TimeSpan.FromMilliseconds(1);
                             _timer2.Tick += (s, args) =>
                             {
-                                for (int i = 0; i < 100; i++)
+                                for (int ii = 0; ii < 100; ii++)
                                 {
                                     if (b >= saveData.NodeDatas.Count)
                                     {
-                                        State = STATE.NORMAL;
+                                        ProjectOpenArrowsLoading openArrowLoadingWindow = new ProjectOpenArrowsLoading(saveData.NodeDatas.Count);
+                                        openArrowLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                                        openArrowLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+                                        Canvas.SetTop(openArrowLoadingWindow, 0);
+                                        Canvas.SetBottom(openArrowLoadingWindow, 0);
+                                        Grid.SetZIndex(openArrowLoadingWindow, 4000);
+                                        MainWindow._MainWindow.mainGrid.Children.Add(openArrowLoadingWindow);
+
+                                        DispatcherTimer _timer3 = new DispatcherTimer();
+                                        int c = 0;
+                                        _timer3.Interval = TimeSpan.FromMilliseconds(1);
+                                        _timer3.Tick += (s, args) =>
+                                        {
+                                            for (int iii = 0; iii < 100; iii++)
+                                            {
+                                                if (c >= saveData.NodeDatas.Count)
+                                                {
+                                                    State = STATE.NORMAL;
+                                                    _timer3.Stop();
+                                                    openArrowLoadingWindow.Dispose();
+                                                    break;
+                                                }
+
+                                                for (int k = 0; k < saveData.NodeDatas[c].NextNodes.Count; k++)
+                                                {
+                                                    Node node1 = null;
+                                                    for(int j = 0; j < Node.NodeList.Count; j++)
+                                                    {
+                                                        if (Node.NodeList[j].Num == saveData.NodeDatas[c].Num)
+                                                        {
+                                                            node1 = Node.NodeList[j];
+                                                            break;
+                                                        }
+                                                    }
+
+                                                    Node node2 = null;
+                                                    for (int j = 0; j < Node.NodeList.Count; j++)
+                                                    {
+                                                        if (Node.NodeList[j].Num == saveData.NodeDatas[c].NextNodes[k])
+                                                        {
+                                                            node2 = Node.NodeList[j];
+                                                            break;
+                                                        }
+                                                    }
+
+                                                    NodeArrow nodeArrow = new NodeArrow(node1, node2);
+                                                    Panel.SetZIndex(nodeArrow, 90);
+
+                                                    MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(nodeArrow);
+                                                    node2.ArrowsFromOther.Add(nodeArrow);
+                                                    node1.ArrowsFromMe.Add(nodeArrow);
+                                                }
+
+                                                c++;
+                                                openArrowLoadingWindow.SetNodeCount(c);
+                                            }
+                                        };
+
+                                        _timer3.Start();
+
                                         _timer2.Stop();
                                         openLoadingWindow.Dispose();
                                         break;
@@ -236,6 +319,7 @@ namespace MattNode
                                     node.Width = saveData.NodeDatas[b].Width;
                                     node.Height = saveData.NodeDatas[b].Height;
                                     node.RepositionElements();
+                                    node.Num = saveData.NodeDatas[b].Num;
                                     Panel.SetZIndex(node, 100);
 
                                     //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);

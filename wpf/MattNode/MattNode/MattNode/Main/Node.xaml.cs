@@ -22,6 +22,7 @@ namespace MattNode
     /// </summary>
     public partial class Node : Instance
     {
+        public static int NodeCount = 0;
         public static Node FocusedNode = null;
         public static List<Node> NodeList = new List<Node>();
         DispatcherTimer Timer;
@@ -31,8 +32,12 @@ namespace MattNode
         private bool SettingNodeTypeItems = false;
         public List<NodeArrow> ArrowsFromMe = new List<NodeArrow>();
         public List<NodeArrow> ArrowsFromOther = new List<NodeArrow>();
+        public int Num;
         public Node(bool followMouse, Point deltaMousePoint)
         {
+            Num = NodeCount;
+            NodeCount++;
+
             InitializeComponent();
             Init();
 

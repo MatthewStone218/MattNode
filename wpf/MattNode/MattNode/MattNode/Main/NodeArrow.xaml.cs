@@ -20,8 +20,8 @@ namespace MattNode
     /// </summary>
     public partial class NodeArrow : Arrow
     {
-        private Node StartNode;
-        private Node EndNode;
+        public Node StartNode;
+        public Node EndNode;
         public NodeArrow(Node startNode, Node endNode)
         {
             EnabledInstanceList.Add(this);

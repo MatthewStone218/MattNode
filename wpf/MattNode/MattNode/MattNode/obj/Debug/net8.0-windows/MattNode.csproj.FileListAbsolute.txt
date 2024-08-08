@@ -28,6 +28,7 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\MainCanvas.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\MenuBar.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\Node.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\NodeArrow.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\SaveAsk.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\DoneWindow.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeDeleter.g.cs
@@ -35,6 +36,10 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeDeletionAsk2.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeMigrateAsk.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeMigrator.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectCleanLoading.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenArrowsLoading.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenLoading.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectSaveLoading.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyMenu.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyOutputNode.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyTypeNode.g.cs
@@ -49,6 +54,7 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\MainCanvas.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\MenuBar.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\Node.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\NodeArrow.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\SaveAsk.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\DoneWindow.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeDeleter.baml
@@ -56,6 +62,10 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeDeletionAsk2.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeMigrateAsk.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\NodeTypeMigrator.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectCleanLoading.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenArrowsLoading.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenLoading.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectSaveLoading.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyMenu.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyOutputNode.baml
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\PropertyTypeNode.baml
@@ -72,11 +82,3 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.pdb
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\MattNode.genruntimeconfig.cache
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\ref\MattNode.dll
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\NodeArrow.g.cs
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\NodeArrow.baml
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectCleanLoading.g.cs
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenLoading.g.cs
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectSaveLoading.g.cs
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectCleanLoading.baml
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectOpenLoading.baml
-C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectSaveLoading.baml
