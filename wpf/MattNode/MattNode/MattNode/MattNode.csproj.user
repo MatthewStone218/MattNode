@@ -16,6 +16,9 @@
     <Compile Update="Property\ProjectCleanLoading.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Property\ProjectExportLoading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Property\ProjectOpenArrowsLoading.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Property\ProjectCleanLoading.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Property\ProjectExportLoading.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Property\ProjectOpenArrowsLoading.xaml">

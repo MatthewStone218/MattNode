@@ -16,10 +16,12 @@ using System.Windows.Shapes;
 
 using Newtonsoft.Json;
 using System.IO;
+using System.IO.Compression;
 using static System.Net.Mime.MediaTypeNames;
 using MattNode.Property;
 using System.Windows.Threading;
 using static MattNode.MenuBar;
+
 
 namespace MattNode
 {
@@ -69,7 +71,8 @@ namespace MattNode
             PROPERTY,
             CLEAN,
             SAVE,
-            OPEN
+            OPEN,
+            EXPORT
         }
         public static STATE State = STATE.NORMAL;
         public static string ?SavePath = null;
@@ -412,6 +415,173 @@ namespace MattNode
             };
 
             _timer.Start();
+        }
+
+        private void ExportFile(object sender, RoutedEventArgs e)
+        {
+            State = STATE.EXPORT;
+
+            if (SavePath != null)
+            {
+                SaveProject(SavePath);
+            }
+
+            List<NodeData> nodeDatas = new List<NodeData>();
+
+            ProjectExportLoading exportLoadingWindow = new ProjectExportLoading();
+            exportLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+            exportLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(exportLoadingWindow, 0);
+            Canvas.SetBottom(exportLoadingWindow, 0);
+            Grid.SetZIndex(exportLoadingWindow, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(exportLoadingWindow);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
+            saveFileDialog.Filter = "zip file (*.zip)|*.zip";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string zipPath = saveFileDialog.FileName;
+                string folderPath = System.IO.Path.GetDirectoryName(zipPath)+"\\temp-amtt-node-delete-this-folder";
+                Directory.CreateDirectory(folderPath);
+
+                string text = "";
+
+                for (int b = 0; b < ProjectProperty.ExportFiles.Count; b++)
+                {
+                    text = "";
+                    for (int i = 0; i < Node.NodeList.Count; i++)
+                    {
+                        string text2 = "";
+                        string _text = Node.NodeList[i].GetNodeText();
+                        string _type = Node.NodeList[i].GetNodeType();
+
+                        bool write = false;
+
+                        int ?type_num = null;
+
+                        for(int a = 0; a < ProjectProperty.NodeTypes.Count; a++)
+                        {
+                            if(Node.NodeList[i].GetNodeType() == ProjectProperty.NodeTypes[a].Name)
+                            {
+                                type_num = a;
+                                break;
+                            }
+                        }
+
+                        List<int> nextNodes = new List<int>();
+
+                        for (int ii = 0; ii < Node.NodeList[i].ArrowsFromMe.Count; ii++)
+                        {
+                            nextNodes.Add(Node.NodeList[i].ArrowsFromMe[ii].EndNode.Num);
+                        }
+
+                        List<int> prevNodes = new List<int>();
+
+                        for (int ii = 0; ii < Node.NodeList[i].ArrowsFromMe.Count; ii++)
+                        {
+                            prevNodes.Add(Node.NodeList[i].ArrowsFromOther[ii].StartNode.Num);
+                        }
+
+                        if (ProjectProperty.ExportFiles[b].Extension == ".csv")
+                        {
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
+                        {
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
+                        {
+                            text2 += $"{Node.NodeList[i].Num}: {{";
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
+                            {
+                                write = true;
+                                text2 += $"\n    type: \"{_type}\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n    text: \"{_text}\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
+                            {
+                                write = true;
+                                text2 += $"\n    next_nodes: [";
+                                for (int ii = 0; ii < nextNodes.Count; ii++)
+                                {
+                                    text2 += $"\"{nextNodes[ii]}\",";
+                                }
+                                text2 += $"]";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
+                            {
+                                write = true;
+                                text2 += $"\n    prev_nodes: [";
+                                for (int ii = 0; ii < prevNodes.Count; ii++)
+                                {
+                                    text2 += $"\"{prevNodes[ii]}\",";
+                                }
+                                text2 += $"]";
+                            }
+
+                            text2 += $"\n}}\n";
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
+                        {
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
+                        {
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script without indexing)")
+                        {
+                        }
+
+                        if(write)
+                        {
+                            text += text2;
+                        }
+                    }
+
+                    if (ProjectProperty.ExportFiles[b].Extension == ".csv")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script without indexing)")
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                    }
+                }
+
+                if (File.Exists(zipPath)) { File.Delete(zipPath); }
+
+                ZipFile.CreateFromDirectory(folderPath, zipPath);
+
+                Directory.Delete(folderPath, true);
+            }
+
+            State = STATE.NORMAL;
+            exportLoadingWindow.Dispose();
         }
     }
 }

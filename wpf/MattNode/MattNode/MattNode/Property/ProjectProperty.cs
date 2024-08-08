@@ -180,7 +180,7 @@ namespace MattNode
             CleanProperty();
             
             AddExportFile("TextTable", ".csv");
-            AddExportFile("Script", ".yymps(Structure containing functions)");
+            AddExportFile("Script", ".txt(Structure containing functions)");
             
             AddNodeType("Text", new SolidColorBrush(Color.FromRgb(255,255,255)));
             AddNodeType("Script", new SolidColorBrush(Color.FromRgb(193, 102, 107)));

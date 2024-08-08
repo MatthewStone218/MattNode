@@ -395,6 +395,15 @@ namespace MattNode
             }
         }
 
+        public string GetNodeText()
+        {
+            return contentTextBox.Text;
+        }
+        public string GetNodeType()
+        {
+            return (string)typeComboBox.SelectedValue;
+        }
+
         public void node_GotFocus()
         {
             if (!SettingNodeTypeItems)

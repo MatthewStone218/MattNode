@@ -31,23 +31,23 @@ namespace MattNode
             {
                 extensionComboBox.SelectedIndex = 0;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Structure containing functions)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Structure containing functions)")
             {
                 extensionComboBox.SelectedIndex = 1;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Structure)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Structure)")
             {
                 extensionComboBox.SelectedIndex = 2;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Structure without indexing)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Structure without indexing)")
             {
                 extensionComboBox.SelectedIndex = 4;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Script containing functions)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Script containing functions)")
             {
                 extensionComboBox.SelectedIndex = 5;
             }
-            else if (ProjectProperty.ExportFiles[Num].Extension == ".yymps(Script without indexing)")
+            else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Script without indexing)")
             {
                 extensionComboBox.SelectedIndex = 6;
             }

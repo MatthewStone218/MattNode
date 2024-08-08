@@ -9,10 +9,11 @@
     <Grid>
         <Menu>
             <MenuItem Header="File">
-                <MenuItem Header="New File" Checked="NewProject"/>
+                <MenuItem Header="New File" Click="NewProject"/>
                 <MenuItem Header="Open File" Click="OpenProject"/>
                 <MenuItem Header="Save File" Click="SaveProject"/>
                 <MenuItem Header="Save File as" Click="SaveProjectAs"/>
+                <MenuItem Header="Export" Click="ExportFile"/>
             </MenuItem>
             <MenuItem Header="Property">
                 <MenuItem Header="Modify Properties" Click="OpenPropertyMenu"/>
