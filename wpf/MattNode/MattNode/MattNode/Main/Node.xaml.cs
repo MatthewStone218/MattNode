@@ -496,12 +496,24 @@ namespace MattNode
         {
             if(FocusedNode != this && FocusedNode != null)
             {
-                NodeArrow nodeArrow = new NodeArrow(FocusedNode,this);
-                Panel.SetZIndex(nodeArrow, 90);
+                bool alreadyExists = false;
+                for(int i = 0; i < ArrowsFromOther.Count; i++)
+                {
+                    if (ArrowsFromOther[i].StartNode == FocusedNode)
+                    {
+                        alreadyExists = true; break;
+                    }
+                }
 
-                MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(nodeArrow);
-                ArrowsFromOther.Add(nodeArrow);
-                FocusedNode.ArrowsFromMe.Add(nodeArrow);
+                if (!alreadyExists)
+                {
+                    NodeArrow nodeArrow = new NodeArrow(FocusedNode, this);
+                    Panel.SetZIndex(nodeArrow, 90);
+
+                    MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(nodeArrow);
+                    ArrowsFromOther.Add(nodeArrow);
+                    FocusedNode.ArrowsFromMe.Add(nodeArrow);
+                }
             }
 
             node_GotFocus();

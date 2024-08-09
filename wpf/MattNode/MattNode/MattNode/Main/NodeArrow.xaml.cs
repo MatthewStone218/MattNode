@@ -24,6 +24,7 @@ namespace MattNode
         public Node EndNode;
         public NodeArrow(Node startNode, Node endNode)
         {
+            CompositionTarget.Rendering += CheckCursor;
             EnabledInstanceList.Add(this);
             StartNode = startNode;
             EndNode = endNode;
@@ -40,6 +41,7 @@ namespace MattNode
         public override void Dispose()
         {
             base.Dispose();
+            CompositionTarget.Rendering -= CheckCursor;
             StartNode.ArrowsFromMe.Remove(this);
             EndNode.ArrowsFromOther.Remove(this);
             EnabledInstanceList.Remove(this);
@@ -123,6 +125,60 @@ namespace MattNode
         private double GetXInLine(double y, double x1, double y1, double x2, double y2)
         {
             return (y-y1)*(x2-x1)/(y2-y1) + x1;
+        }
+
+        private void CheckCursor(object sender, EventArgs e)
+        {
+            if (CheckLineCircleCollision(
+                Canvas.GetLeft(this) + MainWindow.GetWindowWidth()/2 + ArrowLine.X1, 
+                Canvas.GetTop(this) + MainWindow.GetWindowHeight() / 2 + ArrowLine.Y1, 
+                Canvas.GetLeft(this) + MainWindow.GetWindowWidth() / 2 + ArrowLine.X2, 
+                Canvas.GetTop(this) + MainWindow.GetWindowHeight() / 2 + ArrowLine.Y2, 
+                MainWindow.GetWindowWidth()/2 + (MainWindow.GetMousePos().X - MainWindow.GetWindowWidth() / 2)/MainCanvas.RenderSize - MainCanvas.Canvas.X,
+                MainWindow.GetWindowHeight() / 2 + (MainWindow.GetMousePos().Y - MainWindow.GetWindowHeight() / 2) / MainCanvas.RenderSize - MainCanvas.Canvas.Y,
+                30))
+            {
+                ArrowLine.Stroke = new SolidColorBrush(Color.FromRgb(150, 0, 0));
+                ArrowHead1.Stroke = new SolidColorBrush(Color.FromRgb(150, 0, 0));
+                ArrowHead2.Stroke = new SolidColorBrush(Color.FromRgb(150, 0, 0));
+                if (Mouse.RightButton == MouseButtonState.Pressed)
+                {
+                    Dispose();
+                }
+            }
+            else
+            {
+                ArrowLine.Stroke = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                ArrowHead1.Stroke = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                ArrowHead2.Stroke = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
+        }
+        private bool CheckLineCircleCollision(double x1, double y1, double x2, double y2, double cx, double cy, double radius)
+        {
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double a = dx * dx + dy * dy;
+            double b = 2 * (dx * (x1 - cx) + dy * (y1 - cy));
+            double c = (x1 - cx) * (x1 - cx) + (y1 - cy) * (y1 - cy) - radius * radius;
+
+            double det = b * b - 4 * a * c;
+            if (det < 0)
+            {
+                // No real solutions; the line does not intersect the circle
+                return false;
+            }
+            else
+            {
+                // Check if any of the intersection points are within the line segment
+                double t1 = (-b - Math.Sqrt(det)) / (2 * a);
+                double t2 = (-b + Math.Sqrt(det)) / (2 * a);
+                return (t1 >= 0 && t1 <= 1) || (t2 >= 0 && t2 <= 1);
+            }
+        }
+
+        private void arrowCollisionLine_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

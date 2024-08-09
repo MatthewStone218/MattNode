@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Canvas>
-        <Line x:Name="arrowLine" X1="0" Y1="50" X2="100" Y2="50" Stroke="White" StrokeThickness="3" IsHitTestVisible="False"/>
+        <Line x:Name="arrowLine" X1="0" Y1="50" X2="100" Y2="50" Stroke="White" StrokeThickness="3" IsHitTestVisible="False" Cursor="No"/>
 
         <Line x:Name="arrowHead1" X1="100" Y1="50" X2="90" Y2="40" Stroke="White" StrokeThickness="3" IsHitTestVisible="False"/>
         <Line x:Name="arrowHead2" X1="100" Y1="50" X2="90" Y2="60" Stroke="White" StrokeThickness="3" IsHitTestVisible="False"/>

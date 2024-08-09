@@ -145,7 +145,7 @@ namespace MattNode
         {
             return new Point( MainWindow.GetMousePos().X/RenderSize - Canvas.X - MainWindow.GetWindowWidth()/(RenderSize*2) , MainWindow.GetMousePos().Y/RenderSize - Canvas.Y - MainWindow.GetWindowHeight()/(RenderSize * 2));
         }
-        private void DragSpace_MouseButtonDown(object sender, MouseButtonEventArgs e)
+        public void DragSpace_MouseButtonDown(object sender, MouseButtonEventArgs e)
         {
             Dragging = true;
             DragStartPoint = MainWindow.GetMousePos();
