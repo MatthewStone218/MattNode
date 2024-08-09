@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using MattNode.Property;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,8 @@ namespace MattNode
     public partial class MainWindow : Window
     {
         public static MainWindow _MainWindow;
+        public static bool CloseByCode = false;
+        public static bool IsClosing = false;
         public MainWindow()
         {
             _MainWindow = this;
@@ -57,8 +60,22 @@ namespace MattNode
             node.node_GotFocus();
         }
 
-        private void window_Closed(object sender, EventArgs e)
+        private void window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (!CloseByCode && !IsClosing)
+            {
+                IsClosing = true;
+
+                e.Cancel = true;
+
+                QuitAsk quitAsk = new QuitAsk();
+                quitAsk.HorizontalAlignment = HorizontalAlignment.Left;
+                quitAsk.VerticalAlignment = VerticalAlignment.Top;
+                Canvas.SetTop(quitAsk, 0);
+                Canvas.SetBottom(quitAsk, 0);
+                Grid.SetZIndex(quitAsk, 10000);
+                MainWindow._MainWindow.mainGrid.Children.Add(quitAsk);
+            }
         }
 
         private void TestPerformance()

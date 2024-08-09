@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MattNode"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920" Background="#FF7893CA" Closed="window_Closed" KeyDown="Window_KeyDown">
+        Title="MainWindow" Height="1080" Width="1920" Background="#FF7893CA" KeyDown="Window_KeyDown" Closing="window_Closing">
     <Grid x:Name="mainGrid" Width="1920" Height="1080">
         <local:MainCanvas x:Name="mainCanvas"/>
         <Button Content="New Node" HorizontalAlignment="Left" Height="60" Margin="1660,38,0,0" VerticalAlignment="Top" Width="214" Click="NodeCreateButton_Clicked"/>

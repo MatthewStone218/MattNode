@@ -76,6 +76,7 @@ namespace MattNode
         }
         public static STATE State = STATE.NORMAL;
         public static string ?SavePath = null;
+        public delegate void ActionAfterSave();
         public MenuBar()
         {
             InitializeComponent();
@@ -105,18 +106,27 @@ namespace MattNode
             MainWindow._MainWindow.mainGrid.Children.Add(propertyMenu);
         }
 
-        public static void SaveProject()
+        public static void SaveProject(ActionAfterSave actionAfterSave = null)
         {
             if(SavePath == null)
             {
-                SaveProjectAs();
+                SaveProjectAs(actionAfterSave);
             }
             else
             {
-                SaveProject(SavePath);
+                SaveProject(SavePath, actionAfterSave);
             }
         }
-        public static void SaveProject(string path)
+
+        public static void SaveAndCloseProject()
+        {
+            SaveProject(() => {
+                MainWindow.CloseByCode = true;
+                MainWindow._MainWindow.Close();
+            });
+        }
+
+        public static void SaveProject(string path, ActionAfterSave actionAfterSave = null)
         {
             State = STATE.SAVE;
 
@@ -148,6 +158,11 @@ namespace MattNode
 
                         File.WriteAllText(path, json);
 
+                        if(actionAfterSave != null)
+                        {
+                            actionAfterSave();
+                        }
+
                         break;
                     }
 
@@ -177,7 +192,7 @@ namespace MattNode
             _timer.Start();
         }
 
-        public static void SaveProjectAs()
+        public static void SaveProjectAs(ActionAfterSave actionAfterSave = null)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
@@ -186,7 +201,7 @@ namespace MattNode
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                SaveProject(saveFileDialog.FileName);
+                SaveProject(saveFileDialog.FileName, actionAfterSave);
                 SavePath = saveFileDialog.FileName;
             }
         }

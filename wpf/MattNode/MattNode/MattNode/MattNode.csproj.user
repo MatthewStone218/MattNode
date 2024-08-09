@@ -76,6 +76,9 @@
     <Compile Update="Main\SaveAskNewFile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Property\QuitAsk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DesignMode.xaml">
@@ -148,6 +151,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Main\SaveAskNewFile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Property\QuitAsk.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
