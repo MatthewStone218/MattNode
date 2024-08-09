@@ -41,15 +41,15 @@ namespace MattNode
             }
             else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Structure without indexing)")
             {
-                extensionComboBox.SelectedIndex = 4;
+                extensionComboBox.SelectedIndex = 3;
             }
             else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Script containing functions)")
             {
-                extensionComboBox.SelectedIndex = 5;
+                extensionComboBox.SelectedIndex = 4;
             }
             else if (ProjectProperty.ExportFiles[Num].Extension == ".txt(Script without indexing)")
             {
-                extensionComboBox.SelectedIndex = 6;
+                extensionComboBox.SelectedIndex = 5;
             }
         }
 

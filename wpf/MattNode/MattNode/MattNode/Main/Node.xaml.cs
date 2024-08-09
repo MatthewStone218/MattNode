@@ -517,5 +517,22 @@ namespace MattNode
                 ArrowsFromOther[i].SetArrow();
             }
         }
+
+        private void contentTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Tab)
+            {
+                TextBox textBox = sender as TextBox;
+                if (textBox != null)
+                {
+                    int caretIndex = textBox.CaretIndex;
+                    textBox.Text = textBox.Text.Insert(caretIndex, "\t");
+                    textBox.CaretIndex = caretIndex + 1;
+
+                    // 기본 Tab 동작을 막기 위해 처리 완료로 표시
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

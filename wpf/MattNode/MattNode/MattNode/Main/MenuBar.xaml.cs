@@ -376,6 +376,17 @@ namespace MattNode
 
         private void NewProject(object sender, RoutedEventArgs e)
         {
+            SaveAskNewFile saveAsk = new SaveAskNewFile();
+            saveAsk.HorizontalAlignment = HorizontalAlignment.Left;
+            saveAsk.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(saveAsk, 0);
+            Canvas.SetBottom(saveAsk, 0);
+            Grid.SetZIndex(saveAsk, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(saveAsk);
+        }
+
+        public static void NewProject()
+        {
             State = STATE.CLEAN;
 
             SavePath = null;
@@ -452,9 +463,34 @@ namespace MattNode
                 for (int b = 0; b < ProjectProperty.ExportFiles.Count; b++)
                 {
                     text = "";
+
+                    if (ProjectProperty.ExportFiles[b].Extension == ".csv")
+                    {
+                        text += "index,type,text,next_node,prev_node";
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
+                    {
+                        text += "{";
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
+                    {
+                        text += "{";
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
+                    {
+                        text += "{";
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
+                    {
+                    }
+                    else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script without indexing)")
+                    {
+                    }
+
                     for (int i = 0; i < Node.NodeList.Count; i++)
                     {
                         string text2 = "";
+                        int _index = Node.NodeList[i].Num;
                         string _text = Node.NodeList[i].GetNodeText();
                         string _type = Node.NodeList[i].GetNodeType();
 
@@ -480,40 +516,83 @@ namespace MattNode
 
                         List<int> prevNodes = new List<int>();
 
-                        for (int ii = 0; ii < Node.NodeList[i].ArrowsFromMe.Count; ii++)
+                        for (int ii = 0; ii < Node.NodeList[i].ArrowsFromOther.Count; ii++)
                         {
                             prevNodes.Add(Node.NodeList[i].ArrowsFromOther[ii].StartNode.Num);
                         }
 
                         if (ProjectProperty.ExportFiles[b].Extension == ".csv")
                         {
-                        }
-                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
-                        {
-                        }
-                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
-                        {
-                            text2 += $"{Node.NodeList[i].Num}: {{";
-
+                            text += $"\n{_index},";
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {
                                 write = true;
-                                text2 += $"\n    type: \"{_type}\"";
+                                text2 += $"\"{_type}\",";
+                            }
+                            else
+                            {
+                                text2 += $"\"\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
                             {
                                 write = true;
-                                text2 += $"\n    text: \"{_text}\"";
+                                text2 += $"\"{_text.Replace("\"","\"\"")}\",";
+                            }
+                            else
+                            {
+                                text2 += $"\"\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
                             {
                                 write = true;
-                                text2 += $"\n    next_nodes: [";
+                                text2 += $"\"[";
                                 for (int ii = 0; ii < nextNodes.Count; ii++)
                                 {
-                                    text2 += $"\"{nextNodes[ii]}\",";
+                                    text2 += $"{nextNodes[ii]},";
+                                }
+                                text2 += $"]\",";
+                            }
+                            else
+                            {
+                                text2 += $"\"[]\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
+                            {
+                                write = true;
+                                text2 += $"\"[";
+                                for (int ii = 0; ii < prevNodes.Count; ii++)
+                                {
+                                    text2 += $"{prevNodes[ii]},";
+                                }
+                                text2 += $"]\",";
+                            }
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
+                        {
+                            text2 += $"\n\t{Node.NodeList[i].Num}: {{";
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
+                            {
+                                write = true;
+                                text2 += $"\n\t\ttype: \"{_type}\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n\t\tfunc: function(){{\n\t\t\t{_text.Replace(System.Environment.NewLine, "\n\t\t\t")}\n\t\t}}";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
+                            {
+                                write = true;
+                                text2 += $"\n\t\tnext_nodes: [";
+                                for (int ii = 0; ii < nextNodes.Count; ii++)
+                                {
+                                    text2 += $"{nextNodes[ii]},";
                                 }
                                 text2 += $"]";
                             }
@@ -521,27 +600,114 @@ namespace MattNode
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
                             {
                                 write = true;
-                                text2 += $"\n    prev_nodes: [";
+                                text2 += $"\n\t\tprev_nodes: [";
                                 for (int ii = 0; ii < prevNodes.Count; ii++)
                                 {
-                                    text2 += $"\"{prevNodes[ii]}\",";
+                                    text2 += $"{prevNodes[ii]},";
                                 }
                                 text2 += $"]";
                             }
 
-                            text2 += $"\n}}\n";
+                            text2 += $"\n\t}}\n,";
+                        }
+                        else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
+                        {
+                            text2 += $"\n\t{Node.NodeList[i].Num}: {{";
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
+                            {
+                                write = true;
+                                text2 += $"\n\t\ttype: \"{_type}\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n\t\ttext: \"{_text.Replace(System.Environment.NewLine, "\\n")}\"";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
+                            {
+                                write = true;
+                                text2 += $"\n\t\tnext_nodes: [";
+                                for (int ii = 0; ii < nextNodes.Count; ii++)
+                                {
+                                    text2 += $"{nextNodes[ii]},";
+                                }
+                                text2 += $"]";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
+                            {
+                                write = true;
+                                text2 += $"\n\t\tprev_nodes: [";
+                                for (int ii = 0; ii < prevNodes.Count; ii++)
+                                {
+                                    text2 += $"{prevNodes[ii]},";
+                                }
+                                text2 += $"]";
+                            }
+
+                            text2 += $"\n\t}}\n,";
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
                         {
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n\t{_text.Replace(System.Environment.NewLine, "\n\t")}\n,";
+                            }
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
                         {
+                            text2 += $"\nfunction func_{Node.NodeList[i].Num}(){{";
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
+                            {
+                                write = true;
+                                text2 += $"\n\tvar _type = \"{_type}\";";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
+                            {
+                                write = true;
+                                text2 += $"\n\tvar _next_nodes = [";
+                                for (int ii = 0; ii < nextNodes.Count; ii++)
+                                {
+                                    text2 += $"{nextNodes[ii]},";
+                                }
+                                text2 += $"];";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
+                            {
+                                write = true;
+                                text2 += $"\n\tvar prev_nodes = [";
+                                for (int ii = 0; ii < prevNodes.Count; ii++)
+                                {
+                                    text2 += $"{prevNodes[ii]},";
+                                }
+                                text2 += $"];";
+                            }
+
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n\t{_text.Replace(System.Environment.NewLine, "\n\t")}";
+                            }
+
+                            text2 += "\n}\n";
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script without indexing)")
                         {
+                            if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
+                            {
+                                write = true;
+                                text2 += $"\n{_text}\n";
+                            }
                         }
-
-                        if(write)
+                        
+                        if (write)
                         {
                             text += text2;
                         }
@@ -549,18 +715,21 @@ namespace MattNode
 
                     if (ProjectProperty.ExportFiles[b].Extension == ".csv")
                     {
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".csv", text);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
                     {
+                        text += "}";
                         File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
                     {
+                        text += "}";
                         File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
                     {
+                        text += "\n}";
                         File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")

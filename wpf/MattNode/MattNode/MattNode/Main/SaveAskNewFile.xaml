@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="MattNode.Property.SaveAskNewFile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MattNode.Property"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <Canvas Background="#7F000000" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1920" Height="1080">
+        <Rectangle Height="500" Width="1000" Fill="#FFC4CED2" Canvas.Left="460" Canvas.Top="290"/>
+        <Label x:Name="cautionLabel" Canvas.Left="510" Canvas.Top="318" Background="{x:Null}" Width="900" Height="342" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" MaxWidth="900">
+            <TextBlock x:Name="cautionTextBlock" Text="Wanna save this project before open other project?" TextWrapping="Wrap" FontSize="36" TextAlignment="Center"/>
+        </Label>
+        <Button x:Name="noButton" Content="No" Height="88" Width="384" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="542" Canvas.Top="660" FontSize="48" Click="noButton_Click"/>
+        <Button x:Name="yesButton" Content="Yes" Height="88" Width="384" Canvas.Left="986" Canvas.Top="660" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Click="yesButton_Click"/>
+
+    </Canvas>
+</UserControl>

@@ -9,7 +9,7 @@
     <Canvas Background="Black">
         <Canvas x:Name="bgCanvas" Height="250" Width="300" MouseDown="node_MouseDown" Background="White" GotFocus="node_GotFocus" PreviewMouseRightButtonDown="Control_MouseRightButtonDown">
             <ComboBox x:Name="typeComboBox" Canvas.Left="15" Canvas.Top="65" Width="221" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="node_GotFocus" SelectionChanged="typeComboBox_SelectionChanged" PreviewMouseRightButtonDown="Control_MouseRightButtonDown"/>
-            <TextBox x:Name="contentTextBox" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="90" Width="270" Height="145" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="contentTextBox_TextChanged" GotFocus="node_GotFocus" PreviewMouseRightButtonDown="Control_MouseRightButtonDown" ContextMenu="{x:Null}"/>
+            <TextBox x:Name="contentTextBox" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="90" Width="270" Height="145" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="contentTextBox_TextChanged" GotFocus="node_GotFocus" PreviewMouseRightButtonDown="Control_MouseRightButtonDown" ContextMenu="{x:Null}" AcceptsReturn="True" PreviewKeyDown="contentTextBox_PreviewKeyDown"/>
         </Canvas>
         <Image x:Name="deleteButton" Height="27" Width="22" Source="/spr_delete.png" Canvas.Left="263" Canvas.Top="60" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="deleteButton_MouseDown" Cursor="No" PreviewMouseRightButtonDown="Control_MouseRightButtonDown"/>
 

@@ -9,7 +9,7 @@
     <Canvas x:Name="canvas" Background="#FFE4E4E4">
         <Label Content="Type" Margin="7,10,329,1025" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ComboBox x:Name="typeComboBox" Margin="78,16,0,0" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" SelectionChanged="typeComboBox_SelectionChanged"/>
-        <TextBox x:Name="contentTextBox" HorizontalAlignment="Left" Height="984" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" Canvas.Left="10" Canvas.Top="0" TextChanged="contentTextBox_TextChanged"/>
+        <TextBox x:Name="contentTextBox" HorizontalAlignment="Left" Height="984" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" Canvas.Left="10" Canvas.Top="0" TextChanged="contentTextBox_TextChanged" AcceptsReturn="True" PreviewKeyDown="contentTextBox_PreviewKeyDown"/>
         <Thumb x:Name="resizeThumb" DragDelta="resizeThumb_DragDelta" HorizontalAlignment="Left" VerticalAlignment="Top" Height="1080" Width="10" Background="#FFF0F0F0" Cursor="SizeWE" Canvas.Left="390" Canvas.Top="0" Opacity="0"/>
     </Canvas>
 </UserControl>

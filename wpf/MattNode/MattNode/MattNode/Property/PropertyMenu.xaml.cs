@@ -95,9 +95,9 @@ namespace MattNode
             {
                 double newTop = Canvas.GetTop(Canvas1) + e.Delta / 2;
 
-                if(newTop + PropertyOutputNodes.Count * 150 < outputFileCanvas.Height)
+                if(newTop + PropertyOutputNodes.Count * 200 < outputFileCanvas.Height)
                 {
-                    newTop = outputFileCanvas.Height - PropertyOutputNodes.Count * 150;
+                    newTop = outputFileCanvas.Height - PropertyOutputNodes.Count * 200;
                 }
                 
                 if (newTop > 0) { newTop = 0; }

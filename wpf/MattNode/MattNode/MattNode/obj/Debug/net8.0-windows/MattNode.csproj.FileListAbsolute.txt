@@ -84,3 +84,5 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\n
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\ref\MattNode.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectExportLoading.g.cs
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Property\ProjectExportLoading.baml
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\SaveAskNewFile.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Debug\net8.0-windows\Main\SaveAskNewFile.baml

@@ -3,27 +3,71 @@
   "WorkspaceRootPath": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\menubar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\menubar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\property\\propertyoutputnode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertyoutputnode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\node.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\node.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\node.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\node.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\property\\projectexportloading.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\projectexportloading.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\menubar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\menubar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\inspector.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\inspector.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\inspector.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\inspector.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\saveasknewfile.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\saveasknewfile.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\saveask.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\saveask.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\property\\projectexportloading.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\saveasknewfile.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\saveasknewfile.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\main\\saveask.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\saveask.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\propertyoutputnode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertyoutputnode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\property\\propertyoutputnode.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertyoutputnode.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\propertymenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertymenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|c:\\users\\matt\\desktop\\physia\\mattnode\\wpf\\mattnode\\mattnode\\mattnode\\property\\projectproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\projectproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\projectexportloading.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\projectexportloading.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\projectexportloading.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\projectexportloading.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -67,10 +111,6 @@
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertymenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\propertymenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\propertymenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\matt\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -82,16 +122,8 @@
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\collision\\collisionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\inspector.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\inspector.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\collision\\collisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\collision\\collisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\node.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\node.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\maincanvas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -120,14 +152,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\nodetypemigrator.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\property\\nodetypemigrator.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\inspector.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\inspector.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\main\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|solutionrelative:mattnode\\main\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D701B7A-EDE8-476D-AB28-5FDA99A109D9}|MattNode\\MattNode.csproj|C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\mattnode\\property\\propertytypenode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -257,185 +281,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PropertyOutputNode.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyOutputNode.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\PropertyOutputNode.xaml.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAjwDEAAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T04:55:51.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProjectExportLoading.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectExportLoading.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\ProjectExportLoading.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBYAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T04:16:33.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProjectExportLoading.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectExportLoading.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml",
-              "RelativeToolTip": "MattNode\\Property\\ProjectExportLoading.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-08T04:16:16.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProjectOpenArrowsLoading.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T03:25:52.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MenuBar.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Main\\MenuBar.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml.cs",
-              "RelativeToolTip": "MattNode\\Main\\MenuBar.xaml.cs",
-              "ViewState": "AQIAABgCAAAAAAAAAAAlwDMCAABnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:39:42.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Node.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Node.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Main\\Node.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Node.xaml.cs",
-              "RelativeToolTip": "MattNode\\Main\\Node.xaml.cs",
-              "ViewState": "AQIAAHgBAAAAAAAAAADwv5EBAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:14:21.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProjectOpenLoading.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenLoading.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\ProjectOpenLoading.xaml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAArwB8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:52:44.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MenuBar.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Main\\MenuBar.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml",
-              "RelativeToolTip": "MattNode\\Main\\MenuBar.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T07:46:53.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Instance.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\Instance.cs",
-              "RelativeDocumentMoniker": "MattNode\\Collision\\Instance.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\Instance.cs",
-              "RelativeToolTip": "MattNode\\Collision\\Instance.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:30:50.562Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ProjectOpenArrowsLoading.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
-              "RelativeToolTip": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
+              "Title": "SaveAskNewFile.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAskNewFile.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Main\\SaveAskNewFile.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAskNewFile.xaml",
+              "RelativeToolTip": "MattNode\\Main\\SaveAskNewFile.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-08T03:25:36.483Z",
+              "WhenOpened": "2024-08-09T06:54:40.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ProjectOpenLoading.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenLoading.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml",
-              "RelativeToolTip": "MattNode\\Property\\ProjectOpenLoading.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T08:52:32.55Z",
+              "Title": "SaveAsk.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAsk.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\SaveAsk.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAsk.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\SaveAsk.xaml.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAWwBsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T06:52:40.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ProjectCleanLoading.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectCleanLoading.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\ProjectCleanLoading.xaml.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T09:03:30.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CollisionNode.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionNode.cs",
-              "RelativeDocumentMoniker": "MattNode\\Collision\\CollisionNode.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionNode.cs",
-              "RelativeToolTip": "MattNode\\Collision\\CollisionNode.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAvwJwAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:17:13.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CollisionTree.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionTree.cs",
-              "RelativeDocumentMoniker": "MattNode\\Collision\\CollisionTree.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionTree.cs",
-              "RelativeToolTip": "MattNode\\Collision\\CollisionTree.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:17:14.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 0,
               "Title": "Node.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Node.xaml",
               "RelativeDocumentMoniker": "MattNode\\Main\\Node.xaml",
@@ -447,203 +322,131 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ProjectCleanLoading.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectCleanLoading.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml",
-              "RelativeToolTip": "MattNode\\Property\\ProjectCleanLoading.xaml",
+              "DocumentIndex": 12,
+              "Title": "PropertyOutputNode.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyOutputNode.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml",
+              "RelativeToolTip": "MattNode\\Property\\PropertyOutputNode.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T09:03:05.994Z"
+              "WhenOpened": "2024-08-09T05:14:45.078Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MattNode\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAvwBQAAAAbAAAA",
+              "DocumentIndex": 2,
+              "Title": "MenuBar.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\MenuBar.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\MenuBar.xaml.cs",
+              "ViewState": "AQIAAJkCAAAAAAAAAAAAALcCAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:43:13.237Z"
+              "WhenOpened": "2024-08-01T09:39:42.04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MattNode\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml",
-              "RelativeToolTip": "MattNode\\MainWindow.xaml",
+              "DocumentIndex": 8,
+              "Title": "MenuBar.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Main\\MenuBar.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MenuBar.xaml",
+              "RelativeToolTip": "MattNode\\Main\\MenuBar.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-24T10:12:24.289Z"
+              "WhenOpened": "2024-08-07T07:46:53.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PropertyMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyMenu.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\PropertyMenu.xaml.cs",
-              "ViewState": "AQIAALcAAAAAAAAAAAAlwM8AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:43:40.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Popup.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs",
-              "ToolTip": "C:\\Users\\matt\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs [\uC77D\uAE30 \uC804\uC6A9]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs [\uC77D\uAE30 \uC804\uC6A9]",
-              "ViewState": "AQIAABoAAAAAAAAAAAAlwC4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T05:42:09.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProjectSaveLoading.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectSaveLoading.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml",
-              "RelativeToolTip": "MattNode\\Property\\ProjectSaveLoading.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T08:42:37.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 3,
               "Title": "Inspector.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\Main\\Inspector.xaml.cs",
               "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml.cs",
               "RelativeToolTip": "MattNode\\Main\\Inspector.xaml.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAAAAAAA",
+              "ViewState": "AQIAAIIAAAAAAAAAAADgv58AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T10:02:15.739Z"
+              "WhenOpened": "2024-08-01T10:02:15.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MainCanvas.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Main\\MainCanvas.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml",
-              "RelativeToolTip": "MattNode\\Main\\MainCanvas.xaml",
+              "DocumentIndex": 6,
+              "Title": "Arrow.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Arrow.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\Arrow.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Arrow.cs",
+              "RelativeToolTip": "MattNode\\Main\\Arrow.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAIwE4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:35:11.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Node.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Node.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\Node.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Node.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\Node.xaml.cs",
+              "ViewState": "AQIAAPkBAAAAAAAAAADgvwwCAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:14:21.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Inspector.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Main\\Inspector.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml",
+              "RelativeToolTip": "MattNode\\Main\\Inspector.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T10:29:43.321Z"
+              "WhenOpened": "2024-08-01T10:02:13.913Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProjectSaveLoading.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectSaveLoading.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\ProjectSaveLoading.xaml.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAtwCAAAABYAAAA",
+              "DocumentIndex": 5,
+              "Title": "SaveAskNewFile.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAskNewFile.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\SaveAskNewFile.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAskNewFile.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\SaveAskNewFile.xaml.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAIwCkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:42:23.851Z"
+              "WhenOpened": "2024-08-09T06:54:56.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NodeArrow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\NodeArrow.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Main\\NodeArrow.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\NodeArrow.xaml.cs",
-              "RelativeToolTip": "MattNode\\Main\\NodeArrow.xaml.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAjwBYAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:24:38.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "NodeTypeDeleter.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeleter.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeDeleter.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeleter.xaml",
-              "RelativeToolTip": "MattNode\\Property\\NodeTypeDeleter.xaml",
+              "DocumentIndex": 10,
+              "Title": "SaveAsk.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAsk.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Main\\SaveAsk.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\SaveAsk.xaml",
+              "RelativeToolTip": "MattNode\\Main\\SaveAsk.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T08:54:45.58Z"
+              "WhenOpened": "2024-08-09T06:55:01.243Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "NodeTypeDeletionAsk.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAUwFUAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:54:49.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PropertyMenu.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyMenu.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml",
-              "RelativeToolTip": "MattNode\\Property\\PropertyMenu.xaml",
+              "DocumentIndex": 59,
+              "Title": "DoneWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DoneWindow.xaml",
+              "RelativeDocumentMoniker": "MattNode\\DoneWindow.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DoneWindow.xaml",
+              "RelativeToolTip": "MattNode\\DoneWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T11:37:33.344Z"
+              "WhenOpened": "2024-07-31T02:08:56.276Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MainCanvas.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Main\\MainCanvas.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml.cs",
-              "RelativeToolTip": "MattNode\\Main\\MainCanvas.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:17:17.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "NodeTypeMigrator.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeMigrator.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeMigrator.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeMigrator.xaml",
-              "RelativeToolTip": "MattNode\\Property\\NodeTypeMigrator.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-07T08:42:14.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "PropertyTypeNode.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyTypeNode.xaml.cs",
-              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyTypeNode.xaml.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyTypeNode.xaml.cs",
-              "RelativeToolTip": "MattNode\\Property\\PropertyTypeNode.xaml.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAjwDcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:22:14.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "PropertyOutputNode.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyOutputNode.xaml",
-              "RelativeDocumentMoniker": "MattNode\\PropertyOutputNode.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyOutputNode.xaml",
-              "RelativeToolTip": "MattNode\\PropertyOutputNode.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-30T05:14:11.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "NodeTypeMigrateAsk.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeMigrateAsk.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeMigrateAsk.xaml.cs",
@@ -655,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "PropertyMenu.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyMenu.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\PropertyMenu.xaml.cs",
@@ -667,7 +470,162 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 17,
+              "Title": "ProjectOpenArrowsLoading.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T03:25:52.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProjectExportLoading.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectExportLoading.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectExportLoading.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T04:16:33.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProjectExportLoading.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectExportLoading.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectExportLoading.xaml",
+              "RelativeToolTip": "MattNode\\Property\\ProjectExportLoading.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-08T04:16:16.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PropertyMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\PropertyMenu.xaml.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAUwGMAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:43:40.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PropertyOutputNode.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyOutputNode.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyOutputNode.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\PropertyOutputNode.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAhwDMAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T04:55:51.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "PropertyOutputNode.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyOutputNode.xaml",
+              "RelativeDocumentMoniker": "MattNode\\PropertyOutputNode.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyOutputNode.xaml",
+              "RelativeToolTip": "MattNode\\PropertyOutputNode.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-30T05:14:11.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProjectProperty.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectProperty.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectProperty.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectProperty.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectProperty.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T04:55:22.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProjectOpenArrowsLoading.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
+              "RelativeToolTip": "MattNode\\Property\\ProjectOpenArrowsLoading.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-08T03:25:36.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProjectOpenLoading.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenLoading.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml",
+              "RelativeToolTip": "MattNode\\Property\\ProjectOpenLoading.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T08:52:32.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ProjectCleanLoading.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectCleanLoading.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectCleanLoading.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T09:03:30.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CollisionNode.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionNode.cs",
+              "RelativeDocumentMoniker": "MattNode\\Collision\\CollisionNode.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionNode.cs",
+              "RelativeToolTip": "MattNode\\Collision\\CollisionNode.cs",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAvwJwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:17:13.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CollisionTree.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionTree.cs",
+              "RelativeDocumentMoniker": "MattNode\\Collision\\CollisionTree.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\CollisionTree.cs",
+              "RelativeToolTip": "MattNode\\Collision\\CollisionTree.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:17:14.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProjectOpenLoading.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectOpenLoading.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectOpenLoading.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectOpenLoading.xaml.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAArwB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T08:52:44.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
               "Title": "PropertyMenu.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyMenu.xaml",
               "RelativeDocumentMoniker": "MattNode\\PropertyMenu.xaml",
@@ -678,41 +636,180 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "DoneWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DoneWindow.xaml",
-              "RelativeDocumentMoniker": "MattNode\\DoneWindow.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DoneWindow.xaml",
-              "RelativeToolTip": "MattNode\\DoneWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-31T02:08:56.276Z"
+              "DocumentIndex": 23,
+              "Title": "Instance.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\Instance.cs",
+              "RelativeDocumentMoniker": "MattNode\\Collision\\Instance.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Collision\\Instance.cs",
+              "RelativeToolTip": "MattNode\\Collision\\Instance.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:30:50.562Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Inspector.xaml",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml",
-              "RelativeDocumentMoniker": "MattNode\\Main\\Inspector.xaml",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Inspector.xaml",
-              "RelativeToolTip": "MattNode\\Main\\Inspector.xaml",
+              "DocumentIndex": 35,
+              "Title": "ProjectCleanLoading.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectCleanLoading.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectCleanLoading.xaml",
+              "RelativeToolTip": "MattNode\\Property\\ProjectCleanLoading.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-01T10:02:13.913Z"
+              "WhenOpened": "2024-08-07T09:03:05.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MattNode\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAvwBQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:43:13.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MattNode\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainWindow.xaml",
+              "RelativeToolTip": "MattNode\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-24T10:12:24.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Popup.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs",
+              "ToolTip": "C:\\Users\\matt\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\17c55c5ac8a94f394f63fc3b38aa577b5cda52e92d5f1f78019ad6da0d50a3ed\\Popup.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "ViewState": "AQIAABoAAAAAAAAAAAAlwC4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T05:42:09.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProjectSaveLoading.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectSaveLoading.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml",
+              "RelativeToolTip": "MattNode\\Property\\ProjectSaveLoading.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T08:42:37.971Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "Arrow.cs",
-              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Arrow.cs",
-              "RelativeDocumentMoniker": "MattNode\\Main\\Arrow.cs",
-              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\Arrow.cs",
-              "RelativeToolTip": "MattNode\\Main\\Arrow.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAIwE4AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:35:11.988Z"
+              "Title": "MainCanvas.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Main\\MainCanvas.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml",
+              "RelativeToolTip": "MattNode\\Main\\MainCanvas.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T10:29:43.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
+              "Title": "ProjectSaveLoading.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\ProjectSaveLoading.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\ProjectSaveLoading.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\ProjectSaveLoading.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAtwCAAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T08:42:23.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "NodeArrow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\NodeArrow.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\NodeArrow.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\NodeArrow.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\NodeArrow.xaml.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAjwBYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:24:38.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "NodeTypeDeleter.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeleter.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeDeleter.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeleter.xaml",
+              "RelativeToolTip": "MattNode\\Property\\NodeTypeDeleter.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T08:54:45.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "NodeTypeDeletionAsk.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\NodeTypeDeletionAsk.xaml.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAUwFUAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T08:54:49.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PropertyMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyMenu.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyMenu.xaml",
+              "RelativeToolTip": "MattNode\\Property\\PropertyMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T11:37:33.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MainCanvas.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Main\\MainCanvas.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Main\\MainCanvas.xaml.cs",
+              "RelativeToolTip": "MattNode\\Main\\MainCanvas.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:17:17.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "NodeTypeMigrator.xaml",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeMigrator.xaml",
+              "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeMigrator.xaml",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeMigrator.xaml",
+              "RelativeToolTip": "MattNode\\Property\\NodeTypeMigrator.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-08-07T08:42:14.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "PropertyTypeNode.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyTypeNode.xaml.cs",
+              "RelativeDocumentMoniker": "MattNode\\Property\\PropertyTypeNode.xaml.cs",
+              "ToolTip": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\PropertyTypeNode.xaml.cs",
+              "RelativeToolTip": "MattNode\\Property\\PropertyTypeNode.xaml.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAjwDcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:22:14.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "NodeTypeMigrator.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Property\\NodeTypeMigrator.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\Property\\NodeTypeMigrator.xaml.cs",
@@ -724,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "Node.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Node.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\Node.xaml.cs",
@@ -736,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 46,
               "Title": "Instance.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\Instance.cs",
               "RelativeDocumentMoniker": "MattNode\\Instance.cs",
@@ -748,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "CollisionNode.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\CollisionNode.cs",
               "RelativeDocumentMoniker": "MattNode\\CollisionNode.cs",
@@ -760,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "NodeTypeDeleter.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeleter.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeleter.xaml.cs",
@@ -772,7 +869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "DesignMode.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DesignMode.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\DesignMode.xaml.cs",
@@ -784,7 +881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "MainCanvas.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\MainCanvas.xaml",
               "RelativeDocumentMoniker": "MattNode\\MainCanvas.xaml",
@@ -795,7 +892,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "PropertyTypeNodeExportOptionNode.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyTypeNodeExportOptionNode.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\PropertyTypeNodeExportOptionNode.xaml.cs",
@@ -807,7 +904,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 50,
               "Title": "NodeTypeMigrateAsk.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeMigrateAsk.xaml",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeMigrateAsk.xaml",
@@ -818,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 51,
               "Title": "NodeTypeDeletionAsk2.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeletionAsk2.xaml",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeletionAsk2.xaml",
@@ -829,7 +926,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 52,
               "Title": "NodeTypeDeletionAsk2.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeletionAsk2.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeletionAsk2.xaml.cs",
@@ -841,7 +938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 53,
               "Title": "SaveAsk.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\SaveAsk.xaml",
               "RelativeDocumentMoniker": "MattNode\\SaveAsk.xaml",
@@ -852,7 +949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 54,
               "Title": "SaveAsk.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\SaveAsk.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\SaveAsk.xaml.cs",
@@ -864,7 +961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 60,
               "Title": "NodeTypeDeleter.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeleter.xaml",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeleter.xaml",
@@ -875,7 +972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 61,
               "Title": "NodeTypeMigrator.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeMigrator.xaml",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeMigrator.xaml",
@@ -886,7 +983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 62,
               "Title": "NodeTypeDeletionAsk.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeletionAsk.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeletionAsk.xaml.cs",
@@ -898,7 +995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 63,
               "Title": "PropertyTypeNodeExportOptionNode.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyTypeNodeExportOptionNode.xaml",
               "RelativeDocumentMoniker": "MattNode\\PropertyTypeNodeExportOptionNode.xaml",
@@ -909,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 64,
               "Title": "PropertyTypeNode.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyTypeNode.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\PropertyTypeNode.xaml.cs",
@@ -921,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 65,
               "Title": "NodeTypeMigrator.xaml.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeMigrator.xaml.cs",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeMigrator.xaml.cs",
@@ -933,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 66,
               "Title": "PropertyTypeNode.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\PropertyTypeNode.xaml",
               "RelativeDocumentMoniker": "MattNode\\PropertyTypeNode.xaml",
@@ -944,7 +1041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 67,
               "Title": "NodeTypeDeletionAsk.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\NodeTypeDeletionAsk.xaml",
               "RelativeDocumentMoniker": "MattNode\\NodeTypeDeletionAsk.xaml",
@@ -955,7 +1052,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "Node.g.i.cs",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\obj\\Debug\\net8.0-windows\\Node.g.i.cs",
               "RelativeDocumentMoniker": "MattNode\\obj\\Debug\\net8.0-windows\\Node.g.i.cs",
@@ -967,7 +1064,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "DesignMode.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\DesignMode.xaml",
               "RelativeDocumentMoniker": "MattNode\\DesignMode.xaml",
@@ -978,7 +1075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 44,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\matt\\Desktop\\physia\\mattnode\\wpf\\MattNode\\MattNode\\MattNode\\App.xaml",
               "RelativeDocumentMoniker": "MattNode\\App.xaml",
