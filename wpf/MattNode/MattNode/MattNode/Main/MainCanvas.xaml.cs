@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -41,9 +42,6 @@ namespace MattNode
             InitRanderTransform();
             Register_MouseWheelEvent();
             CompositionTarget.Rendering += RenderTick;
-
-            rect1.HorizontalAlignment = HorizontalAlignment.Left;
-            rect1.VerticalAlignment = VerticalAlignment.Top;
         }
 
         public void Dispose()
@@ -59,6 +57,17 @@ namespace MattNode
         }
         private void RenderTick(object sender, EventArgs e)
         {
+            if (Mouse.LeftButton != MouseButtonState.Pressed) { Dragging = false; }
+
+            if (Dragging)
+            {
+                X = PosAtDragStart.X + (MainWindow.GetMousePos().X - DragStartPoint.X) / RenderSize;
+                Y = PosAtDragStart.Y + (MainWindow.GetMousePos().Y - DragStartPoint.Y) / RenderSize;
+
+                _TranslateTransform.X = X + MainWindow.GetWindowWidth() / (RenderSize * 2);
+                _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
+            }
+
             RenderSize += (RenderSizeGoal - RenderSize) / 5;
 
             if (Math.Abs(RenderSize- RenderSizeGoal) < 0.005) { RenderSize = RenderSizeGoal; }
@@ -69,9 +78,7 @@ namespace MattNode
             _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
 
 
-            rect1.Margin = new Thickness(-X - 960, -Y - 540, 0, 0);
-
-            List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960, -Y - 540, 1920, 1080));
+            List<Instance> instances = CollisionTree.GetInstancesInBoundaryList(new Instance(-X - 960 / RenderSize, -Y - 540 / RenderSize, 1920 / RenderSize, 1080 / RenderSize));
             for (int i = 0; i < Instance.EnabledInstanceList.Count; i++)
             {
                 Instance.EnabledInstanceList[i]._IsEnabled = false;
@@ -147,27 +154,36 @@ namespace MattNode
         }
         public void DragSpace_MouseButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Dragging = true;
-            DragStartPoint = MainWindow.GetMousePos();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                Dragging = true;
+                DragStartPoint = MainWindow.GetMousePos();
 
-            PosAtDragStart = new Point(X, Y);
+                PosAtDragStart = new Point(X, Y);
+            }
+            else if(e.MiddleButton == MouseButtonState.Pressed)
+            {
+                Node node = new Node(false, new Point(-50, -20));
+                System.Windows.Controls.Canvas.SetLeft(node, GetMousePos().X - 50);
+                System.Windows.Controls.Canvas.SetTop(node, GetMousePos().Y - 20);
+                Panel.SetZIndex(node, 100);
+
+                //mainCanvas.mainCanvas.Children.Add(node);
+                node.Focus();
+                node.typeComboBox.SelectedIndex = 0;
+                node.node_GotFocus();
+                node.ReregisterCollisionTree();
+            }
         }
 
         private void DragSpace_MouseButtonLeave(object sender, MouseEventArgs e)
         {
-            Dragging = false;
+            //Dragging = false;
         }
 
         private void DragSpace_MouseButtonMove(object sender, MouseEventArgs e)
         {
-            if (Dragging)
-            {
-                X = PosAtDragStart.X + (MainWindow.GetMousePos().X - DragStartPoint.X) / RenderSize;
-                Y = PosAtDragStart.Y + (MainWindow.GetMousePos().Y - DragStartPoint.Y) / RenderSize;
 
-                _TranslateTransform.X = X + MainWindow.GetWindowWidth() / (RenderSize * 2);
-                _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
-            }
         }
 
         private void DragSpace_MouseButtonUp(object sender, MouseButtonEventArgs e)
@@ -176,7 +192,12 @@ namespace MattNode
         }
         private void Control_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            e.Handled = true;
+            //e.Handled = true;
+        }
+
+        private void DragSpace_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
