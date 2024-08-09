@@ -8,10 +8,8 @@
         Title="MattNode - new project" Height="1080" Width="1920" Background="#FF7893CA" KeyDown="Window_KeyDown" Closing="window_Closing">
     <Grid x:Name="mainGrid" Width="1920" Height="1080">
         <local:MainCanvas x:Name="mainCanvas"/>
-        <Button Content="New Node" HorizontalAlignment="Left" Height="60" Margin="1660,38,0,0" VerticalAlignment="Top" Width="214" Click="NodeCreateButton_Clicked"/>
         <local:Inspector x:Name="mainInspector" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,18,0,0"/>
         <local:MenuBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920"/>
-        <Button Content="test performance" Margin="1614,180,46,786" Click="TestPerformance"/>
         <Button x:Name="focusCatcher" Content="Button" Margin="1822,1001,0,0" Background="{x:Null}" IsHitTestVisible="False" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
     </Grid>
 </Window>
