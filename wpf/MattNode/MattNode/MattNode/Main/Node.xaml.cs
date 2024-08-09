@@ -408,11 +408,14 @@ namespace MattNode
         {
             if (!SettingNodeTypeItems)
             {
+                SetTypeItems();
+
                 if (FocusedNode != null && FocusedNode.typeComboBox.SelectedIndex >= 0)
                 {
+                    FocusedNode.SetTypeItems();
                     FocusedNode.focusRectangle1.Stroke = ProjectProperty.NodeTypes[FocusedNode.typeComboBox.SelectedIndex].Color;
                 }
-                SetTypeItems();
+
                 Inspector.SetType(typeComboBox.SelectedValue);
                 Inspector.SetContent(contentTextBox.Text);
 

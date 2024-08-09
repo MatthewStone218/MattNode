@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MattNode.Property;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -27,6 +28,7 @@ namespace MattNode
         private int Num;
         private List<PropertyTypeNodeExportOptionNode> ExportOptionNodes = new List<PropertyTypeNodeExportOptionNode>();
         private bool IsInitializingColor = false;
+        private string OldName;
         public PropertyTypeNode(int num, bool fold)
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace MattNode
         public void Init()
         {
             typeNameTextBox.Text = ProjectProperty.NodeTypes[Num].Name;
+            OldName = ProjectProperty.NodeTypes[Num].Name;
             IsInitializingColor = true;
             colorPicker.SelectedColor = ProjectProperty.NodeTypes[Num].Color.Color;
             colorPicker.Background = ProjectProperty.NodeTypes[Num].Color;
@@ -75,7 +78,6 @@ namespace MattNode
 
             ((Canvas)Parent).Children.Remove(this);
 
-            typeNameTextBox.TextChanged -= typeNameTextBox_TextChanged;
             deleteButton.MouseDown -= deleteButton_MouseDown;
             upButton.Click -= upButton_Click;
             downButton.Click -= downButton_Click;
@@ -111,13 +113,6 @@ namespace MattNode
             Fold = !Fold;
         }
 
-        private void typeNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (typeNameTextBox.IsFocused && !PropertyMenu.SettingNodes)
-            {
-                ProjectProperty.ModifyNodeType(Num, typeNameTextBox.Text, ProjectProperty.NodeTypes[Num].Color, ProjectProperty.NodeTypes[Num].ExportOption);
-            }
-        }
 
         public bool GetFold()
         {
@@ -136,7 +131,7 @@ namespace MattNode
 
         private void deleteButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            NodeTypeDeletionAsk askWindow = new NodeTypeDeletionAsk(Num);
+            NodeTypeDeletionAsk askWindow = new NodeTypeDeletionAsk(Num, this);
             askWindow.HorizontalAlignment = HorizontalAlignment.Left;
             askWindow.VerticalAlignment = VerticalAlignment.Top;
             Canvas.SetTop(askWindow, 0);
@@ -182,6 +177,42 @@ namespace MattNode
                         }
                     }
                 }
+            }
+        }
+
+        public void typeNameTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            PropertyMenu.ChangingNodeType = false;
+            if (OldName != typeNameTextBox.Text)
+            {
+                NodeTypeMigrateAsk migrateWindow = new NodeTypeMigrateAsk(OldName, typeNameTextBox.Text, this);
+                migrateWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                migrateWindow.VerticalAlignment = VerticalAlignment.Top;
+                Canvas.SetTop(migrateWindow, 0);
+                Canvas.SetBottom(migrateWindow, 0);
+                Grid.SetZIndex(migrateWindow, 4000);
+                MainWindow._MainWindow.mainGrid.Children.Add(migrateWindow);
+
+                e.Handled = true;
+            }
+        }
+
+        private void typeNameTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            PropertyMenu.ChangingNodeType = true;
+        }
+
+        public void ApplyName()
+        {
+            ProjectProperty.ModifyNodeType(Num, typeNameTextBox.Text, ProjectProperty.NodeTypes[Num].Color, ProjectProperty.NodeTypes[Num].ExportOption);
+        }
+
+        private void control_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (PropertyMenu.ChangingNodeType)
+            {
+                e.Handled = true;
+                MainWindow._MainWindow.focusCatcher.Focus();
             }
         }
     }

@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:MattNode"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="890">
-    <Grid x:Name="mianGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="200" Background="#FFDCE6E8">
-        <Label x:Name="extensionLabel" Content="Extension" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,118,0,0"/>
-        <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Margin="25,18,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="751" FontSize="48" VerticalContentAlignment="Center" TextChanged="nameTextbox_TextChanged" Loaded="nameTextBox_Loaded"/>
-        <ComboBox x:Name="extensionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="59" Width="681" Margin="187,118,0,0" FontSize="36" SelectionChanged="extensionComboBox_SelectionChanged">
+    <Grid x:Name="mianGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="200" Background="#FFDCE6E8" PreviewMouseDown="control_PreviewMouseDown">
+        <Label x:Name="extensionLabel" Content="Extension" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,118,0,0" PreviewMouseDown="control_PreviewMouseDown"/>
+        <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Margin="25,18,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="751" FontSize="48" VerticalContentAlignment="Center" TextChanged="nameTextbox_TextChanged" Loaded="nameTextBox_Loaded" PreviewMouseDown="control_PreviewMouseDown"/>
+        <ComboBox x:Name="extensionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="59" Width="681" Margin="187,118,0,0" FontSize="36" SelectionChanged="extensionComboBox_SelectionChanged" PreviewMouseDown="control_PreviewMouseDown">
             <ComboBoxItem Content=".csv"/>
             <ComboBoxItem Content=".txt(Structure containing functions)"/>
             <ComboBoxItem Content=".txt(Structure)"/>
@@ -17,8 +17,8 @@
             <ComboBoxItem Content=".txt(Script containing functions)"/>
             <ComboBoxItem Content=".txt(Script without indexing)"/>
         </ComboBox>
-        <Rectangle Height="8" Width="890" Fill="#FF7893CA" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,192,0,0"/>
-        <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" VerticalAlignment="Top" HorizontalAlignment="Left" Height="82" Margin="800,18,0,0" Width="68"/>
+        <Rectangle Height="8" Width="890" Fill="#FF7893CA" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,192,0,0" PreviewMouseDown="control_PreviewMouseDown"/>
+        <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" VerticalAlignment="Top" HorizontalAlignment="Left" Height="82" Margin="800,18,0,0" Width="68" PreviewMouseDown="control_PreviewMouseDown"/>
 
     </Grid>
 </UserControl>

@@ -90,5 +90,13 @@ namespace MattNode
             ProjectProperty.RemoveExportFile(Num);
             PropertyMenu.mainProperty.SetPropertyNodes();
         }
+        private void control_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (PropertyMenu.ChangingNodeType)
+            {
+                e.Handled = true;
+                MainWindow._MainWindow.focusCatcher.Focus();
+            }
+        }
     }
 }

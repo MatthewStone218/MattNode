@@ -8,10 +8,10 @@
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
         <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920" Height="1080" Background="#7F000000"/>
-        <Rectangle Height="980" Width="1820" Fill="#FFE5E7EA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
-        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="80" Margin="1556,935,0,0" FontSize="24" Click="CloseMenuWithSave"/>
+        <Rectangle Height="980" Width="1820" Fill="#FFE5E7EA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" PreviewMouseDown="control_PreviewMouseDown"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="80" Margin="1556,935,0,0" FontSize="24" Click="CloseMenuWithSave" PreviewMouseDown="control_PreviewMouseDown"/>
 
-        <Canvas x:Name="outputFileCanvas" Margin="64,178,64,158" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Background="White" ClipToBounds="True">
+        <Canvas x:Name="outputFileCanvas" Margin="64,178,64,158" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Background="White" ClipToBounds="True" PreviewMouseDown="control_PreviewMouseDown">
             <Canvas.Style>
                 <Style TargetType="Canvas">
                     <Setter Property="Background" Value="White"/>
@@ -25,7 +25,7 @@
             <Canvas x:Name="Canvas1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" Canvas.Top="0" Canvas.Left="0"/>
         </Canvas>
 
-        <Canvas x:Name="nodeTypeCanvas" Margin="967,178,64,158" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" ClipToBounds="True">
+        <Canvas x:Name="nodeTypeCanvas" Margin="967,178,64,158" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="890" Height="744" ClipToBounds="True" PreviewMouseDown="control_PreviewMouseDown">
             <Canvas.Style>
                 <Style TargetType="Canvas">
                     <Setter Property="Background" Value="White"/>
@@ -41,8 +41,8 @@
 
         <Label Content="Output Files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="100" Margin="259,64,0,0" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Node Types" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="100" Margin="1162,64,0,0" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="addOutputFileButton" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="80" Margin="876,86,0,0" FontSize="48" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Click="addOutputFileButton_Click"/>
-        <Button x:Name="addNodeTypeButton" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="80" Margin="1776,86,0,0" FontSize="48" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Click="addNodeTypeButton_Click"/>
+        <Button x:Name="addOutputFileButton" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="80" Margin="876,86,0,0" FontSize="48" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Click="addOutputFileButton_Click" PreviewMouseDown="control_PreviewMouseDown"/>
+        <Button x:Name="addNodeTypeButton" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="80" Margin="1776,86,0,0" FontSize="48" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Click="addNodeTypeButton_Click" PreviewMouseDown="control_PreviewMouseDown"/>
 
     </Grid>
 </UserControl>

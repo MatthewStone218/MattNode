@@ -59,11 +59,15 @@ namespace MattNode
         }
         private void RenderTick(object sender, EventArgs e)
         {
-            RenderSize += (RenderSizeGoal - RenderSize) / 10;
+            RenderSize += (RenderSizeGoal - RenderSize) / 5;
+
+            if (Math.Abs(RenderSize- RenderSizeGoal) < 0.005) { RenderSize = RenderSizeGoal; }
+
             _ScaleTransform.ScaleX = RenderSize;
             _ScaleTransform.ScaleY = RenderSize;
             _TranslateTransform.X = X + MainWindow.GetWindowWidth() / (RenderSize * 2);
             _TranslateTransform.Y = Y + MainWindow.GetWindowHeight() / (RenderSize * 2);
+
 
             rect1.Margin = new Thickness(-X - 960, -Y - 540, 0, 0);
 
@@ -116,7 +120,7 @@ namespace MattNode
         }
         private void Global_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            if (PropertyMenu.mainProperty == null)
+            if (PropertyMenu.mainProperty == null && Keyboard.IsKeyDown(Key.LeftCtrl))
             {
                 RenderSizeGoal += e.Delta / 3000.0f;
 

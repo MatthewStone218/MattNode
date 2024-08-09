@@ -127,5 +127,14 @@ namespace MattNode
             bool writeNextNodes = false;
             ProjectProperty.NodeTypes[Num].ExportOption[OptionNum] = new FileExportOption(writeType, writeText, writePrevNodes, writeNextNodes);
         }
+
+        private void control_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (PropertyMenu.ChangingNodeType)
+            {
+                e.Handled = true;
+                MainWindow._MainWindow.focusCatcher.Focus();
+            }
+        }
     }
 }

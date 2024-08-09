@@ -28,6 +28,17 @@ namespace MattNode
             InitializeComponent();
             MigrateNodes(ProjectProperty.NodeTypes[Num].Name, ProjectProperty.NodeTypes[NewNum].Name);
             ProjectProperty.NodeTypes.RemoveAt(Num);
+            Init();
+        }
+        public NodeTypeMigrator(string name, string newName)
+        {
+            InitializeComponent();
+            MigrateNodes(name, newName);
+            Init();
+        }
+
+        public void Init()
+        {
             PropertyMenu.mainProperty.SetPropertyTypeNodes();
             CompositionTarget.Rendering += RenderTick;
         }
@@ -63,7 +74,10 @@ namespace MattNode
 
         private void Dispose()
         {
-            NodeTypeDeletionAsk.mainWindow.Dispose();
+            if (NodeTypeDeletionAsk.mainWindow != null)
+            {
+                NodeTypeDeletionAsk.mainWindow.Dispose();
+            }
             CompositionTarget.Rendering -= RenderTick;
             ((Grid)Parent).Children.Remove(this);
         }

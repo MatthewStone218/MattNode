@@ -21,6 +21,7 @@ using static System.Net.Mime.MediaTypeNames;
 using MattNode.Property;
 using System.Windows.Threading;
 using static MattNode.MenuBar;
+using System.Diagnostics;
 
 
 namespace MattNode
@@ -130,6 +131,10 @@ namespace MattNode
         {
             State = STATE.SAVE;
 
+            SavePath = path;
+
+            MainWindow._MainWindow.Title = $"MattNode - {System.IO.Path.GetFileNameWithoutExtension(SavePath)}";
+
             List<NodeData> nodeDatas = new List<NodeData>();
 
             ProjectSaveLoading saveLoadingWindow = new ProjectSaveLoading(Node.NodeList.Count);
@@ -222,6 +227,8 @@ namespace MattNode
                 SavePath = openFileDialog.FileName;
                 string json = File.ReadAllText(SavePath);
                 SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
+
+                MainWindow._MainWindow.Title = $"MattNode - {System.IO.Path.GetFileNameWithoutExtension(SavePath)}";
 
                 ProjectProperty.ExportFiles = saveData.ExportFiles;
                 ProjectProperty.NodeTypes = saveData.NodeTypes;
@@ -404,6 +411,8 @@ namespace MattNode
         {
             State = STATE.CLEAN;
 
+            MainWindow._MainWindow.Title = "MattNode - new project";
+
             SavePath = null;
             ProjectProperty.ApplyDefaultProperty();
 
@@ -466,6 +475,11 @@ namespace MattNode
             // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
             saveFileDialog.Filter = "zip file (*.zip)|*.zip";
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog.FileName = "MattNodeProject1";
+            if(SavePath != null)
+            {
+                saveFileDialog.FileName = System.IO.Path.GetFileNameWithoutExtension(SavePath);
+            }
 
             if (saveFileDialog.ShowDialog() == true)
             {
@@ -728,6 +742,7 @@ namespace MattNode
                         }
                     }
 
+
                     if (ProjectProperty.ExportFiles[b].Extension == ".csv")
                     {
                         File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".csv", text);
@@ -762,6 +777,8 @@ namespace MattNode
                 ZipFile.CreateFromDirectory(folderPath, zipPath);
 
                 Directory.Delete(folderPath, true);
+
+                Process.Start("explorer.exe", folderPath);
             }
 
             State = STATE.NORMAL;

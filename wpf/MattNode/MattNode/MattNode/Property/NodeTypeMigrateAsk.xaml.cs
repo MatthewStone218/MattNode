@@ -21,10 +21,23 @@ namespace MattNode
     public partial class NodeTypeMigrateAsk : UserControl
     {
         public int Num, NewNum;
-        public NodeTypeMigrateAsk(int num, int newNum)
+        public string Name, NewName;
+        private bool UseNum = false;
+        private PropertyTypeNode TypeNode;
+        public NodeTypeMigrateAsk(int num, int newNum, PropertyTypeNode typeNode)
         {
+            UseNum = true;
             Num = num;
             NewNum = newNum;
+            TypeNode = typeNode;
+            InitializeComponent();
+        }
+        public NodeTypeMigrateAsk(string name, string newName, PropertyTypeNode typeNode)
+        {
+            UseNum = false;
+            Name = name;
+            NewName = newName;
+            TypeNode = typeNode;
             InitializeComponent();
         }
 
@@ -38,24 +51,42 @@ namespace MattNode
 
         private void noButton_Click(object sender, RoutedEventArgs e)
         {
+            PropertyMenu.mainProperty.SetPropertyTypeNodes();
             Dispose();
         }
 
         private void yesButton_Click(object sender, RoutedEventArgs e)
         {
-            NodeTypeMigrator migrateWindow = new NodeTypeMigrator(Num,NewNum);
+            TypeNode.ApplyName();
+
+            NodeTypeMigrator migrateWindow;
+            if (UseNum)
+            {
+                migrateWindow = new NodeTypeMigrator(Num, NewNum);
+            }
+            else 
+            {
+                migrateWindow = new NodeTypeMigrator(Name, NewName);
+            }
             migrateWindow.HorizontalAlignment = HorizontalAlignment.Left;
             migrateWindow.VerticalAlignment = VerticalAlignment.Top;
             Canvas.SetTop(migrateWindow, 0);
             Canvas.SetBottom(migrateWindow, 0);
-            Grid.SetZIndex(migrateWindow, 4000);
+            Grid.SetZIndex(migrateWindow, 6000);
             MainWindow._MainWindow.mainGrid.Children.Add(migrateWindow);
 
             Dispose();
         }
         private void cautionText_Loaded(object sender, RoutedEventArgs e)
         {
-            cautionTextBlock.Text = $"Are you sure you want to Migrate ALL \"{ProjectProperty.NodeTypes[Num].Name}\" type nodes to \"{ProjectProperty.NodeTypes[NewNum].Name}\"?\n\nTHIS IS NOT UNDOABLE ACTION.";
+            if (UseNum)
+            {
+                cautionTextBlock.Text = $"Are you sure you want to Migrate ALL \"{ProjectProperty.NodeTypes[Num].Name}\" type nodes to \"{ProjectProperty.NodeTypes[NewNum].Name}\"?\n\nTHIS IS NOT UNDOABLE ACTION.";
+            }
+            else
+            {
+                cautionTextBlock.Text = $"Are you sure you want to Migrate ALL \"{Name}\" type nodes to \"{NewName}\"?\n\nTHIS IS NOT UNDOABLE ACTION.";
+            }
         }
     }
 }

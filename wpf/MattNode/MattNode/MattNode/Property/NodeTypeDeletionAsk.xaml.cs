@@ -22,15 +22,18 @@ namespace MattNode
     {
         public int Num;
         public static NodeTypeDeletionAsk ?mainWindow = null;
-        public NodeTypeDeletionAsk(int num)
+        private PropertyTypeNode TypeNode;
+        public NodeTypeDeletionAsk(int num, PropertyTypeNode typeNode)
         {
             mainWindow = this;
             Num = num;
             InitializeComponent();
+            TypeNode = typeNode;
         }
 
         public void Dispose()
         {
+            mainWindow = null;
             originalTypeLabel.Loaded -= originalTypeLabel_Loaded;
             newTypeComboBox.Loaded -= newTypeComboBox_Loaded;
             cancelButton.Click -= cancelButton_Click;
@@ -83,7 +86,7 @@ namespace MattNode
 
             if(newNum == -1) { MessageBox.Show("Can't Find new type."); return; }
 
-            NodeTypeMigrateAsk migrateWindow = new NodeTypeMigrateAsk(Num, newNum);
+            NodeTypeMigrateAsk migrateWindow = new NodeTypeMigrateAsk(Num, newNum, TypeNode);
             migrateWindow.HorizontalAlignment = HorizontalAlignment.Left;
             migrateWindow.VerticalAlignment = VerticalAlignment.Top;
             Canvas.SetTop(migrateWindow, 0);

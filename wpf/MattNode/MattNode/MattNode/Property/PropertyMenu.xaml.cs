@@ -23,6 +23,7 @@ namespace MattNode
     /// </summary>
     public partial class PropertyMenu : UserControl
     {
+        public static bool ChangingNodeType = false;
         public static bool SettingNodes = false;
         public static PropertyMenu ?mainProperty = null;
         private List<PropertyOutputNode> PropertyOutputNodes = new List<PropertyOutputNode>();
@@ -219,6 +220,14 @@ namespace MattNode
         {
             ProjectProperty.AddNodeType();
             SetPropertyNodes();
+        }
+        private void control_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (PropertyMenu.ChangingNodeType)
+            {
+                e.Handled = true;
+                MainWindow._MainWindow.focusCatcher.Focus();
+            }
         }
     }
 }

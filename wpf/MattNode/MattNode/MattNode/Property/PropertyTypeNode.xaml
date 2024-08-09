@@ -13,14 +13,14 @@
                     <Button x:Name="leftButton" Height="150" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Content="↳" FontSize="24"/>
                 </Canvas>
             </Canvas>
-            <Rectangle Height="150" Stroke="Black" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFDCE6E8"/>
-            <Label x:Name="typeNameLabel" Content="Type Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="22,22,0,0"/>
-            <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="424" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" TextChanged="typeNameTextBox_TextChanged" Loaded="typeNameTextBox_Loaded"/>
-            <Button x:Name="foldButton" Content="▼" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,125,0,0" Height="25" Width="890" Click="foldButton_Click"/>
+            <Rectangle Height="150" Stroke="Black" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFDCE6E8" PreviewMouseDown="control_PreviewMouseDown"/>
+            <Label x:Name="typeNameLabel" Content="Type Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="22,22,0,0" PreviewMouseDown="control_PreviewMouseDown"/>
+            <TextBox x:Name="typeNameTextBox" TextWrapping="Wrap" Width="424" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="209,10,0,0" Height="82" Loaded="typeNameTextBox_Loaded" GotFocus="typeNameTextBox_GotFocus" LostFocus="typeNameTextBox_LostFocus"/>
+            <Button x:Name="foldButton" Content="▼" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,125,0,0" Height="25" Width="890" Click="foldButton_Click" PreviewMouseDown="control_PreviewMouseDown"/>
         </Grid>
-        <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" Height="80" Canvas.Left="717" Canvas.Top="10" Width="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button x:Name="upButton" Content="▲" Canvas.Left="798" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="39" Click="upButton_Click"/>
-        <Button x:Name="downButton" Content="▼" Canvas.Left="798" Canvas.Top="51" Width="82" Height="39" HorizontalAlignment="Center" VerticalAlignment="Top" Click="downButton_Click"/>
-        <wpftoolkit:ColorPicker Name="colorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged" Height="70" Width="70" Canvas.Left="641" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="deleteButton" Source="/spr_delete.png" MouseDown="deleteButton_MouseDown" Height="80" Canvas.Left="717" Canvas.Top="10" Width="67" HorizontalAlignment="Left" VerticalAlignment="Center" PreviewMouseDown="control_PreviewMouseDown"/>
+        <Button x:Name="upButton" Content="▲" Canvas.Left="798" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="39" Click="upButton_Click" PreviewMouseDown="control_PreviewMouseDown"/>
+        <Button x:Name="downButton" Content="▼" Canvas.Left="798" Canvas.Top="51" Width="82" Height="39" HorizontalAlignment="Center" VerticalAlignment="Top" Click="downButton_Click" PreviewMouseDown="control_PreviewMouseDown"/>
+        <wpftoolkit:ColorPicker Name="colorPicker" SelectedColorChanged="ColorPicker_SelectedColorChanged" Height="70" Width="70" Canvas.Left="641" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewMouseDown="control_PreviewMouseDown"/>
     </Canvas>
 </UserControl>
