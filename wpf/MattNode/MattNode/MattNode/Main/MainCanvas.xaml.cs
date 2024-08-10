@@ -163,12 +163,13 @@ namespace MattNode
             }
             else if(e.MiddleButton == MouseButtonState.Pressed)
             {
-                Node node = new Node(false, new Point(-50, -20));
-                System.Windows.Controls.Canvas.SetLeft(node, GetMousePos().X - 50);
-                System.Windows.Controls.Canvas.SetTop(node, GetMousePos().Y - 20);
+                Node node = new Node(false, new Point(-150, -150));
+                System.Windows.Controls.Canvas.SetLeft(node, GetMousePos().X - 150);
+                System.Windows.Controls.Canvas.SetTop(node, GetMousePos().Y - 150);
                 Panel.SetZIndex(node, 100);
 
                 //mainCanvas.mainCanvas.Children.Add(node);
+                Keyboard.ClearFocus();
                 node.Focus();
                 node.typeComboBox.SelectedIndex = 0;
                 node.node_GotFocus();

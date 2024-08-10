@@ -62,6 +62,9 @@ namespace MattNode
             double top = Canvas.GetTop(EndNode) - margin;
             double bottom = Canvas.GetTop(EndNode) + EndNode.Height + margin;
 
+            double startX = x1;
+            double startY = y1;
+
             double goalX = x2;
             double goalY = y2;
 
@@ -110,7 +113,57 @@ namespace MattNode
                 }
             }
 
-            SetArrow(x1, y1, goalX, goalY);
+            left = Canvas.GetLeft(StartNode) - margin;
+            right = Canvas.GetLeft(StartNode) + StartNode.Width + margin;
+            top = Canvas.GetTop(StartNode) - margin;
+            bottom = Canvas.GetTop(StartNode) + StartNode.Height + margin;
+
+            if (x1 < x2)
+            {
+                double yAtRight = GetYInLine(right, x1, y1, x2, y2);
+                if (top <= yAtRight && yAtRight <= bottom)
+                {
+                    startX = right;
+                    startY = yAtRight;
+                }
+                else
+                {
+                    if (y1 < y2)
+                    {
+                        startX = GetXInLine(bottom, x1, y1, x2, y2);
+                        startY = bottom;
+                    }
+                    else
+                    {
+                        startX = GetXInLine(top, x1, y1, x2, y2);
+                        startY = top;
+                    }
+                }
+            }
+            else
+            {
+                double yAtLeft = GetYInLine(left, x1, y1, x2, y2);
+                if (top <= yAtLeft && yAtLeft <= bottom)
+                {
+                    startX = left;
+                    startY = yAtLeft;
+                }
+                else
+                {
+                    if (y1 < y2)
+                    {
+                        startX = GetXInLine(bottom, x1, y1, x2, y2);
+                        startY = bottom;
+                    }
+                    else
+                    {
+                        startX = GetXInLine(top, x1, y1, x2, y2);
+                        startY = top;
+                    }
+                }
+            }
+
+            SetArrow(startX, startY, goalX, goalY);
         }
 
         private Point GetLocalPosFromMainCanvas(Point point)
