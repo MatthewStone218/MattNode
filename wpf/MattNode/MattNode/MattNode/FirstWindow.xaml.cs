@@ -77,7 +77,7 @@ namespace MattNode
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://like-seagull-69a.notion.site/Welcome-to-MattNode-b4e7068a4b1446e7bab5f3bae36bb5f9?pvs=4",
+                FileName = "https://www.notion.so/MattNode-English-Tutorial-958fdf74e0404d73a54edf12dc0ada78",
                 UseShellExecute = true // 필수: UseShellExecute를 true로 설정하여 OS가 기본 브라우저를 사용하도록 합니다.
             });
         }
@@ -86,7 +86,7 @@ namespace MattNode
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://like-seagull-69a.notion.site/Download-b514c38a3ddc4633b0f007d94748f7ea?pvs=4",
+                FileName = "https://github.com/MatthewStone218/MattNode",
                 UseShellExecute = true // 필수: UseShellExecute를 true로 설정하여 OS가 기본 브라우저를 사용하도록 합니다.
             });
         }
