@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+using Xceed.Wpf.AvalonDock.Controls;
 
 namespace MattNode
 {
@@ -183,13 +185,13 @@ namespace MattNode
         private void CheckCursor(object sender, EventArgs e)
         {
             if (CheckLineCircleCollision(
-                Canvas.GetLeft(this) + MainWindow.GetWindowWidth()/2 + ArrowLine.X1, 
-                Canvas.GetTop(this) + MainWindow.GetWindowHeight() / 2 + ArrowLine.Y1, 
-                Canvas.GetLeft(this) + MainWindow.GetWindowWidth() / 2 + ArrowLine.X2, 
-                Canvas.GetTop(this) + MainWindow.GetWindowHeight() / 2 + ArrowLine.Y2, 
-                MainWindow.GetWindowWidth()/2 + (MainWindow.GetMousePos().X - MainWindow.GetWindowWidth() / 2)/MainCanvas.RenderSize - MainCanvas.Canvas.X,
-                MainWindow.GetWindowHeight() / 2 + (MainWindow.GetMousePos().Y - MainWindow.GetWindowHeight() / 2) / MainCanvas.RenderSize - MainCanvas.Canvas.Y,
-                30))
+                Canvas.GetLeft(this) + ArrowLine.X1, 
+                Canvas.GetTop(this) + ArrowLine.Y1, 
+                Canvas.GetLeft(this) + ArrowLine.X2, 
+                Canvas.GetTop(this) + ArrowLine.Y2,
+                MainCanvas.GetMousePos().X,
+                MainCanvas.GetMousePos().Y,
+                10))
             {
                 ArrowLine.Stroke = new SolidColorBrush(Color.FromRgb(150, 0, 0));
                 ArrowHead1.Stroke = new SolidColorBrush(Color.FromRgb(150, 0, 0));
@@ -211,20 +213,27 @@ namespace MattNode
             double dx = x2 - x1;
             double dy = y2 - y1;
             double a = dx * dx + dy * dy;
+
+            // a가 충분히 작으면 선분이 매우 짧다고 가정하여 직접 계산
+            if (Math.Abs(a) < 1e-10)
+            {
+                return ((x1 - cx) * (x1 - cx) + (y1 - cy) * (y1 - cy) <= radius * radius) ||
+                       ((x2 - cx) * (x2 - cx) + (y2 - cy) * (y2 - cy) <= radius * radius);
+            }
+
             double b = 2 * (dx * (x1 - cx) + dy * (y1 - cy));
             double c = (x1 - cx) * (x1 - cx) + (y1 - cy) * (y1 - cy) - radius * radius;
 
             double det = b * b - 4 * a * c;
             if (det < 0)
             {
-                // No real solutions; the line does not intersect the circle
                 return false;
             }
             else
             {
-                // Check if any of the intersection points are within the line segment
-                double t1 = (-b - Math.Sqrt(det)) / (2 * a);
-                double t2 = (-b + Math.Sqrt(det)) / (2 * a);
+                double sqrtDet = Math.Sqrt(det);
+                double t1 = (-b - sqrtDet) / (2 * a);
+                double t2 = (-b + sqrtDet) / (2 * a);
                 return (t1 >= 0 && t1 <= 1) || (t2 >= 0 && t2 <= 1);
             }
         }

@@ -35,7 +35,7 @@ namespace MattNode
 
         public static Point GetMousePos()
         {
-            return Mouse.GetPosition(Application.Current.MainWindow);
+            return Mouse.GetPosition(MainWindow._MainWindow);
         }
 
         public static double GetWindowWidth()
