@@ -78,9 +78,38 @@ namespace MattNode
         public static STATE State = STATE.NORMAL;
         public static string ?SavePath = null;
         public delegate void ActionAfterSave();
+        public static string FolderDefaultPath = null;
         public MenuBar()
         {
             InitializeComponent();
+            Init();
+        }
+
+        private void Init()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string filePath = System.IO.Path.Combine(appDataPath, "Mattnode\\savePath.txt");
+
+            // 문자열 불러오기
+            if (File.Exists(filePath))
+            {
+                string loadedText = File.ReadAllText(filePath);
+                FolderDefaultPath = loadedText;
+            }
+        }
+
+        private static void SetDefaultFolderPath(string path)
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            if(!Directory.Exists(System.IO.Path.Combine(appDataPath, "Mattnode")))
+            {
+                Directory.CreateDirectory(System.IO.Path.Combine(appDataPath, "Mattnode"));
+            }
+
+            string filePath = System.IO.Path.Combine(appDataPath, "Mattnode\\savePathsavePath.txt");
+
+            File.WriteAllText(filePath, path);
         }
 
         private void CopyDiscordName(object sender, RoutedEventArgs e)
@@ -132,6 +161,7 @@ namespace MattNode
             State = STATE.SAVE;
 
             SavePath = path;
+            SetDefaultFolderPath(SavePath);
 
             MainWindow._MainWindow.Title = $"MattNode - {System.IO.Path.GetFileNameWithoutExtension(SavePath)}";
 
@@ -202,12 +232,14 @@ namespace MattNode
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
             saveFileDialog.Filter = "MattNode file (*.MattNode)|*.MattNode";
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog.InitialDirectory = FolderDefaultPath;
 
             if (saveFileDialog.ShowDialog() == true)
             {
                 SaveProject(saveFileDialog.FileName, actionAfterSave);
                 SavePath = saveFileDialog.FileName;
+
+                SetDefaultFolderPath(SavePath);
             }
         }
 
@@ -225,6 +257,7 @@ namespace MattNode
             {
                 State = STATE.CLEAN;
                 SavePath = openFileDialog.FileName;
+                SetDefaultFolderPath(SavePath);
                 string json = File.ReadAllText(SavePath);
                 SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
 
@@ -474,7 +507,7 @@ namespace MattNode
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             // 저장할 파일 형식 필터 설정 (예: 텍스트 파일)
             saveFileDialog.Filter = "zip file (*.zip)|*.zip";
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog.InitialDirectory = FolderDefaultPath;
             saveFileDialog.FileName = "MattNodeProject1";
             if(SavePath != null)
             {
