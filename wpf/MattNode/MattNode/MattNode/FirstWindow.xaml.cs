@@ -23,7 +23,7 @@ namespace MattNode
     /// </summary>
     public partial class FirstWindow : Window
     {
-        public static string Version = "1.0.0";
+        public static string Version = "1.0.3";
         public FirstWindow()
         {
             InitializeComponent();

@@ -549,5 +549,15 @@ namespace MattNode
                 }
             }
         }
+
+        private void contentTextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            node_GotFocus();
+        }
+
+        private void contentTextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            node_GotFocus();
+        }
     }
 }

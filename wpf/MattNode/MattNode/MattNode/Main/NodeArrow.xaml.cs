@@ -166,6 +166,10 @@ namespace MattNode
             }
 
             SetArrow(startX, startY, goalX, goalY);
+
+            numLabel.Content = StartNode.ArrowsFromMe.IndexOf(this) + 1;
+            Canvas.SetLeft(numLabel, (arrowLine.X1 + arrowLine.X2) / 2 - numLabel.Width / 2);
+            Canvas.SetTop(numLabel, (arrowLine.Y1 + arrowLine.Y2) / 2 - numLabel.Height / 2);
         }
 
         private Point GetLocalPosFromMainCanvas(Point point)
@@ -184,6 +188,7 @@ namespace MattNode
 
         private void CheckCursor(object sender, EventArgs e)
         {
+            numLabel.Content = StartNode.ArrowsFromMe.IndexOf(this) + 1;
             if (CheckLineCircleCollision(
                 Canvas.GetLeft(this) + ArrowLine.X1, 
                 Canvas.GetTop(this) + ArrowLine.Y1, 

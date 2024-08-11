@@ -634,7 +634,7 @@ namespace MattNode
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
                         {
-                            text2 += $"\n\t{Node.NodeList[i].Num}: {{";
+                            text2 += $"\n\tnode_{_index}: {{";
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {
@@ -674,7 +674,7 @@ namespace MattNode
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
                         {
-                            text2 += $"\n\t{Node.NodeList[i].Num}: {{";
+                            text2 += $"\n\tnode_{_index}: {{";
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {
@@ -722,7 +722,7 @@ namespace MattNode
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
                         {
-                            text2 += $"\nfunction func_{Node.NodeList[i].Num}(){{";
+                            text2 += $"\nfunction func_{_index}(){{";
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {

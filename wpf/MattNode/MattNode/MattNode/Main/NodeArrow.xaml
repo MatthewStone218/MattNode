@@ -11,5 +11,6 @@
 
         <Line x:Name="arrowHead1" X1="100" Y1="50" X2="90" Y2="40" Stroke="White" StrokeThickness="3" IsHitTestVisible="False"/>
         <Line x:Name="arrowHead2" X1="100" Y1="50" X2="90" Y2="60" Stroke="White" StrokeThickness="3" IsHitTestVisible="False"/>
+        <Label x:Name="numLabel" Content="1" Background="White" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsHitTestVisible="False"/>
     </Canvas>
 </local:Arrow>
