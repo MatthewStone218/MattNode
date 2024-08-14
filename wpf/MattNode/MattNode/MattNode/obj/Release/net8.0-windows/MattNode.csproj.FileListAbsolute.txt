@@ -91,3 +91,5 @@ C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Release
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Release\net8.0-windows\MattNode.genruntimeconfig.cache
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Release\net8.0-windows\ref\MattNode.dll
 C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\obj\Release\net8.0-windows\MattNode_Content.g.cs
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Release\net8.0-windows\Sprites\spr_logo.ico
+C:\Users\matt\Desktop\physia\mattnode\wpf\MattNode\MattNode\MattNode\bin\Release\net8.0-windows\spr_logo.ico

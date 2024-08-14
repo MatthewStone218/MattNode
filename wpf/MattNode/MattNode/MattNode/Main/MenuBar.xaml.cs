@@ -255,157 +255,162 @@ namespace MattNode
 
             if (openFileDialog.ShowDialog() == true)
             {
-                State = STATE.CLEAN;
-                SavePath = openFileDialog.FileName;
-                SetDefaultFolderPath(SavePath);
-                string json = File.ReadAllText(SavePath);
-                SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
-
-                MainWindow._MainWindow.Title = $"MattNode - {System.IO.Path.GetFileNameWithoutExtension(SavePath)}";
-
-                ProjectProperty.ExportFiles = saveData.ExportFiles;
-                ProjectProperty.NodeTypes = saveData.NodeTypes;
-                Node.NodeCount = saveData.NodeCount;
-
-                MainCanvas.Canvas.X = 0;
-                MainCanvas.Canvas.Y = 0;
-
-                ProjectCleanLoading cleanLoadingWindow = new ProjectCleanLoading(Node.NodeList.Count);
-                cleanLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
-                cleanLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
-                Canvas.SetTop(cleanLoadingWindow, 0);
-                Canvas.SetBottom(cleanLoadingWindow, 0);
-                Grid.SetZIndex(cleanLoadingWindow, 4000);
-                MainWindow._MainWindow.mainGrid.Children.Add(cleanLoadingWindow);
-
-                DispatcherTimer _timer = new DispatcherTimer();
-                int a = 0;
-                _timer.Interval = TimeSpan.FromMilliseconds(1);
-                _timer.Tick += (s, args) =>
-                {
-                    for (int i = 0; i < 100; i++)
-                    {
-                        if (Node.NodeList.Count <= 0)
-                        {
-                            State = STATE.OPEN;
-
-                            ProjectOpenLoading openLoadingWindow = new ProjectOpenLoading(saveData.NodeDatas.Count);
-                            openLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
-                            openLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
-                            Canvas.SetTop(openLoadingWindow, 0);
-                            Canvas.SetBottom(openLoadingWindow, 0);
-                            Grid.SetZIndex(openLoadingWindow, 4000);
-                            MainWindow._MainWindow.mainGrid.Children.Add(openLoadingWindow);
-
-                            DispatcherTimer _timer2 = new DispatcherTimer();
-                            int b = 0;
-                            _timer2.Interval = TimeSpan.FromMilliseconds(1);
-                            _timer2.Tick += (s, args) =>
-                            {
-                                for (int ii = 0; ii < 100; ii++)
-                                {
-                                    if (b >= saveData.NodeDatas.Count)
-                                    {
-                                        ProjectOpenArrowsLoading openArrowLoadingWindow = new ProjectOpenArrowsLoading(saveData.NodeDatas.Count);
-                                        openArrowLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
-                                        openArrowLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
-                                        Canvas.SetTop(openArrowLoadingWindow, 0);
-                                        Canvas.SetBottom(openArrowLoadingWindow, 0);
-                                        Grid.SetZIndex(openArrowLoadingWindow, 4000);
-                                        MainWindow._MainWindow.mainGrid.Children.Add(openArrowLoadingWindow);
-
-                                        DispatcherTimer _timer3 = new DispatcherTimer();
-                                        int c = 0;
-                                        _timer3.Interval = TimeSpan.FromMilliseconds(1);
-                                        _timer3.Tick += (s, args) =>
-                                        {
-                                            for (int iii = 0; iii < 100; iii++)
-                                            {
-                                                if (c >= saveData.NodeDatas.Count)
-                                                {
-                                                    State = STATE.NORMAL;
-                                                    _timer3.Stop();
-                                                    openArrowLoadingWindow.Dispose();
-                                                    break;
-                                                }
-
-                                                for (int k = 0; k < saveData.NodeDatas[c].NextNodes.Count; k++)
-                                                {
-                                                    Node node1 = null;
-                                                    for(int j = 0; j < Node.NodeList.Count; j++)
-                                                    {
-                                                        if (Node.NodeList[j].Num == saveData.NodeDatas[c].Num)
-                                                        {
-                                                            node1 = Node.NodeList[j];
-                                                            break;
-                                                        }
-                                                    }
-
-                                                    Node node2 = null;
-                                                    for (int j = 0; j < Node.NodeList.Count; j++)
-                                                    {
-                                                        if (Node.NodeList[j].Num == saveData.NodeDatas[c].NextNodes[k])
-                                                        {
-                                                            node2 = Node.NodeList[j];
-                                                            break;
-                                                        }
-                                                    }
-
-                                                    NodeArrow nodeArrow = new NodeArrow(node1, node2);
-                                                    Panel.SetZIndex(nodeArrow, 90);
-
-                                                    MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(nodeArrow);
-                                                    node2.ArrowsFromOther.Add(nodeArrow);
-                                                    node1.ArrowsFromMe.Add(nodeArrow);
-                                                }
-
-                                                c++;
-                                                openArrowLoadingWindow.SetNodeCount(c);
-                                            }
-                                        };
-
-                                        _timer3.Start();
-
-                                        _timer2.Stop();
-                                        openLoadingWindow.Dispose();
-                                        break;
-                                    }
-
-                                    Node node = new Node(false, new Point(0, 0));
-                                    Canvas.SetLeft(node, saveData.NodeDatas[b].Left);
-                                    Canvas.SetTop(node, saveData.NodeDatas[b].Top);
-                                    node.Width = saveData.NodeDatas[b].Width;
-                                    node.Height = saveData.NodeDatas[b].Height;
-                                    node.RepositionElements();
-                                    node.Num = saveData.NodeDatas[b].Num;
-                                    Panel.SetZIndex(node, 100);
-
-                                    //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
-                                    node.SetTypeItems();
-                                    node.typeComboBox.SelectedValue = saveData.NodeDatas[b].Type;
-                                    node.SetContent(saveData.NodeDatas[b].Text);
-                                    node.ReregisterCollisionTree();
-
-                                    b++;
-                                    openLoadingWindow.SetNodeCount(b);
-                                }
-                            };
-
-                            _timer2.Start();
-                            _timer.Stop();
-                            cleanLoadingWindow.Dispose();
-                            break;
-                        }
-
-                        Node.NodeList[0].Dispose();
-
-                        a++;
-                        cleanLoadingWindow.SetNodeCount(a);
-                    }
-                };
-
-                _timer.Start();
+                OpenProject(openFileDialog.FileName);
             }
+        }
+
+        public static void OpenProject(string path)
+        {
+            State = STATE.CLEAN;
+            SavePath = path;
+            SetDefaultFolderPath(SavePath);
+            string json = File.ReadAllText(SavePath);
+            SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json);
+
+            MainWindow._MainWindow.Title = $"MattNode - {System.IO.Path.GetFileNameWithoutExtension(SavePath)}";
+
+            ProjectProperty.ExportFiles = saveData.ExportFiles;
+            ProjectProperty.NodeTypes = saveData.NodeTypes;
+            Node.NodeCount = saveData.NodeCount;
+
+            MainCanvas.Canvas.X = 0;
+            MainCanvas.Canvas.Y = 0;
+
+            ProjectCleanLoading cleanLoadingWindow = new ProjectCleanLoading(Node.NodeList.Count);
+            cleanLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+            cleanLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+            Canvas.SetTop(cleanLoadingWindow, 0);
+            Canvas.SetBottom(cleanLoadingWindow, 0);
+            Grid.SetZIndex(cleanLoadingWindow, 4000);
+            MainWindow._MainWindow.mainGrid.Children.Add(cleanLoadingWindow);
+
+            DispatcherTimer _timer = new DispatcherTimer();
+            int a = 0;
+            _timer.Interval = TimeSpan.FromMilliseconds(1);
+            _timer.Tick += (s, args) =>
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    if (Node.NodeList.Count <= 0)
+                    {
+                        State = STATE.OPEN;
+
+                        ProjectOpenLoading openLoadingWindow = new ProjectOpenLoading(saveData.NodeDatas.Count);
+                        openLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                        openLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+                        Canvas.SetTop(openLoadingWindow, 0);
+                        Canvas.SetBottom(openLoadingWindow, 0);
+                        Grid.SetZIndex(openLoadingWindow, 4000);
+                        MainWindow._MainWindow.mainGrid.Children.Add(openLoadingWindow);
+
+                        DispatcherTimer _timer2 = new DispatcherTimer();
+                        int b = 0;
+                        _timer2.Interval = TimeSpan.FromMilliseconds(1);
+                        _timer2.Tick += (s, args) =>
+                        {
+                            for (int ii = 0; ii < 100; ii++)
+                            {
+                                if (b >= saveData.NodeDatas.Count)
+                                {
+                                    ProjectOpenArrowsLoading openArrowLoadingWindow = new ProjectOpenArrowsLoading(saveData.NodeDatas.Count);
+                                    openArrowLoadingWindow.HorizontalAlignment = HorizontalAlignment.Left;
+                                    openArrowLoadingWindow.VerticalAlignment = VerticalAlignment.Top;
+                                    Canvas.SetTop(openArrowLoadingWindow, 0);
+                                    Canvas.SetBottom(openArrowLoadingWindow, 0);
+                                    Grid.SetZIndex(openArrowLoadingWindow, 4000);
+                                    MainWindow._MainWindow.mainGrid.Children.Add(openArrowLoadingWindow);
+
+                                    DispatcherTimer _timer3 = new DispatcherTimer();
+                                    int c = 0;
+                                    _timer3.Interval = TimeSpan.FromMilliseconds(1);
+                                    _timer3.Tick += (s, args) =>
+                                    {
+                                        for (int iii = 0; iii < 100; iii++)
+                                        {
+                                            if (c >= saveData.NodeDatas.Count)
+                                            {
+                                                State = STATE.NORMAL;
+                                                _timer3.Stop();
+                                                openArrowLoadingWindow.Dispose();
+                                                break;
+                                            }
+
+                                            for (int k = 0; k < saveData.NodeDatas[c].NextNodes.Count; k++)
+                                            {
+                                                Node node1 = null;
+                                                for (int j = 0; j < Node.NodeList.Count; j++)
+                                                {
+                                                    if (Node.NodeList[j].Num == saveData.NodeDatas[c].Num)
+                                                    {
+                                                        node1 = Node.NodeList[j];
+                                                        break;
+                                                    }
+                                                }
+
+                                                Node node2 = null;
+                                                for (int j = 0; j < Node.NodeList.Count; j++)
+                                                {
+                                                    if (Node.NodeList[j].Num == saveData.NodeDatas[c].NextNodes[k])
+                                                    {
+                                                        node2 = Node.NodeList[j];
+                                                        break;
+                                                    }
+                                                }
+
+                                                NodeArrow nodeArrow = new NodeArrow(node1, node2);
+                                                Panel.SetZIndex(nodeArrow, 90);
+
+                                                MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(nodeArrow);
+                                                node2.ArrowsFromOther.Add(nodeArrow);
+                                                node1.ArrowsFromMe.Add(nodeArrow);
+                                            }
+
+                                            c++;
+                                            openArrowLoadingWindow.SetNodeCount(c);
+                                        }
+                                    };
+
+                                    _timer3.Start();
+
+                                    _timer2.Stop();
+                                    openLoadingWindow.Dispose();
+                                    break;
+                                }
+
+                                Node node = new Node(false, new Point(0, 0));
+                                Canvas.SetLeft(node, saveData.NodeDatas[b].Left);
+                                Canvas.SetTop(node, saveData.NodeDatas[b].Top);
+                                node.Width = saveData.NodeDatas[b].Width;
+                                node.Height = saveData.NodeDatas[b].Height;
+                                node.RepositionElements();
+                                node.Num = saveData.NodeDatas[b].Num;
+                                Panel.SetZIndex(node, 100);
+
+                                //MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Add(node);
+                                node.SetTypeItems();
+                                node.typeComboBox.SelectedValue = saveData.NodeDatas[b].Type;
+                                node.SetContent(saveData.NodeDatas[b].Text);
+                                node.ReregisterCollisionTree();
+
+                                b++;
+                                openLoadingWindow.SetNodeCount(b);
+                            }
+                        };
+
+                        _timer2.Start();
+                        _timer.Stop();
+                        cleanLoadingWindow.Dispose();
+                        break;
+                    }
+
+                    Node.NodeList[0].Dispose();
+
+                    a++;
+                    cleanLoadingWindow.SetNodeCount(a);
+                }
+            };
+
+            _timer.Start();
         }
 
         private static string GetStringAfter(string text, string substring)
@@ -639,13 +644,13 @@ namespace MattNode
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {
                                 write = true;
-                                text2 += $"\n\t\ttype: \"{_type}\"";
+                                text2 += $"\n\t\ttype: \"{_type}\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
                             {
                                 write = true;
-                                text2 += $"\n\t\tfunc: function(){{\n\t\t\t{_text.Replace(System.Environment.NewLine, "\n\t\t\t")}\n\t\t}}";
+                                text2 += $"\n\t\tfunc: function(){{\n\t\t\t{_text.Replace(System.Environment.NewLine, "\n\t\t\t")}\n\t\t}},";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
@@ -656,7 +661,7 @@ namespace MattNode
                                 {
                                     text2 += $"{nextNodes[ii]},";
                                 }
-                                text2 += $"]";
+                                text2 += $"],";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
@@ -667,7 +672,7 @@ namespace MattNode
                                 {
                                     text2 += $"{prevNodes[ii]},";
                                 }
-                                text2 += $"]";
+                                text2 += $"],";
                             }
 
                             text2 += $"\n\t}}\n,";
@@ -679,13 +684,13 @@ namespace MattNode
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteType)
                             {
                                 write = true;
-                                text2 += $"\n\t\ttype: \"{_type}\"";
+                                text2 += $"\n\t\ttype: \"{_type}\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteText)
                             {
                                 write = true;
-                                text2 += $"\n\t\ttext: \"{_text.Replace(System.Environment.NewLine, "\\n")}\"";
+                                text2 += $"\n\t\ttext: \"{_text.Replace(System.Environment.NewLine, "\\n").Replace("\"", "\\\"")}\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WriteNextNodes)
@@ -696,7 +701,7 @@ namespace MattNode
                                 {
                                     text2 += $"{nextNodes[ii]},";
                                 }
-                                text2 += $"]";
+                                text2 += $"],";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
@@ -707,7 +712,7 @@ namespace MattNode
                                 {
                                     text2 += $"{prevNodes[ii]},";
                                 }
-                                text2 += $"]";
+                                text2 += $"],";
                             }
 
                             text2 += $"\n\t}}\n,";
@@ -811,7 +816,7 @@ namespace MattNode
 
                 Directory.Delete(folderPath, true);
 
-                Process.Start("explorer.exe", folderPath);
+                Process.Start("explorer.exe", System.IO.Path.GetDirectoryName(zipPath));
             }
 
             State = STATE.NORMAL;

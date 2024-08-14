@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Xml.Serialization;
 using System.Diagnostics;
 using System.Security.Policy;
+using Microsoft.Win32;
 
 namespace MattNode
 {
@@ -23,13 +24,47 @@ namespace MattNode
     /// </summary>
     public partial class FirstWindow : Window
     {
-        public static string Version = "1.0.3";
+        public static string Version = "1.0.9";
         public FirstWindow()
         {
-            InitializeComponent();
-            RequestVersion();
-        }
+            AssociateFileExtension();
+            if (App.OpenFilePath == null)
+            {
+                InitializeComponent();
+                RequestVersion();
+            }
+            else
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
 
+                MenuBar.OpenProject(App.OpenFilePath);
+
+                this.Close();
+            }
+        }
+        public static void AssociateFileExtension()
+        {
+            string progID = "MattNode";
+            string extension = ".mattnode";
+            string applicationPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MattNode.exe");
+            string iconPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"spr_logo.ico");
+
+            // 확장자와 ProgID 연결
+            Registry.SetValue(@"HKEY_CURRENT_USER\Software\Classes\" + extension, "", progID);
+
+            // ProgID와 프로그램 실행 경로 연결
+            using (var key = Registry.CurrentUser.CreateSubKey(@"Software\Classes\" + progID + @"\shell\open\command"))
+            {
+                key.SetValue("", "\"" + applicationPath + "\" \"%1\"");
+            }
+
+            // 아이콘 설정
+            using (var iconKey = Registry.CurrentUser.CreateSubKey(@"Software\Classes\" + progID + @"\DefaultIcon"))
+            {
+                iconKey.SetValue("", iconPath);
+            }
+        }
         private async void RequestVersion()
         {
             string url = "http://matthewstone218.dothome.co.kr/mattnode/version.php";

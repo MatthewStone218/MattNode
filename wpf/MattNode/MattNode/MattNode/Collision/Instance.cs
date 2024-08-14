@@ -55,8 +55,8 @@ namespace MattNode
         {
             DeleteFromCollisionTree();
             EnabledInstanceList.Remove(this);
-            MainWindow._MainWindow.mainGrid.Children.Remove(this);
-            MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Remove(this);
+            if (MainWindow._MainWindow.mainGrid.Children.Contains(this)) { MainWindow._MainWindow.mainGrid.Children.Remove(this); }
+            if (MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Contains(this)) { MainWindow._MainWindow.mainCanvas.mainCanvas.Children.Remove(this); }
         }
         public bool Intersects(Instance other)
         {

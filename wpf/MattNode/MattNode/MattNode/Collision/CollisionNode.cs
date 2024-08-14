@@ -152,6 +152,11 @@ namespace MattNode
             Children[1] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary), Boundary.Width / 2, Boundary.Height / 2);
             Children[2] = new CollisionNode(this, Canvas.GetLeft(Boundary), Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
             Children[3] = new CollisionNode(this, Canvas.GetLeft(Boundary) + Boundary.Width / 2, Canvas.GetTop(Boundary) + Boundary.Height / 2, Boundary.Width / 2, Boundary.Height / 2);
+
+            for (int i = 0; i < Instances.Count; i++)
+            {
+                Instances[i].Nodes.Remove(this);
+            }
         }
 
         public void RemoveInstance(Instance instance)
@@ -203,8 +208,9 @@ namespace MattNode
                         Instances.Add(Children[i].Instances[ii]);
                     }
                 }
-
                 Children = null;
+
+                if (Parent != null) { Parent.TryMerge(); }
             }
         }
 
