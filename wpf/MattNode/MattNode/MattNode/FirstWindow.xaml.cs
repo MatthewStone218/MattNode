@@ -24,7 +24,7 @@ namespace MattNode
     /// </summary>
     public partial class FirstWindow : Window
     {
-        public static string Version = "1.0.9";
+        public static string Version = "1.0.11";
         public FirstWindow()
         {
             AssociateFileExtension();

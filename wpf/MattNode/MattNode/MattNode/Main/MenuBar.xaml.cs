@@ -109,7 +109,7 @@ namespace MattNode
 
             string filePath = System.IO.Path.Combine(appDataPath, "Mattnode\\savePathsavePath.txt");
 
-            File.WriteAllText(filePath, path);
+            File.WriteAllText(filePath, path, Encoding.UTF8);
         }
 
         private void CopyDiscordName(object sender, RoutedEventArgs e)
@@ -191,7 +191,7 @@ namespace MattNode
                         SaveData saveData = new SaveData(ProjectProperty.ExportFiles, ProjectProperty.NodeTypes, Node.NodeCount, nodeDatas);
                         string json = JsonConvert.SerializeObject(saveData);
 
-                        File.WriteAllText(path, json);
+                        File.WriteAllText(path, json, Encoding.UTF8);
 
                         if(actionAfterSave != null)
                         {
@@ -623,7 +623,7 @@ namespace MattNode
                             }
                             else
                             {
-                                text2 += $"\"[]\"";
+                                text2 += $"\"\",";
                             }
 
                             if (ProjectProperty.NodeTypes[(int)type_num].ExportOption[b].WritePrevNodes)
@@ -635,6 +635,10 @@ namespace MattNode
                                     text2 += $"{prevNodes[ii]},";
                                 }
                                 text2 += $"]\",";
+                            }
+                            else
+                            {
+                                text2 += $"\"\",";
                             }
                         }
                         else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
@@ -783,30 +787,30 @@ namespace MattNode
 
                     if (ProjectProperty.ExportFiles[b].Extension == ".csv")
                     {
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".csv", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".csv", text, Encoding.UTF8);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure containing functions)")
                     {
                         text += "}";
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text, Encoding.UTF8);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure)")
                     {
                         text += "}";
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text, Encoding.UTF8);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Structure without indexing)")
                     {
                         text += "\n}";
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text, Encoding.UTF8);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script containing functions)")
                     {
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text, Encoding.UTF8);
                     }
                     else if (ProjectProperty.ExportFiles[b].Extension == ".txt(Script without indexing)")
                     {
-                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text);
+                        File.WriteAllText(System.IO.Path.Combine(folderPath, ProjectProperty.ExportFiles[b].Name) + ".txt", text, Encoding.UTF8);
                     }
                 }
 
