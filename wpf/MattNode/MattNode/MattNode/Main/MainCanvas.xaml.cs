@@ -22,6 +22,7 @@ namespace MattNode
     /// </summary>
     public partial class MainCanvas : UserControl
     {
+        private static Label _OriginLabel;
         public static MainCanvas Canvas;
         private bool Dragging = false;
         private Point DragStartPoint = new Point(0, 0);
@@ -42,6 +43,7 @@ namespace MattNode
             InitRanderTransform();
             Register_MouseWheelEvent();
             CompositionTarget.Rendering += RenderTick;
+            _OriginLabel = originLabel;
         }
 
         public void Dispose()
@@ -150,7 +152,8 @@ namespace MattNode
 
         public static Point GetMousePos()
         {
-            return new Point( MainWindow.GetMousePos().X/RenderSize - Canvas.X - MainWindow.GetWindowWidth()/(RenderSize*2) , MainWindow.GetMousePos().Y/RenderSize - Canvas.Y - MainWindow.GetWindowHeight()/(RenderSize * 2));
+            return Mouse.GetPosition(_OriginLabel);
+            //return new Point( MainWindow.GetMousePos().X/RenderSize - Canvas.X - MainWindow.GetWindowWidth()/(RenderSize*2) , MainWindow.GetMousePos().Y/RenderSize - Canvas.Y - MainWindow.GetWindowHeight()/(RenderSize * 2));
         }
         public void DragSpace_MouseButtonDown(object sender, MouseButtonEventArgs e)
         {

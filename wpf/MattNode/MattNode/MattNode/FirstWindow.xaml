@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MattNode"
         mc:Ignorable="d"
-        Title="FirstWindow" Height="1080" Width="1920" Background="#FF7893CA" MinHeight="1080" MinWidth="1920">
-    <Canvas>
-        <Button x:Name="startButton" Content="Start" FontSize="24" Click="startButton_Click" Grid.Row="1" Width="350" Height="70" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="785" Canvas.Top="532"/>
-        <Button x:Name="updateButton" Content="Update (already up to date)" FontSize="24" IsEnabled="False" Grid.Row="1" Click="updateButton_Click" Width="350" Height="70" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="785" Canvas.Top="634"/>
-        <Label x:Name="updateLabel" Content="You can Update MattNode Now!" Margin="744,44,0,0" FontSize="48" Width="740" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed"/>
-        <Label Content="MattNode" FontSize="144" Width="740" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Calibri" Grid.RowSpan="2" Canvas.Left="590" Canvas.Top="171"/>
-        <Button x:Name="tutorialButton" Content="Tutorial" FontSize="24" Click="tutorialButton_Click" Grid.Row="1" Width="350" HorizontalAlignment="Center" VerticalAlignment="Top" Height="70" Canvas.Left="785" Canvas.Top="736"/>
-    </Canvas>
+        Title="FirstWindow" Height="1080" Width="1920" Background="#FF7893CA" MaxWidth="1920" MaxHeight="1080">
+    <Viewbox Stretch="Uniform" Width="1920" Margin="0,0,0,155">
+        <Grid>
+            <Button x:Name="startButton" Content="Start" FontSize="24" Click="startButton_Click" Width="350" Height="70" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="785" Canvas.Top="532" Margin="0,532,0,0"/>
+            <Button x:Name="updateButton" Content="Update (already up to date)" FontSize="24" IsEnabled="False" Click="updateButton_Click" Width="350" Height="70" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="785" Canvas.Top="634" Margin="0,631,0,0"/>
+            <Label x:Name="updateLabel" Content="You can Update MattNode Now!" Margin="744,44,0,0" FontSize="48" Width="740" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed"/>
+            <Label Content="MattNode" FontSize="144" Width="740" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Calibri" Canvas.Left="590" Canvas.Top="171" Margin="0,226,0,0"/>
+            <Button x:Name="tutorialButton" Content="Tutorial" FontSize="24" Click="tutorialButton_Click" Width="350" HorizontalAlignment="Center" VerticalAlignment="Top" Height="70" Canvas.Left="785" Canvas.Top="736" Margin="0,733,0,0"/>
+        </Grid>
+    </Viewbox>
 </Window>

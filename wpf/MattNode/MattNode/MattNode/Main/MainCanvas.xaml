@@ -7,8 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Grid>
-        <Canvas x:Name="dragSpace" Height="1080" Width="1920" Background="#FF7893CA" MouseDown="DragSpace_MouseButtonDown" MouseLeave="DragSpace_MouseButtonLeave" MouseUp="DragSpace_MouseButtonUp" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="DragSpace_MouseButtonMove" PreviewMouseRightButtonDown="Control_MouseRightButtonDown" Cursor=""/>
+        <Canvas x:Name="dragSpace" Height="1080" Width="1920" Background="#FF7893CA" MouseDown="DragSpace_MouseButtonDown" MouseLeave="DragSpace_MouseButtonLeave" MouseUp="DragSpace_MouseButtonUp" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="DragSpace_MouseButtonMove" PreviewMouseRightButtonDown="Control_MouseRightButtonDown" Cursor="">
+        </Canvas>
         <Canvas x:Name="mainCanvas" Margin="0,0,-75,0" Cursor="Arrow" Width="1920" Height="1080" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Label x:Name="originLabel" Content="Label" Height="34" Width="69" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="0" Canvas.Top="0" Visibility="Collapsed"/>
         </Canvas>
     </Grid>
 </UserControl>

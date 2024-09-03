@@ -19,13 +19,17 @@ namespace MattNode
     public partial class MainWindow : Window
     {
         public static MainWindow _MainWindow;
+        public static Viewbox _MainViewbox;
         public static bool CloseByCode = false;
         public static bool IsClosing = false;
+        private const double aspectRatio = 1920.0 / 1080.0;
         public MainWindow()
         {
             _MainWindow = this;
             InitializeComponent();
             Init();
+
+            _MainViewbox = mainViewbox;
         }
 
         private void Init()
@@ -35,7 +39,7 @@ namespace MattNode
 
         public static Point GetMousePos()
         {
-            return Mouse.GetPosition(MainWindow._MainWindow);
+            return Mouse.GetPosition(_MainViewbox);
         }
 
         public static double GetWindowWidth()
@@ -107,6 +111,19 @@ namespace MattNode
             if (e.Key == Key.S && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
             {
                 MenuBar.SaveProject();
+            }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // 새로운 너비 또는 높이에 따라 비율을 조정
+            if (e.WidthChanged)
+            {
+                this.Height = this.Width / aspectRatio;
+            }
+            else if (e.HeightChanged)
+            {
+                this.Width = this.Height * aspectRatio;
             }
         }
     }

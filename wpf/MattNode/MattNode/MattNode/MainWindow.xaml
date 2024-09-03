@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MattNode"
         mc:Ignorable="d"
-        Title="MattNode - new project" Height="1080" Width="1920" Background="#FF7893CA" KeyDown="Window_KeyDown" Closing="window_Closing">
-    <Grid x:Name="mainGrid" Width="1920" Height="1080" MinHeight="1080" MinWidth="1920">
-        <local:MainCanvas x:Name="mainCanvas"/>
-        <local:Inspector x:Name="mainInspector" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,18,0,0"/>
-        <local:MenuBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="1920"/>
-        <Button x:Name="focusCatcher" Content="Button" Margin="1822,1001,0,0" Background="{x:Null}" IsHitTestVisible="False" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-    </Grid>
+        Title="MattNode - new project" Height="1080" Width="1920" Background="#FF7893CA" KeyDown="Window_KeyDown" Closing="window_Closing" SizeChanged="Window_SizeChanged"
+        MaxWidth="1920" MaxHeight="1080"
+        >
+    <Viewbox x:Name="mainViewbox" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid x:Name="mainGrid" Width="1920" Height="1080">
+            <local:MainCanvas x:Name="mainCanvas"/>
+            <local:Inspector x:Name="mainInspector" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,18,0,0"/>
+            <local:MenuBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="1950"/>
+            <Button x:Name="focusCatcher" Content="Button" Margin="1822,1001,0,0" Background="{x:Null}" IsHitTestVisible="False" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        </Grid>
+    </Viewbox>
 </Window>
